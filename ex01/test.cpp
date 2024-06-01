@@ -6,12 +6,14 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 12:49:46 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/01 16:18:18 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/01 16:32:41 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <limits>
+#include <cstdlib> 
 #include <iomanip>
 
 class Contact
@@ -170,7 +172,7 @@ int	main(void)
 					if (std::cin>>index && ((index <= n || index == 9) && index >= 0))
 						break ;
 					std::cin.clear();
-					std::cin.ignore();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 					std::cout<<"invalid index...\n\n";
 				}
 				if (index != 9)
