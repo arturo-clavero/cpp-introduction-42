@@ -5,12 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 20:25:46 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/26 23:04:28 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/26 23:02:32 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/26 23:25:32 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+
+class	Brain{
+	private :
+		std::string	ideas[100];
+	public :
+	//ORTHODOX FORMAT
+		Brain(){
+			std::cout<<"Brain default constructor called\n";
+			for (int i = 0; i < 100; i++)
+				ideas[i] = "";
+		}
+		Brain(Brain const &original){
+			std::cout<<"Brain copy constructor called\n";
+			for (int i = 0; i < 100; i++)
+				ideas[i] = original.ideas[i];
+		}
+		Brain	&operator=(Brain const &original){
+			std::cout<<"Brain copy assignment operator called\n";
+			for (int i = 0; i < 100; i++)
+				ideas[i] = original.ideas[i];
+			return *this;
+		}
+		~Brain() {
+			std::cout<<"Brain destructor called\n";
+		}
+};
 
 class	Animal
 {
@@ -48,6 +75,8 @@ class	Animal
 };
 
 class	Dog : public Animal {
+	private:
+		Brain *local_brain;
 	public	:
 	//MEMBER FTS
 		void	makeSound()	const{
@@ -57,23 +86,30 @@ class	Dog : public Animal {
 		Dog() {
 			std::cout<<"Dog default constructor called\n";
 			type = "Dog";
+			local_brain = new Brain();
 		}
 		Dog(Dog const &original) {
 			std::cout<<"Dog copy constructor called\n";
 			type = original.type;
+			local_brain = new Brain(*original.local_brain);
 		}
 		Dog	&operator=(Dog const &original) {
 			std::cout<<"Dog copy assignment operator called\n";
 			type = original.type;
+			delete local_brain;
+			local_brain = new Brain(*original.local_brain);
 			return *this;
 		}
 		virtual ~Dog() {
 			std::cout<<"Dog destructor called\n";
+			delete local_brain;
 		}
 
 };
 
 class	Cat : public Animal {
+	private:
+		Brain *local_brain;
 	public	:
 	//MEMBER FTS
 		void	makeSound()const{
@@ -83,102 +119,39 @@ class	Cat : public Animal {
 		Cat() {
 			std::cout<<"Cat default constructor called\n";
 			type = "Cat";
+			local_brain = new Brain();
 		}
 		Cat(Cat const &original) {
 			std::cout<<"Cat copy constructor called\n";
 			type = original.type;
+			local_brain = new Brain(*original.local_brain);
 		}
 		Cat	&operator=(Cat const &original) {
 			std::cout<<"Cat copy assignment operator called\n";
 			type = original.type;
+			delete local_brain;
+			local_brain = new Brain(*original.local_brain);
 			return *this;
 		}
 		virtual ~Cat() {
 			std::cout<<"Cat destructor called\n";
+			delete local_brain;
 		}
 };
 
-class	WrongAnimal
-{
-	protected :
-		std::string	type;
-	public	:
-		void	makeSound()	const{
-			std::cout<<"I am defenitely not a cat and I clearly dont understand polymorphysm, can't even spell it\n";
-		}
-		std::string	getType() const
-		{
-			return type;
-		}
-	//ORTHODOX FORMAT
-		WrongAnimal() {
-			std::cout<<"WrongAnimal default constructor called\n";
-			type = "";
-		}
-		WrongAnimal(std::string type) {
-			std::cout<<"WrongAnimal constructor with params called\n";
-			this->type = type;
-		}
-		WrongAnimal(WrongAnimal const &original) {
-			std::cout<<"WrongAnimal copy constructor called\n";
-			type = original.type;
-		}
-		WrongAnimal	&operator=(WrongAnimal const &original) {
-			std::cout<<"WrongAnimal copy assignment operator called\n";
-			type = original.type;
-			return *this;
-		}
-		virtual ~WrongAnimal() {
-			std::cout<<"WrongAnimal (~"<<type<< "~) destructor called\n";
-		}
-};
+/*Implement a Brain class. It contains an array of 100 std::string called ideas.
+This way, Dog and Cat will have a private Brain* attribute.
+Upon construction, Dog and Cat will create their Brain using new Brain();
+Upon destruction, Dog and Cat will delete their Brain.*/
 
-class	WrongCat : public WrongAnimal {
-	public	:
-	//MEMBER FTS
-		void	makeSound()const{
-			std::cout<<"mew miaaaaaeeeewwwwwwwwwwwwww\n";
-		}
-	//ORTHODOX FORMAT
-		WrongCat() {
-			std::cout<<"WrongCat default constructor called\n";
-			type = "WrongCat";
-		}
-		WrongCat(WrongCat const &original) {
-			std::cout<<"WrongCat copy constructor called\n";
-			type = original.type;
-		}
-		WrongCat	&operator=(WrongCat const &original) {
-			std::cout<<"WrongCat copy assignment operator called\n";
-			type = original.type;
-			return *this;
-		}
-		virtual ~WrongCat() {
-			std::cout<<"WrongCat destructor called\n";
-		}
-};
+
 
 int main()
 {
-const Animal* meta = new Animal("Animal hehe");
 const Animal* j = new Dog();
 const Animal* i = new Cat();
-const WrongAnimal* wrongAnimal = new WrongAnimal("error animal");
-const WrongAnimal* wrongCat = new WrongCat();
-
-std::cout << meta->getType() << " " << std::endl;
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-std::cout << wrongAnimal->getType() << " " << std::endl;
-std::cout << wrongCat->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!*/
-j->makeSound();
-meta->makeSound();
-wrongAnimal->makeSound();
-wrongCat->makeSound();
-delete meta;
-delete j;
+delete j;//should not create a leak
 delete i;
-delete wrongAnimal;
-delete wrongCat;
+return (0);
 }
+	
