@@ -5,20 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 02:12:21 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 03:54:05 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/27 03:20:25 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/27 03:20:50 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <exception>
-
-/*A constant name.
-• And a grade that ranges from 1 (highest possible grade) to 150 (lowest possible
-grade).
-Any attempt to instantiate a Bureaucrat using an invalid grade must throw an ex-
-ception:
-either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.*/
 
 class	Bureaucrat{
 	private:
@@ -46,15 +39,6 @@ class	Bureaucrat{
 			if (grade > 150)
 				throw GradeTooLowException();
 			this->grade = grade;
-		}
-		Bureaucrat(Bureaucrat const &original) : name(original.name){
-			std::cout<<"Copy constructor called\n";
-			grade = original.grade;
-		}
-		Bureaucrat	&operator=(Bureaucrat const &original) {
-			std::cout<<"Copy assignment operator called\n";
-			grade = original.grade;
-			return *this;
 		}
 		~Bureaucrat(){
 			std::cout<<"Destructor called for bureaucrat "<<name<<std::endl;
@@ -84,21 +68,3 @@ std::ostream	&operator<<(std::ostream &cout_param, Bureaucrat &bur){
 	std::cout<<bur.getName()<<", bureaucrat grade "<<bur.getGrade()<<std::endl;
 	return (cout_param);
 };
-
-
-int	main(void)
-{
-	try {
-		Bureaucrat bur1("One", 2);
-		Bureaucrat bur2("One", 160);
-		std::cout<<bur1;
-		std::cout<<bur2;
-		bur1.decreaseGrade(1);
-		bur1.increaseGrade(50);
-		bur2.increaseGrade(100);
-		std::cout<<bur1;
-		std::cout<<bur2;
-	}catch(std::exception &e){
-		std::cout<<e.what();
-	}
-}
