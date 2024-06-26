@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 18:51:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/26 20:23:26 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/26 20:03:02 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/26 20:23:14 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 		std::string	Name;
 		int	HitPoints{10};
 		int	EnergyPoints{10};
@@ -57,26 +57,26 @@ class	ClapTrap
 			EnergyPoints--;
 		}
 		void	printStats() {
-			std::cout<<Name<<" : hit("<<HitPoints<<"), energy("<<EnergyPoints<<")\n";
+			std::cout<<"ClapTrap "<<Name<<" : hit("<<HitPoints<<"), energy("<<EnergyPoints<<")\n";
 		}
 	//ORTHODOX FORMAT
 		ClapTrap() {
-			std::cout<<"Default constructor called\n";
+			std::cout<<"ClapTrap default constructor called\n";
 			this->Name = "";
 		}
 		ClapTrap(std::string Name) {
-			std::cout<<"Constructor with params called\n";
+			std::cout<<"ClapTrap constructor with params called\n";
 			this->Name = Name;
 		}
 		ClapTrap(ClapTrap &Original) {
-			std::cout<<"Copy constructor called\n";
+			std::cout<<"ClapTrap copy constructor called\n";
 			AttackDamage = Original.AttackDamage;
 			EnergyPoints = Original.EnergyPoints;
 			HitPoints = Original.HitPoints;
 			Name = Original.Name;
 		}
 		ClapTrap	&operator=(ClapTrap const &Original) {
-			std::cout<<"Copy assignment operator called\n";
+			std::cout<<"ClapTrap copy assignment operator called\n";
 			AttackDamage = Original.AttackDamage;
 			EnergyPoints = Original.EnergyPoints;
 			HitPoints = Original.HitPoints;
@@ -84,19 +84,62 @@ class	ClapTrap
 			return *this;
 		}
 		~ClapTrap() {
-			std::cout<<"Destructor called\n";
+			std::cout<<"ClapTrap destructor called\n";
 		}
 };
 
-int	main(void)
+class	SavTrap : public ClapTrap
 {
-	ClapTrap	Red("red team");
-	ClapTrap	Blue("blue team");
-	
-	Red.attack("blue team");
-	Blue.takeDamage(2);
-	Red.printStats();
-	Blue.printStats();
-	Blue.beRepaired(5);
-	Blue.printStats();
-}
+	private:
+	//
+	public:
+	//member functions
+		void	guardGate() {
+			std::cout<<"ScavTrap is now in Gate keeper mode.\n";
+		}
+		void	attack(const std::string& target) {
+			if (EnergyPoints == 0)
+			{
+				std::cout<<"SavTrap "<<Name<<" failed to attack "<<target<<", (No energy points!)\n";
+				return ;
+			}
+			std::cout<<"SavTrap "<<Name<<" attacks "<<target<<", causing "<<AttackDamage<<" points of damage!\n";
+			EnergyPoints--;
+		}
+		void	printStats() {
+			std::cout<<"SavTrap "<<Name<<" : hit("<<HitPoints<<"), energy("<<EnergyPoints<<")\n";
+		}
+	//ORTHODOX FORMAT
+		SavTrap() {
+			std::cout<<"SavTrap default constructor called\n";
+			Name = "";
+			AttackDamage = 20;
+			EnergyPoints = 50;
+			HitPoints = 100;
+		}
+		SavTrap(std::string Name) {
+			std::cout<<"SavTrap constructor with params called\n";
+			this->Name = Name;
+			AttackDamage = 20;
+			EnergyPoints = 50;
+			HitPoints = 100;
+		}
+		SavTrap(SavTrap &Original) {
+			std::cout<<"SavTrap copy constructor called\n";
+			AttackDamage = Original.AttackDamage;
+			EnergyPoints = Original.EnergyPoints;
+			HitPoints = Original.HitPoints;
+			Name = Original.Name;
+		}
+		SavTrap	&operator=(SavTrap const &Original) {
+			std::cout<<"SavTrap copy assignment operator called\n";
+			AttackDamage = Original.AttackDamage;
+			EnergyPoints = Original.EnergyPoints;
+			HitPoints = Original.HitPoints;
+			Name = Original.Name;
+			return *this;
+		}
+		~SavTrap() {
+			std::cout<<"SavTrap constructor called\n";
+		}
+};
