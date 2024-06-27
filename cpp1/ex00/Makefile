@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/06/27 15:30:50 by arturo           ###   ########.fr        #
+#    Updated: 2024/06/27 15:32:01 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,13 @@ BINDIR = bin
 OBJDIR = $(BINDIR)/obj
 
 SRCS = $(SRCDIR)/main.cpp \
-       $(SRCDIR)/Contact.cpp \
-       $(SRCDIR)/PhoneBook.cpp
+       $(SRCDIR)/newZombie.cpp \
+       $(SRCDIR)/randomChump.cpp \
+	   $(SRCDIR)/Zombie.cpp \
 
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
-HEADERS = $(INCDIR)/PhoneBook.hpp \
-          $(INCDIR)/Contact.hpp
+HEADERS = $(INCDIR)/Zombie.hpp \
 
 EXEC = executable
 
