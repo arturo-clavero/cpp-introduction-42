@@ -6,15 +6,15 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 12:49:46 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 14:08:56 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/27 14:55:42 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	main(void)
 {
-	Phonebook	UserPhonebook;
+	PhoneBook	UserPhonebook;
 	Contact		UserContact;
 	std::string	UserInput;
 	int			n = -1;
