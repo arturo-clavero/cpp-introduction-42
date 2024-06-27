@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/01 12:49:46 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/01 16:32:41 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/27 13:56:56 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/27 14:32:14 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef	CONTACT_HPP
+# define CONTACT_HPP
 
 #include <iostream>
 #include <string>
 #include <limits>
 #include <cstdlib> 
 #include <iomanip>
+#include <sstream>
 
 class Contact
 {
@@ -90,9 +94,15 @@ public:
 			std::cout<<str.at(str.size() - 1);
 		std::cout<<"|";
 	}
+	std::string	to_string(int n)
+	{
+		std::stringstream ss;
+        ss << n;
+        return ss.str();
+	}
 	void	print_basic(int n)
 	{
-		format(std::to_string(n));
+		format(to_string(n));
 		format(FirstName);
 		format(LastName);
 		format(Nickname);
@@ -108,81 +118,4 @@ public:
 	}
 };
 
-class Phonebook
-{
-public:
-	Contact contact[8];
-	bool	print_all(int n)
-	{
-		if (n < 0)
-		{
-			std::cout<<"No contacts\n\n";
-			return (false);
-		}
-		contact[0].format("Index");
-		contact[0].format("First Name");
-		contact[0].format("Last Name");
-		contact[0].format("Nickname");
-		std::cout<<"\n";
-		for (int i = 0; i <= n; i++)
-			contact[i].print_basic(i);
-		return (true);
-	}
-	void	print_index(int n)
-	{
-		contact[n].print_full();
-	}
-	void	delete_old_contact(void)
-	{
-		for (int i = 0; i < 7; i++)
-			contact[i] = contact[i + 1];
-	}
-};
-
-int	main(void)
-{
-	Phonebook	UserPhonebook;
-	Contact		UserContact;
-	std::string	UserInput;
-	int			n = -1;
-	int			index;
-	
-	while (1)
-	{
-		std::cout<<"Please enter ADD, SEARCH or EXIT\n";
-		std::cin>>UserInput;
-		std::cin.ignore();
-		if (UserInput == "ADD")
-		{
-			UserContact.add_new_contact();
-			if (n >= 7)
-			{
-				UserPhonebook.delete_old_contact();
-				n = 6;
-			}
-			UserPhonebook.contact[++n] = UserContact;
-		}
-		else if (UserInput == "SEARCH")
-		{
-			if (UserPhonebook.print_all(n))
-			{
-				while (1)
-				{
-					std::cout<<"Select contact index, or select 9 to go back\n";
-					if (std::cin>>index && ((index <= n || index == 9) && index >= 0))
-						break ;
-					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout<<"invalid index...\n\n";
-				}
-				if (index != 9)
-					UserPhonebook.print_index(index);
-				std::cout<<"\n";
-			}
-		}
-		else if (UserInput == "EXIT")
-			break ;
-		else
-			std::cout<<"Invalid input..\n\n";
-	}
-}
+# endif
