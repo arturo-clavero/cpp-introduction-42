@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:30:37 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/28 15:36:06 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/28 17:26:09 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ class	PhoneBook{
 		void	addContact();
 		void	search();
 };
+
+void	pause();
 
 #endif

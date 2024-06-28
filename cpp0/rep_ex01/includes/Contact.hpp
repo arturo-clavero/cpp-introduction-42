@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:35:01 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/28 15:25:33 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/28 17:43:36 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ class	Contact{
 		bool	setNickname(std::string nickname);
 		bool	setPhoneNumber(std::string phoneNumber);
 		bool	setDarkestSecret(std::string darkestSecret);
-		typedef bool (Contact::*setter)(std::string);
 	//prints:
-
+		void	displayShort(int index);
+		void	displayLong();
 };
+void	printShort(std::string str, char end);
 
 #endif
