@@ -1,4 +1,5 @@
 TO REDO
+	CP1 ex04 doesn't compile... ->
+	same for ex05 -> (maps used can not use maps!!) -> I think same issue for ex04
 
-	- CPP0 EX01: 
-		just redo it all, code is way too complicated, bad logic -> just restart if time allows... (it works but this is not good)
+
