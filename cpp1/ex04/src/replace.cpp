@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/01 21:32:57 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/03 15:14:07 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/27 16:19:33 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/27 16:20:06 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
+#include "replace.hpp"
 
 std::string	ftReplace(std::string haystack, std::string oldNeedle, std::string newNeedle)
 {
@@ -39,15 +38,4 @@ void	sed(std::string fileName, std::string oldNeedle, std::string newNeedle)
 	output << ftReplace(haystack, oldNeedle, newNeedle);
 	input.close();
 	output.close();
-}
-
-int	main(void)
-{
-	std::string	haystack = "this is abc and abc,\n after abc...\n";
-	std::string	oldNeedle = "a";
-	std::string newNeedle = "12345678";
-	std::ofstream	newFile("result.txt");
-	newFile<<haystack;
-	newFile.close();
-	sed("result.txt", oldNeedle, newNeedle);
 }
