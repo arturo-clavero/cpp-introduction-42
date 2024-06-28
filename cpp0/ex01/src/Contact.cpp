@@ -5,92 +5,105 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 14:34:35 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 14:54:25 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/28 13:43:06 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/28 17:43:13 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-int	Contact::is_empty_field(std::string field) {
-	if (field.empty())
-		return (true);
-	for (int i = 0; field[i]; i++)
+Contact::Contact(){
+	std::cout<<"Default constructor for class 'Contact' called\n";
+}
+
+Contact::~Contact(){
+	std::cout<<"Destructor for class 'Contact' called\n";
+}
+
+bool	stringOnlySpaces(std::string str)
+{
+	for (int i = 0; i < (int)str.length(); i++)
 	{
-		if (field[i] != ' ' && field[i] != '\t' && field[i] != '\n')
-			return (false);
+		if (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+			return false;
 	}
-	return (true);
+	return true;
 }
 
-void	Contact::add_new_contact(){
-	while (true){
-		std::cout<<"Input first name\n";
-		std::getline(std::cin, FirstName);
-		if (!is_empty_field(FirstName))
-			break ;
-	}
-	while (true) {
-		std::cout<<"Input last name\n";
-		std::getline(std::cin, LastName);
-		if (!is_empty_field(LastName))
-			break ;
-	}
-	while (true) {
-		std::cout<<"Input nick-name\n";
-		std::getline(std::cin, Nickname);
-		if (!is_empty_field(Nickname))
-			break ;
-	}
-	while (true) {
-		std::cout<<"Input phone number\n";
-		if (std::cin>>PhoneNumber)
-			break;
-		std::cin.clear();
-		std::cin.ignore();
-		std::cout<<"That was not a phone number\n\n";
-	}
-	std::cin.ignore();
-	while (true){
-		std::cout<<"Input darkest secret\n";
-		std::getline(std::cin, DarkestSecret);
-		if (!is_empty_field(DarkestSecret))
-			break ;
-	}
+bool	Contact::setFirstName(std::string firstName) {
+	if (stringOnlySpaces(firstName))
+		return false;
+	this->firstName = firstName;
+	return true;
 }
 
-void	Contact::format(std::string str) {
-	int	i;
-	int	white_space = 10 - str.size();
-	for (i = 0; i < white_space; i++)
+bool	Contact::setLastName(std::string lastName) {
+	if (stringOnlySpaces(lastName))
+		return false;
+	this->lastName = lastName;
+	return true;
+}
+
+bool	Contact::setNickname(std::string nickname) {
+	if (stringOnlySpaces(nickname))
+		return false;
+	this->nickname = nickname;
+	return true;
+}
+
+bool	Contact::setPhoneNumber(std::string phoneNumber) {
+	if (phoneNumber.length() != 10)
+		return false;
+	for (int i = 0; i < 10; i++)
+	{
+		char	c = phoneNumber[i];
+		if (c < '0' || c > '9')
+			return false;
+	}
+	this->phoneNumber = phoneNumber;
+	return true;
+}
+
+bool	Contact::setDarkestSecret(std::string darkestSecret) {
+	if (stringOnlySpaces(darkestSecret))
+		return false;
+	this->darkestSecret = darkestSecret;
+	return true;
+}
+
+void	printSpace(int n)
+{
+	for (int i = 0; i < n; i++)
 		std::cout<<" ";
-	for (i = 0; str[i] && i < 9; i++)
-		std::cout<<str.at(i);
-	if (str.size() > 10)
-		std::cout<<".";
-	else if (str.size() == 10)
-		std::cout<<str.at(str.size() - 1);
-	std::cout<<"|";
 }
 
-std::string	Contact::to_string(int n) {
-	std::stringstream ss;
-	ss << n;
-	return ss.str();
+void	printShort(std::string str, char end)
+{
+	printSpace(10 - str.length());
+	for (int i = 0; i < (int)str.length() && i < 9; i++)
+		std::cout<<str[i];
+	if (str.length() > 10)
+		std::cout<<"."<<end;
+	else if (str.length() == 10)
+		std::cout<<str[9]<<end;
+	else
+		std::cout<<end;
 }
 
-void	Contact::print_basic(int n) {
-	format(to_string(n));
-	format(FirstName);
-	format(LastName);
-	format(Nickname);
-	std::cout<<"\n";
+void	Contact::displayShort(int index)
+{
+	printSpace(9);
+	std::cout<<index + 1<<"|";
+	printShort(firstName, '|');
+	printShort(lastName, '|');
+	printShort(nickname, '\n');
 }
 
-void	Contact::print_full(void) {
-	std::cout<<"First name: "<<FirstName<<"\n";
-	std::cout<<"Last name: "<<LastName<<"\n";
-	std::cout<<"Nickname: "<<Nickname<<"\n";
-	std::cout<<"Phone number: "<<PhoneNumber<<"\n";
-	std::cout<<"Darkest secret: "<<DarkestSecret<<"\n";
+void	Contact::displayLong()
+{
+	std::cout<<"\nFirst name: "<<firstName<<"\n";
+	std::cout<<"Last name: "<<lastName<<"\n";
+	std::cout<<"Nickname: "<<nickname<<"\n";
+	std::cout<<"Phone number: "<<phoneNumber<<"\n";
+	std::cout<<"Darkest secret: "<<darkestSecret<<"\n\n";
 }

@@ -5,35 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 13:56:56 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 14:41:30 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/28 13:35:01 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/28 17:43:36 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CONTACT_HPP
+#ifndef CONTACT_HPP
 # define CONTACT_HPP
 
 #include <iostream>
 #include <string>
 #include <limits>
-#include <cstdlib> 
-#include <iomanip>
-#include <sstream>
 
-class Contact
-{
-public:
-	std::string	FirstName;
-	std::string	LastName;
-	std::string	Nickname;
-	long long	PhoneNumber;
-	std::string	DarkestSecret;
-	int	is_empty_field(std::string field);
-	void	add_new_contact();
-	void	format(std::string str);
-	std::string	to_string(int n);
-	void	print_basic(int n);
-	void	print_full(void);
+/*first name, last name, nickname, phone number, and
+darkest secret.*/
+class	Contact{
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickname;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
+
+	public:
+		Contact();
+		~Contact();
+	//setters:
+		bool	setFirstName(std::string firstName);
+		bool	setLastName(std::string lastName);
+		bool	setNickname(std::string nickname);
+		bool	setPhoneNumber(std::string phoneNumber);
+		bool	setDarkestSecret(std::string darkestSecret);
+	//prints:
+		void	displayShort(int index);
+		void	displayLong();
 };
+void	printShort(std::string str, char end);
 
-# endif
+#endif

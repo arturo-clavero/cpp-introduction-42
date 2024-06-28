@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 13:53:37 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 14:53:05 by arturo           ###   ########.fr       */
+/*   Created: 2024/06/28 13:30:37 by arturo            #+#    #+#             */
+/*   Updated: 2024/06/28 17:26:09 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PHONEBOOK_HPP
+#ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
+/*
+• PhoneBook
+◦ It has an array of contacts.
+◦ It can store a maximum of 8 contacts. 
 
-#include <iostream>
-#include <string>
-#include <limits>
-#include <cstdlib> 
-#include <iomanip>
+anything that will always be used inside a class is private, 
+anything that can be used outside a class is public.
+
+
+*/
 #include "Contact.hpp"
 
-class PhoneBook
-{
+class	PhoneBook{
+	private:
+		Contact	contactList[8];
+		int		next;
+		void	addField(std::string field, bool (Contact::*set)(std::string));
+	
 	public:
-		Contact contact[8];
-		bool	print_all(int n);
-		void	print_index(int n);
-		void	delete_old_contact(void);
+		PhoneBook();
+		~PhoneBook();
+		void	addContact();
+		void	search();
 };
+
+void	pause();
 
 #endif
