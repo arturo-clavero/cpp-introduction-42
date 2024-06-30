@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:43:14 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 15:45:20 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:20:58 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	Zombie::announce( void ) {
 void	Zombie::set_name(std::string str)
 {
 	name = str;
+}
+
+Zombie::Zombie(void)
+{
+	std::cout<<"Default constructor called for class 'Zombie'\n";
 }
 
 Zombie::~Zombie(void)
