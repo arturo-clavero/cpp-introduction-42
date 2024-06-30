@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:16:12 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 16:27:50 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 20:42:39 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,8 @@ int	main(void)
 	Harl	test;
 
 	test.complain("DEBUG");
+	test.complain("INFO");
+	test.complain("WARNING");
+	test.complain("ERROR");
+	test.complain("OTHER");
 }
