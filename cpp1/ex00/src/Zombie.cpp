@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:19:45 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 15:24:43 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:12:24 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,18 @@ void Zombie::announce( void )
 	std::cout<<name<<": BraiiiiiiinnnzzzZ...\n";
 }
 
+Zombie::Zombie()
+{
+	std::cout<<"Default onstructor called for class 'Zombie'\n";
+}
+
 Zombie::Zombie(std::string str)
 {
+	std::cout<<"Constructor with params called for class 'Zombie'\n";
 	name = str;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout<<"Destroying zombie "<<name<<"\n";
+	std::cout<<"Destructor called for class 'Zombie' named '"<<name<<"'\n";
 }
