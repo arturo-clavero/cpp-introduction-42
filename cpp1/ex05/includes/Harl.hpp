@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:26:41 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 16:31:30 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 20:59:21 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define HARL_HPP
 
 #include <iostream>
-#include <map> //CAN NOT USE MAP NEED TO redo thIS EXERCISEq!!!
 #include <string>
 
 class Harl
