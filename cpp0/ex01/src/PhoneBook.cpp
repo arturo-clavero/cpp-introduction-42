@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:02:40 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/28 17:45:18 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:06:53 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	PhoneBook::search()
 		printShort("Nickname", '\n');
 		for (int i = 0; i < next; i++)
 			contactList[i].displayShort(i);
-		std::cout<<"Select index of contact for more information, or enter 0 to go back to the main menu\n";
+		std::cout<<"\nSelect index of contact for more information, or enter 0 to go back to the main menu\n";
 		std::cin>>index;
 		if (std::cin.fail())
 		{

@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:35:01 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/28 17:43:36 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 18:57:43 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <limits>
 

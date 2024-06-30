@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:43:06 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/28 17:43:13 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:05:52 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,29 +71,18 @@ bool	Contact::setDarkestSecret(std::string darkestSecret) {
 	return true;
 }
 
-void	printSpace(int n)
+void	printShort(const std::string str, char end)
 {
-	for (int i = 0; i < n; i++)
-		std::cout<<" ";
-}
-
-void	printShort(std::string str, char end)
-{
-	printSpace(10 - str.length());
-	for (int i = 0; i < (int)str.length() && i < 9; i++)
-		std::cout<<str[i];
+	std::string output = str;
 	if (str.length() > 10)
-		std::cout<<"."<<end;
-	else if (str.length() == 10)
-		std::cout<<str[9]<<end;
-	else
-		std::cout<<end;
+		output = str.substr(0, 9) + '.';
+    std::cout<<std::setw(10)<<std::right<<std::setfill(' ')<<output<<end;
 }
 
-void	Contact::displayShort(int index)
+void	Contact::displayShort(int index_num)
 {
-	printSpace(9);
-	std::cout<<index + 1<<"|";
+	std::string	index_str (1, index_num + 1 + '0');
+	printShort(index_str, '|');
 	printShort(firstName, '|');
 	printShort(lastName, '|');
 	printShort(nickname, '\n');
