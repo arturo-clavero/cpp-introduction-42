@@ -1,5 +1,8 @@
-TO REDO
-	CP1 ex04 doesn't compile... ->
-	same for ex05 -> (maps used can not use maps!!) -> I think same issue for ex04
+CHECKLIST:
+	CPP0 checked 
+	CPP1 checked
+
+TO DO:
+	x
 
 
