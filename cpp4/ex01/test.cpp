@@ -1,78 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 23:02:32 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/26 23:25:32 by arturo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <iostream>
 
 
-class	Brain{
-	private :
-		std::string	ideas[100];
-	public :
-	//ORTHODOX FORMAT
-		Brain(){
-			std::cout<<"Brain default constructor called\n";
-			for (int i = 0; i < 100; i++)
-				ideas[i] = "";
-		}
-		Brain(Brain const &original){
-			std::cout<<"Brain copy constructor called\n";
-			for (int i = 0; i < 100; i++)
-				ideas[i] = original.ideas[i];
-		}
-		Brain	&operator=(Brain const &original){
-			std::cout<<"Brain copy assignment operator called\n";
-			for (int i = 0; i < 100; i++)
-				ideas[i] = original.ideas[i];
-			return *this;
-		}
-		~Brain() {
-			std::cout<<"Brain destructor called\n";
-		}
-};
 
-class	Animal
-{
-	protected :
-		std::string	type;
-	public	:
-		virtual void	makeSound()	const{
-			std::cout<<"GGGGGRRRRR\n";
-		}
-		std::string	getType() const
-		{
-			return type;
-		}
-	//ORTHODOX FORMAT
-		Animal() {
-			std::cout<<"Animal default constructor called\n";
-			type = "";
-		}
-		Animal(std::string type) {
-			std::cout<<"Animal constructor with params called\n";
-			this->type = type;
-		}
-		Animal(Animal const &original) {
-			std::cout<<"Animal copy constructor called\n";
-			type = original.type;
-		}
-		Animal	&operator=(Animal const &original) {
-			std::cout<<"Animal copy assignment operator called\n";
-			type = original.type;
-			return *this;
-		}
-		virtual ~Animal() {
-			std::cout<<"Animal (~"<<type<< "~) destructor called\n";
-		}
-};
+
 
 class	Dog : public Animal {
 	private:
