@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 18:41:55 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/26 18:44:33 by arturo           ###   ########.fr       */
+/*   Updated: 2024/06/30 21:25:24 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,19 +267,3 @@ void	subject_test(void)
 	std::cout << Fixed::max( a, b ) << std::endl;
 }
 
-int	main( void ) {
-Fixed	a(3.19f);
-Fixed	b(3.2f);
-
-comparison_test(a, b);
-a = 5;
-b = 2;
-arithmetic_test(a, b);
-a = -0.678F;
-increment_decrement_test(a);
-min_max_test(a, b);
-min_max_const_test(a, b);
-subject_test();
-std::cout<<"\n\nTESTING ENDED!\nGood job! \nNow everything will be DESTRUCTED!\nhehehehehe\n \\ / \n o 0\n ~~\n";
-return 0;
-}
