@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:51:12 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:28:04 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:32:36 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void	ClapTrap::printStats() {
-	std::cout<<"SavTrap "<<name<<" : hit("<<hitPoints<<"), energy("<<energyPoints<<")\n";
+	std::cout<<"ClapTrap "<<name<<" : hit("<<hitPoints<<"), energy("<<energyPoints<<")\n";
 }
 
 //ORTHODOX FORMAT
