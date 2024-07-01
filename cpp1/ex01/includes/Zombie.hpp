@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:45:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/30 19:20:09 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:58:37 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 		std::string name;
 	public:
 		void announce();
-		void	set_name(std::string str);
+		void	setName(std::string str);
 		Zombie();
 		~Zombie();
 };

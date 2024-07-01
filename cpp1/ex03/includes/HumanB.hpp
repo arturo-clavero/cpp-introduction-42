@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:57:04 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/27 16:10:06 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/01 18:01:04 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class HumanB
 	public:
 		std::string	name;
 		Weapon		*weapon;
-		HumanB(std::string str_name);
+		HumanB(std::string strName);
 		void	attack(void);
-		void	setWeapon(Weapon &local_weapon);
+		void	setWeapon(Weapon &localWeapon);
 };
 
 

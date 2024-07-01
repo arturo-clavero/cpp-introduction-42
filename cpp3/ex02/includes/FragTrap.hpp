@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:37:27 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:52:31 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/01 18:04:41 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	FragTrap : public ClapTrap
 {
 	public:
 	//member functions
-		void highFivesGuys(void);
+		void	highFivesGuys(void);
 		void	attack(const std::string& target);
 		void	printStats();
 	//ORTHODOX FORMAT
