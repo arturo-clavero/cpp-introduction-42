@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:05:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:20:50 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:30:21 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 
 class	SavTrap : public ClapTrap
 {
-	private:
-		std::string	name;
-		int	hitPoints;
-		int	energyPoints;
-		int	attackDamage;
 	public:
 	//member functions
 		void	guardGate();
