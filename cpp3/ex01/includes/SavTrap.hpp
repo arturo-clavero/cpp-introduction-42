@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   SavTrap.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 16:50:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:21:21 by arturo           ###   ########.fr       */
+/*   Created: 2024/07/01 17:05:52 by arturo            #+#    #+#             */
+/*   Updated: 2024/07/01 17:20:50 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SAVTRAP_HPP
+# define SAVTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class	ClapTrap
+class	SavTrap : public ClapTrap
 {
 	private:
 		std::string	name;
 		int	hitPoints;
 		int	energyPoints;
 		int	attackDamage;
-	
 	public:
 	//member functions
+		void	guardGate();
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	printStats();
 	//ORTHODOX FORMAT
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &original);
-		ClapTrap	&operator=(ClapTrap const &original);
-		~ClapTrap();
+		SavTrap();
+		SavTrap(std::string name);
+		SavTrap(SavTrap &original);
+		SavTrap	&operator=(SavTrap const &original);
+		~SavTrap();
 };
 
 #endif
