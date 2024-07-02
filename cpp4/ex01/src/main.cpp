@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 16:55:58 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 17:10:57 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,27 @@ void	testCopyAssignmentOperatorWithAlloc()
 	delete	secondDog;
 }
 
+void	proofNoneAbstractBaseClass()
+{
+	std::cout<<"For the final test we will check that we can create an instance of our base Animal class and call its member functions\n";
+	std::cout<<"This proofs that our base class is not abstract at the moment (abstract classes can not be initialized)\n";
+	std::cout<<"\n\t 1. Initialize base class object\n";
+	Animal animal("random");
+	std::cout<<"\n\t 2. Let's call some member fts\n";
+	animal.makeSound();
+	animal.getType();
+	std::cout<<"\n\t 3. Automatic destruction\n";
+}
+
 int main()
 {
-	testConstructionDestruction();
+	//testConstructionDestruction();
 	//testConstructionDestructionWithAlloc();
 	//testCopyConstructor();
 	//testCopyConstructorWithAlloc();
 	//testCopyAssignmentOperator();
 	//testCopyAssignmentOperatorWithAlloc();
+	proofNoneAbstractBaseClass();
 	return (0);
 }
 	
