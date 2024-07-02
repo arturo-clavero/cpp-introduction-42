@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 17:10:57 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 18:14:59 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	testCopyAssignmentOperator()
 	two = one;
 	std::cout<<"\n\t 4.DAutomatic destruction of both Cats:\n";
 }
-
 
 void	testCopyAssignmentOperatorWithAlloc()
 {
