@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:20:43 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:48:46 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 16:07:53 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Cat	&Cat::operator=(Cat const &original) {
 	std::cout<<"Cat copy assignment operator called\n";
 	Animal::operator=(original);
 	type = original.type;
+	delete localBrain;
 	localBrain = new Brain(*original.localBrain);
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:22:51 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:47:52 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 16:07:31 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Dog	&Dog::operator=(Dog const &original) {
 	std::cout<<"Dog copy assignment operator called\n";
 	Animal::operator=(original);
 	type = original.type;
+	delete localBrain;
 	localBrain = new Brain(*original.localBrain);
 	return *this;
 }
