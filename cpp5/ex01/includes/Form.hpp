@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:28:09 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:08:47 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 16:42:27 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ class	Form{
 		void	beSigned(Bureaucrat &bur);
 		void	signForm(Bureaucrat &bur);
 };
+
+std::ostream	&operator<<(std::ostream &cout_param, Form &form);
 
 # endif

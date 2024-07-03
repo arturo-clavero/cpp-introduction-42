@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:29:11 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:39:23 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 16:44:21 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,3 +73,8 @@ void	Form::signForm(Bureaucrat &bur) {
 	else
 		std::cout<<"Bureaucrat "<<bur.getName()<<" couldn't sign form "<<name<<" because they are incompetent\n";
 }
+
+std::ostream	&operator<<(std::ostream &cout_param, Form &form){
+	std::cout<<form.getName()<<", signed: "<<form.getIsSigned()<< ", required grade for signing: "<<form.getSignGrade()<<", required grade for executing: "<<form.getExecGrade()<<std::endl;
+	return (cout_param);
+};

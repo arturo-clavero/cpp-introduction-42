@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:41:00 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 16:43:37 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	testConstructor()
 {
 	std::cout<<"\nTEST CONSTRUCTOR WITH PARAMS:\n";
 	Form	form("new form");
+	std::cout<<form<<"\n";
 }
 
 void	testCopyConstructor()
@@ -29,6 +30,8 @@ void	testCopyConstructor()
 	std::cout<<"\nTEST COPY CONSTRUCTOR:\n";
 	Form form1("one");
 	Form form2(form1);
+	std::cout<<form1<<"\n";
+	std::cout<<form2<<"\n";
 }
 
 void	testCopyAssignmentOperator()
@@ -36,7 +39,11 @@ void	testCopyAssignmentOperator()
 	std::cout<<"\nTEST COPY ASSIGNMENT OPERATOR:\n";
 	Form form1("one");
 	Form form2("two");
+	std::cout<<form1<<"\n";
+	std::cout<<form2<<"\n";
 	form2 = form1;
+	std::cout<<form1<<"\n";
+	std::cout<<form2<<"\n";
 }
 
 void	testOrthodox()
@@ -51,6 +58,7 @@ void	testGetters()
 {
 	std::cout<<"\nTEST GETTERS\n";
 	Form form("one");
+	std::cout<<form<<"\n";
 	std::cout<<"getExecGrade()= "<<form.getExecGrade()<<"\n";
 	std::cout<<"getIsSigned()= "<<form.getIsSigned()<<"\n";
 	std::cout<<"getName()= "<<form.getName()<<"\n";
