@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 19:46:08 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 14:52:27 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	baseConstructionDestruction()
 	std::cout<<"\n\t 3.Automatic destruction (object out of scope):\n";
 }
 
-void	baseConstructionDestructionWithAlloc()
+void	baseConstructionDestructionHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING CONSTRUCTION AND DESTRUCTION OF BASE CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING CONSTRUCTION AND DESTRUCTION OF BASE CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1.Alloc animal class (type random):\n";
 	Animal *animal = new Animal("random");
 	std::cout<<"\n\t 2.Call member function make sound:\n";
@@ -73,9 +73,9 @@ void	baseCopyConstructor()
 	std::cout<<animalTwo.getType()<<"\n";
 	std::cout<<"\n\t 5. Automatic destruction of both objects:\n";
 }
-void	baseCopyConstructorWithAlloc()
+void	baseCopyConstructorHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING COPY CONSTRUCTOR OF BASE CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING COPY CONSTRUCTOR OF BASE CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1. Alloc animalOne object (type 'gorilla'):\n";
 	Animal *animalOne = new Animal("gorilla");
 	std::cout<<"\n\t 2. Alloc animalTwo object with previous animalOne object:\n";
@@ -112,9 +112,9 @@ void	baseCopyAssignmentOperator()
 	std::cout<<"\n\t 8. Explicit destruction of animalTwo:\n";
 	delete animalTwo;
 }
-void	baseCopyAssignmentOperatorWithAlloc()
+void	baseCopyAssignmentOperatorHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING COPY ASSIGNMENT OPERATOR OF BASE CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING COPY ASSIGNMENT OPERATOR OF BASE CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1. Allocating animalOne object (type 'gorilla'):\n";
 	Animal animalOne("gorilla");
 	std::cout<<"\n\t 2. Allocating animalTwo object (type 'snake'):\n";
@@ -146,9 +146,9 @@ void	derivedConstructionDestruction()
 	cat.makeSound();
 	std::cout<<"\n\t 5. Automatic destruction of objects\n";
 }
-void	derivedConstructionDestructionWithAlloc()
+void	derivedConstructionDestructionHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING CONSTRUCTOR AND DESTRUCTOR OF DERIVED CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING CONSTRUCTOR AND DESTRUCTOR OF DERIVED CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1. Alloc Dog object\n";
 	Dog	*dog = new Dog();
 	std::cout<<"\n\t 2. Alloc Cat object\n";
@@ -173,9 +173,9 @@ void	derivedCopyConstructor()
 	std::cout<<"\n\t 3. Automatic destruction of objects\n";
 }
 
-void	derivedCopyConstructorWithAlloc()
+void	derivedCopyConstructorHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING COPY CONSTRUCTOR OF DERIVED CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING COPY CONSTRUCTOR OF DERIVED CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1. Alloc cat object\n";
 	Cat	*cat = new Cat();
 	std::cout<<"\n\t 2. Alloc otherCat object with previous cat object\n";
@@ -198,9 +198,9 @@ void	derivedCopyAssignmentOperator()
 	std::cout<<"\n\t 3. Automatic destruction of objects\n";
 }
 
-void	derivedCopyAssignmentOperatorWithAlloc()
+void	derivedCopyAssignmentOperatorHeap()
 {
-	std::cout<<"\n////////////////////////////////\nTESTING COPY ASSIGNMENT OPERATOR OF DERIVED CLASS WITH ALLOC\n";
+	std::cout<<"\n////////////////////////////////\nTESTING COPY ASSIGNMENT OPERATOR OF DERIVED CLASS WITH HEAP MEM\n";
 	std::cout<<"\n\t 1. Alloc cat object\n";
 	Cat	*cat = new Cat();
 	std::cout<<"\n\t 2. Alloc otherCat object\n";
@@ -216,21 +216,21 @@ void	derivedCopyAssignmentOperatorWithAlloc()
 void	checkBaseClass()
 {
 	baseConstructionDestruction();
-	baseConstructionDestructionWithAlloc();
+	baseConstructionDestructionHeap();
 	baseCopyConstructor();
-	baseCopyConstructorWithAlloc();
+	baseCopyConstructorHeap();
 	baseCopyAssignmentOperator();
-	baseCopyAssignmentOperatorWithAlloc();
+	baseCopyAssignmentOperatorHeap();
 }
 
 void	checkDerivedClass()
 {
 	derivedConstructionDestruction();
-	derivedConstructionDestructionWithAlloc();
+	derivedConstructionDestructionHeap();
 	derivedCopyConstructor();
-	derivedCopyConstructorWithAlloc();
+	derivedCopyConstructorHeap();
 	derivedCopyAssignmentOperator();
-	derivedCopyAssignmentOperatorWithAlloc();
+	derivedCopyAssignmentOperatorHeap();
 }
 
 void	checkVirtualFts()

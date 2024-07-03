@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 19:47:00 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 14:54:04 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	testConstructionDestruction()
 	std::cout<<"\n\t 2. Automatic destruction (out of scope)\n";
 }
 
-void	testConstructionDestructionWithAlloc()
+void	testConstructionDestructionHeap()
 {
-	std::cout<<"////////////////////////////////////////////////////////\nTest construction and destruction allocating Dog object with Brain:\n\n";
+	std::cout<<"////////////////////////////////////////////////////////\nTest construction and destruction Dog object with Brain and heap memory:\n\n";
 	std::cout<<"\n\t 1. Initialize object\n";
 	const Animal* j = new Dog();
 	std::cout<<"\n\t 2. Delete object\n";
@@ -42,9 +42,9 @@ void	testCopyConstructor()
 	std::cout<<"\n\t 3.Automatic destruction of both Dogs\n";
 }
 
-void	testCopyConstructorWithAlloc()
+void	testCopyConstructorHeap()
 {
-	std::cout<<"////////////////////////////////////////////////////////\nTest copy construction of allocated Dog object with Brain:\n\n";
+	std::cout<<"////////////////////////////////////////////////////////\nTest copy construction of Dog object with Brain and heap memory:\n\n";
 	std::cout<<"\n\t 1.Allocate one cat\n";
 	Animal *oneCat = new Cat();
 	std::cout<<"\n\t 2.Allocate another cat, using previous cat\n";
@@ -67,9 +67,9 @@ void	testCopyAssignmentOperator()
 	std::cout<<"\n\t 4.DAutomatic destruction of both Cats:\n";
 }
 
-void	testCopyAssignmentOperatorWithAlloc()
+void	testCopyAssignmentOperatorHeap()
 {
-	std::cout<<"////////////////////////////////////////////////////////\nTest copy assignment operator of ALLOCATED Dog object with Brain:\n\n";
+	std::cout<<"////////////////////////////////////////////////////////\nTest copy assignment operator of Dog object with Brain and heap memory:\n\n";
 	std::cout<<"\n\t 1.Allocate first dog>\n";
 	Animal	*firstDog = new Dog();
 	std::cout<<"\n\t 2.Allocate second dog:\n";
@@ -97,11 +97,11 @@ void	proofNoneAbstractBaseClass()
 int main()
 {
 	testConstructionDestruction();
-	testConstructionDestructionWithAlloc();
+	testConstructionDestructionHeap();
 	testCopyConstructor();
-	testCopyConstructorWithAlloc();
+	testCopyConstructorHeap();
 	testCopyAssignmentOperator();
-	testCopyAssignmentOperatorWithAlloc();
+	testCopyAssignmentOperatorHeap();
 	proofNoneAbstractBaseClass();
 	return (0);
 }

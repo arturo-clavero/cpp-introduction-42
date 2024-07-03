@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 19:47:12 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 14:55:48 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main()
 {
-	//		Our main function will NOT compile,
+	//		Our main function will NOT compile with the 3 Animals declared below...
 	//		as we can no longer create instances of our base class since we made it abstract
 	Animal	willNotCompile;
 	Animal	alsoWillNotCompile("random");

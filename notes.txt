@@ -3,8 +3,7 @@ CHECKLIST:
 	CPP1 checked
 	CPP2 checked
 	CPP3 checked
+	CPP4 checked
 
-TO DO:
-	CPP4 ex01 main.cpp more tests.....
 
 
