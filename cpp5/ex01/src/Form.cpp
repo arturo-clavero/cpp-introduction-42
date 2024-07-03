@@ -6,13 +6,13 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:29:11 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:44:21 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 16:56:44 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : signGrade(1), execGrade(1){
+Form::Form() : name("default"), signGrade(1), execGrade(1){
 	std::cout<<"Form default constructor called\n";
 	isSigned = false;
 }

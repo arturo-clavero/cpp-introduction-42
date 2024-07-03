@@ -6,11 +6,12 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:00:42 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 18:49:50 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 18:50:03 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(){
 	std::cout<<"Default constructor called\n";
@@ -45,7 +46,7 @@ std::string	Bureaucrat::getName(){
 	return name;
 }
 
-int	Bureaucrat::getGrade(){
+int	Bureaucrat::getGrade() const{
 	return grade;
 }
 
@@ -61,6 +62,11 @@ void	Bureaucrat::decreaseGrade(int amount){
 	if (grade + amount > 150)
 		throw GradeTooLowException();
 	grade += amount;
+}
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	form.execute(*this);
 }
 
 std::ostream	&operator<<(std::ostream &cout_param, Bureaucrat &bur){

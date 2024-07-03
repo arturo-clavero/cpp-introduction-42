@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:00:07 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 18:15:45 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 18:48:16 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+
+class AForm;
 
 class	Bureaucrat{
 	private:
@@ -37,9 +39,10 @@ class	Bureaucrat{
 		Bureaucrat	&operator=(Bureaucrat const &original);
 		~Bureaucrat();
 		std::string	getName();
-		int	getGrade() ;
+		int	getGrade() const;
 		void	increaseGrade(int amount);
 		void	decreaseGrade(int amount);
+		void	executeForm(AForm const & form);
 };
 
 std::ostream	&operator<<(std::ostream &cout_param, Bureaucrat &bur);

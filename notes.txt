@@ -5,5 +5,8 @@ CHECKLIST:
 	CPP3 checked
 	CPP4 checked
 
-
+REVISE
+	- Abstract class /read doc
+	- Exceptions / try/ catch/ throw/
+	- const
 
