@@ -6,18 +6,18 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:03:35 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 02:58:18 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:15:28 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", 145, 37), name("Shrubbery Creation"), target("default"), signGrade(145), execGrade(37){
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", 145, 137), name("Shrubbery Creation"), target("default"), signGrade(145), execGrade(137){
 	std::cout<<"Default constructor called for Shrubbery\n";
 	isSigned = false;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery Creation", 145, 37), name("Shrubbery Creation"), target("default"), signGrade(145), execGrade(37) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery Creation", 145, 137), name("Shrubbery Creation"), target("default"), signGrade(145), execGrade(137) {
 	std::cout<<"Constructor called for Shrubbery with target "<<target<<"\n";
 	isSigned = false;
 	this->target = target;

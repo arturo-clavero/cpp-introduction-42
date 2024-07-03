@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 16:49:01 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 02:58:52 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:43:53 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,12 @@ void	AForm::signForm(Bureaucrat &bur) {
 
 void	AForm::execute(Bureaucrat const & executor) const{
 	try{
+		if (!isSigned && executor.getGrade() > getSignGrade())
+			throw "Bureacrat's grade is lower than required grade for signing";
 		if (!isSigned)
 			throw "form is not signed";
 		if (executor.getGrade() > getExecGrade())
-			throw "Bureacrat's grade is too low";
+			throw "Bureacrat's grade is lower than required grade for execution";
 		performTask();
 		std::cout<<"Form "<<getName()<<" executed\n";
 	}catch (char const *errorType) {
