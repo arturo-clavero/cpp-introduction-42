@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 17:23:18 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 19:47:12 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main()
 {
 	//		Our main function will NOT compile,
 	//		as we can no longer create instances of our base class since we made it abstract
-//	Animal	willNotCompile;
-//	Animal	alsoWillNotCompile("random");
-//	Animal *andAlsoWillNotCompile = new Dog();
+	Animal	willNotCompile;
+	Animal	alsoWillNotCompile("random");
+	Animal *andAlsoWillNotCompile = new Dog();
 	//Please comment out the above declarations and let-s see that we can still call animal constructors
 	std::cout<<"\n\tInitialize cat\n";
 	Cat oneCat;

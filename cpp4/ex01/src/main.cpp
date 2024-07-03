@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 18:14:59 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/02 19:47:00 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,12 @@ void	proofNoneAbstractBaseClass()
 
 int main()
 {
-	//testConstructionDestruction();
-	//testConstructionDestructionWithAlloc();
-	//testCopyConstructor();
-	//testCopyConstructorWithAlloc();
-	//testCopyAssignmentOperator();
-	//testCopyAssignmentOperatorWithAlloc();
+	testConstructionDestruction();
+	testConstructionDestructionWithAlloc();
+	testCopyConstructor();
+	testCopyConstructorWithAlloc();
+	testCopyAssignmentOperator();
+	testCopyAssignmentOperatorWithAlloc();
 	proofNoneAbstractBaseClass();
 	return (0);
 }

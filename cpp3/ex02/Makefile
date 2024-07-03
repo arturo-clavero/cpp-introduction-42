@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/01 17:36:15 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/02 20:02:22 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,5 +48,11 @@ fclean: clean
 	rm -f $(EXEC)
 
 re: fclean all
+
+leaks: all
+	valgrind --leak-check=full ./$(EXEC)
+
+run: all
+	./$(EXEC)
 
 .PHONY: all clean fclean re
