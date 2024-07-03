@@ -9,4 +9,5 @@ REVISE
 	- Abstract class /read doc
 	- Exceptions / try/ catch/ throw/
 	- const
+	- virtual destructors (base gotta have virtual destructors!! ->recheck)
 
