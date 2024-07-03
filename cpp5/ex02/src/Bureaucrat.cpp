@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:00:42 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 18:50:03 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 01:57:07 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	Bureaucrat::decreaseGrade(int amount){
 
 void	Bureaucrat::executeForm(AForm const & form)
 {
+	std::cout<<"Bureaucrat "<<name<<" is attempting to execute form "<<form.getName()<<"\n";
 	form.execute(*this);
 }
 

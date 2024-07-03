@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 16:57:30 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 18:41:26 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 02:26:52 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm{
 	
@@ -31,6 +32,5 @@ class ShrubberyCreationForm : public AForm{
 		~ShrubberyCreationForm();
 		void	performTask() const;
 };
-
 
 #endif

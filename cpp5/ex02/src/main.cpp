@@ -6,13 +6,15 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 19:10:51 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:09:54 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
@@ -22,11 +24,10 @@ int	main(void)
 	//testExecShrubb
 	//testExecRobot
 	//testExecPresi
-	 Bureaucrat bur("Mr. Guy", 140);
-	 ShrubberyCreationForm form("home");
-	 std::cout<<"\n"<<form<<"\n";
+	Bureaucrat bur("Mr. Guy", 1);
+	PresidentialPardonForm form("home");
+	std::cout<<"\n"<<form<<"\n";
 	form.beSigned(bur);
-	form.signForm(bur);
-	//bur.executeForm(form);
+	bur.executeForm(form);
 	std::cout<<"\n";
 }

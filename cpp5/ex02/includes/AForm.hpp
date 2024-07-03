@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 16:49:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 18:46:35 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 02:00:44 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class	AForm{
 	public:
 		class	GradeTooHighException : public std::exception{
 			const char *what() const throw(){
-				return "Grade too high\n";
+				return "Error: Grade too high\n";
 			}
 		};
 		class	GradeTooLowException : public std::exception{
 			const char *what() const throw(){
-				return "Grade too low\n";
+				return "Error: Grade too low\n";
 			}
 		};
 		AForm();
@@ -37,10 +37,10 @@ class	AForm{
 		AForm(AForm const &original);
 		AForm	&operator=(AForm const &original);
 		~AForm();
-		std::string	getName();
-		int	getSignGrade();
+		std::string	getName() const;
+		int	getSignGrade() const;
 		int	getExecGrade() const;
-		int	getIsSigned();
+		int	getIsSigned() const;
 		void	beSigned(Bureaucrat &bur);
 		void	signForm(Bureaucrat &bur);
 		virtual void performTask() const = 0;

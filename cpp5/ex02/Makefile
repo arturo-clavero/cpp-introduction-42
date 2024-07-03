@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/03 18:54:13 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/04 03:03:02 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,16 @@ SRCS = $(SRCDIR)/main.cpp \
        $(SRCDIR)/Bureaucrat.cpp \
 	   $(SRCDIR)/AForm.cpp \
 	   $(SRCDIR)/ShrubberyCreationForm.cpp \
+	   $(SRCDIR)/RobotomyRequestForm.cpp \
+	   $(SRCDIR)/PresidentialPardonForm.cpp \
 
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 HEADERS = $(INCDIR)/Bureaucrat.hpp \
 		  $(INCDIR)/AForm.hpp \
 	      $(INCDIR)/ShrubberyCreationForm.hpp \
+		  $(INCDIR)/RobotomyRequestForm.hpp \
+		  $(INCDIR)/PresidentialPardonForm.hpp \
 
 EXEC = executable
 

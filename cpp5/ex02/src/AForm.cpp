@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 16:49:01 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 19:06:57 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/04 02:58:52 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ AForm::~AForm(){
 	std::cout<<"Destructor called for aform "<<name<<std::endl;
 }
 
-std::string	AForm::getName(){
+std::string	AForm::getName() const{
 	return name;
 }
 
-int	AForm::getSignGrade(){
+int	AForm::getSignGrade() const{
 	return signGrade;
 }
 
@@ -54,14 +54,16 @@ int	AForm::getExecGrade() const{
 	return execGrade;
 }
 
-int	AForm::getIsSigned() {
+int	AForm::getIsSigned() const{
 	return isSigned;
 }
 
 void	AForm::beSigned(Bureaucrat &bur) {
+	std::cout<<"Bureaucrat "<<bur.getName()<<" is attempting to sign form "<<getName()<<"\n";
 	if (bur.getGrade() > signGrade)
 		throw GradeTooLowException();
-	isSigned = true;	
+	isSigned = true;
+	std::cout<<"Bureaucrat "<<bur.getName()<<" succesfullly signed form "<<getName()<<"\n";
 }
 
 void	AForm::signForm(Bureaucrat &bur) {
@@ -74,10 +76,16 @@ void	AForm::signForm(Bureaucrat &bur) {
 }
 
 void	AForm::execute(Bureaucrat const & executor) const{
-	if (isSigned && executor.getGrade() <= getExecGrade())
+	try{
+		if (!isSigned)
+			throw "form is not signed";
+		if (executor.getGrade() > getExecGrade())
+			throw "Bureacrat's grade is too low";
 		performTask();
-	else
-		std::cout<<"Could not execute\n";
+		std::cout<<"Form "<<getName()<<" executed\n";
+	}catch (char const *errorType) {
+		std::cout<<"Error: failed execution because "<<errorType<<"\n";
+	}
 }
 
 std::ostream	&operator<<(std::ostream &cout_param, AForm &form){
