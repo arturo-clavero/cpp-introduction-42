@@ -6,11 +6,52 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 15:25:28 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/03 16:24:43 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+void	testDefaultConstructor()
+{
+	std::cout<<"\nTEST DEFAULT CONSTRUCTOR:\n";
+	Bureaucrat	Bur;
+}
+
+void	testConstructor()
+{
+	std::cout<<"\nTEST CONSTRUCTOR WITH PARAMS:\n";
+	Bureaucrat	bur("new bur", 5);
+}
+
+void	testCopyConstructor()
+{
+	std::cout<<"\nTEST COPY CONSTRUCTOR:\n";
+	Bureaucrat bur1("one", 6);
+	Bureaucrat bur2(bur1);
+	std::cout<<bur1;
+	std::cout<<bur2;
+}
+
+void	testCopyAssignmentOperator()
+{
+	std::cout<<"\nTEST COPY ASSIGNMENT OPERATOR:\n";
+	Bureaucrat bur1("one", 3);
+	Bureaucrat bur2("two", 6);
+	std::cout<<bur1;
+	std::cout<<bur2;
+	bur2 = bur1;
+	std::cout<<bur1<<"\n";
+	std::cout<<bur2<<"\n";
+}
+
+void	testOrthodox()
+{
+	testDefaultConstructor();
+	testConstructor();
+	testCopyConstructor();
+	testCopyAssignmentOperator();
+}
 
 void	initBurGradeTooLow()
 {
@@ -67,7 +108,7 @@ void	testIncrement()
 
 void	testDecrement()
 {
-	std::cout<<"\nTESTING DECREMEN T MEMBER FT\n\n";
+	std::cout<<"\nTESTING DECREMENT MEMBER FT\n\n";
 	Bureaucrat bur("example", 1);
 	std::cout<<bur;
 	try {
@@ -85,6 +126,7 @@ void	testDecrement()
 
 int	main(void)
 {
+	testOrthodox();
 	initBurGradeTooLow();
 	initBurGradeTooHigh();
 	testGetters();
