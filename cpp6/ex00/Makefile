@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/04 06:26:50 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/04 06:27:42 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,23 +19,11 @@ OBJDIR = $(BINDIR)/obj
 
 
 SRCS = $(SRCDIR)/main.cpp \
-       $(SRCDIR)/Bureaucrat.cpp \
-	   $(SRCDIR)/AForm.cpp \
-	   $(SRCDIR)/Form.cpp \
-	   $(SRCDIR)/ShrubberyCreationForm.cpp \
-	   $(SRCDIR)/RobotomyRequestForm.cpp \
-	   $(SRCDIR)/PresidentialPardonForm.cpp \
-	   $(SRCDIR)/Intern.cpp \
+       $(SRCDIR)/ScalarConverter.cpp \
 	   
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
-HEADERS = $(INCDIR)/Bureaucrat.hpp \
-		  $(INCDIR)/AForm.hpp \
-		  $(INCDIR)/Form.hpp \
-	      $(INCDIR)/ShrubberyCreationForm.hpp \
-		  $(INCDIR)/RobotomyRequestForm.hpp \
-		  $(INCDIR)/PresidentialPardonForm.hpp \
-		  $(INCDIR)/Intern.hpp \
+HEADERS = $(INCDIR)/ScalarConverter.hpp\
 
 EXEC = executable
 
