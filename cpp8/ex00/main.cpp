@@ -6,36 +6,47 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:29:26 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/11 03:14:21 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/11 18:29:50 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <vector>
+#include <deque>
+#include <list>
 
-void	testVectors(){
-	std::vector<int> numbers(4, 10);
-	int		toFind = 1;
+template<typename T>
+
+void	test(T &numbers, int toFind, std::string test){
+	std::cout<<test;
 	try {
-	easyfind(numbers, toFind);
-	std::cout<<"number "<<toFind<<" found\n";}
+	typename T::iterator itFound = easyfind(numbers, toFind);
+	std::cout<<"number "<<toFind<<" found at "<<std::distance(numbers.begin(), itFound)<<"\n";}
 	catch(std::exception &e){
 		std::cout<<"error: "<<e.what();
 	}
 }
-/*
-void	testArrays(){
-	std::array<int, 5> numbers = {1, 2, 3, 4, 5};
-	int		toFind = 5;
-	try {
-	auto result = easyfind(numbers, toFind);
-	std::cout<<"number "<<toFind<<" found at ..pointer>"<<*result<<"\n";}
-	catch(std::string errorType){
-		std::cout<<"error: "<<errorType<<"\n";
-	}
-}*/
+
+void	testingVectors(){
+	std::vector<int> contVector(4, 10);
+	test(contVector, 1, "\nTesting invalid element with vector container:\n");
+	test(contVector, 10, "\nTesting valid element with vector container:\n");
+}
+
+void	testingDeques(){
+	std::deque<int> contDeque(4, 10);
+	test(contDeque, 1, "\nTesting invalid element with deque container:\n");
+	test(contDeque, 10, "\nTesting valid element with deque container:\n");
+}
+
+void	testingLists(){
+	std::list<int> contList(4, 10);
+	test(contList, 1, "\nTesting invalid element with list container:\n");
+	test(contList, 10, "\nTesting valid element with list container:\n");
+}
 
 int	main(void){
-	testVectors();
-	//vectors  deque list 
+	testingVectors();
+	testingDeques();
+	testingLists();	
 }
