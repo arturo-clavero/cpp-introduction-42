@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:50:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:30:29 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:02:49 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class	ClapTrap
 	//ORTHODOX FORMAT
 		ClapTrap();
 		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &original);
+		ClapTrap(ClapTrap const &original);
 		ClapTrap	&operator=(ClapTrap const &original);
 		~ClapTrap();
 };

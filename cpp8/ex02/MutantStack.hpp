@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 17:37:27 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:02:56 by arturo           ###   ########.fr       */
+/*   Created: 2024/07/13 10:46:03 by arturo            #+#    #+#             */
+/*   Updated: 2024/07/13 10:47:36 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
-#include "ClapTrap.hpp"
+#include <iostream>
+#include <stack>
 
-class	FragTrap : public ClapTrap
-{
-	public:
-	//member functions
-		void	highFivesGuys(void);
-		void	attack(const std::string& target);
-		void	printStats();
-	//ORTHODOX FORMAT
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &original);
-		FragTrap	&operator=(FragTrap const &original);
-		~FragTrap();
-};
+class	MutantStack{
+	
+}
 
-# endif
+#endif

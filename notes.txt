@@ -7,5 +7,7 @@ CHECKLIST:
 
 REVISE
 	- CPP6 ex 00 is quite dirty .... 
+
+	/ADD CONST TO ALL COPY CONSTRUCTORS AND COPY ASSIGNMENT OPERATORS.... done now but some things may not work... need to test ! before sumit check and if soemthing deosnt work its the const thing
 	
 

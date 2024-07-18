@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:44:24 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:56:02 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:03:24 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ FragTrap::FragTrap(std::string name) {
 	hitPoints = 100;
 }
 
-FragTrap::FragTrap(FragTrap &original) : ClapTrap(original) {
+FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original) {
 	std::cout<<"Copy constructor called for class 'FragTrap'\n";
 	attackDamage = original.attackDamage;
 	energyPoints = original.energyPoints;

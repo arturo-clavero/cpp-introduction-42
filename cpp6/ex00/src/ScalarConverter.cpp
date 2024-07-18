@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 06:27:53 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/07 23:56:30 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 18:59:45 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ ScalarConverter::ScalarConverter() {
 	std::cout<<"Default constructor for scalar converter class called\n";
 }
 	
-ScalarConverter::ScalarConverter(ScalarConverter &original) {
+ScalarConverter::ScalarConverter(const ScalarConverter &original) {
 	std::cout<<"Copy constructor for scalar converter class called\n";
 	(void)original;
 }
 
-ScalarConverter	&ScalarConverter::operator=(ScalarConverter &original) {
+ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &original) {
 	std::cout<<"Copy assignment operator for scalar converter class called\n";
 	(void)original;
 	return *this;

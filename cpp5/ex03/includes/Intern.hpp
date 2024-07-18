@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 03:48:43 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 05:37:55 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:00:33 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class	Intern{
 	public:
 		Form	*makeForm(std::string type, std::string target);
 		Intern();
-		Intern(Intern &original);
-		Intern	&operator=(Intern &original);
+		Intern(const Intern &original);
+		Intern	&operator=(const Intern &original);
 		~Intern();
 };
 

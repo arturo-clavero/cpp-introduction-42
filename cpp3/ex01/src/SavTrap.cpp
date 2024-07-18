@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:06:28 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 17:56:21 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:04:12 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ SavTrap::SavTrap(std::string name) {
 	hitPoints = 100;
 }
 
-SavTrap::SavTrap(SavTrap &original) : ClapTrap(original) {
+SavTrap::SavTrap(SavTrap const &original) : ClapTrap(original) {
 	std::cout<<"Copy constructor called for class 'SavTrap'\n";
 	attackDamage = original.attackDamage;
 	energyPoints = original.energyPoints;

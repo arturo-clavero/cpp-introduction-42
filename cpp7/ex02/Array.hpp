@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:48:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/08 18:56:03 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 18:57:50 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ class Array{
 			len = n;
 			array = new T[len];
 		}
-		Array(Array &original){
+		Array(const Array &original){
 			std::cout<<"Copy constructor called for class 'Array'\n";
 			len = original.size();
 			array = new T[len];
 			for (int i = 0; i < len; i++)
 				array[i] = original.array[i];
 		}
-		Array	&operator=(Array &original){
+		Array	&operator=(const Array &original){
 			std::cout<<"Copy assignment operator called for class 'Array'\n";
 			delete[] array;
 			len = original.size();

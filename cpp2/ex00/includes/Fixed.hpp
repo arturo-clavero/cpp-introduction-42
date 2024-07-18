@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 21:03:42 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/30 21:10:53 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:05:10 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class	Fixed
 		int	getRawBits(void)const;
 		void setRawBits(int const raw);
 		Fixed();
-		Fixed(Fixed &original);
-		Fixed	&operator=(Fixed &original);
+		Fixed(Fixed const &original);
+		Fixed	&operator=(Fixed const &original);
 		~Fixed();
 };
 

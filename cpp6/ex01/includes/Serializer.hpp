@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:53:07 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/08 01:22:29 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 18:59:26 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class Serializer{
 	private :
 		Serializer();
-		Serializer(Serializer &original);
-		Serializer	&operator=(Serializer &original);
+		Serializer(const Serializer &original);
+		Serializer	&operator=(const Serializer &original);
 		~Serializer();
 	public :
 		static uintptr_t serialize(Data* ptr);

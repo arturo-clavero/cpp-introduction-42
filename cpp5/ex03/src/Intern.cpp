@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 03:55:54 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 06:07:04 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 19:00:47 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ Intern::Intern(){
 	std::cout<<"Default constructor called for class Intern\n";
 }
 
-Intern::Intern(Intern &original){
+Intern::Intern(const Intern &original){
 	std::cout<<"Copy constructor called for class Intern\n";
 	(void)original;
 }
 
-Intern	&Intern::operator=(Intern &original){
+Intern	&Intern::operator=(const Intern &original){
 	std::cout<<"Copy assignment operator called for class Intern\n";
 	(void)original;
 	return *this;

@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:52:53 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/08 01:08:09 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/12 18:59:13 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ Serializer::Serializer(){
 	std::cout<<"Serializer default constructor called\n";
 }
 
-Serializer::Serializer(Serializer &original){
+Serializer::Serializer(const Serializer &original){
 	(void)original;
 	std::cout<<"Serializer copy constructor called\n";
 }
 
-Serializer	&Serializer::operator=(Serializer &original){
+Serializer	&Serializer::operator=(const Serializer &original){
 	(void)original;
 	std::cout<<"Serializer copy assignment operator called\n";
 	return *this;
