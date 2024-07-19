@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 10:46:03 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/20 01:25:38 by artclave         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:47:12 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stack>
 #include <deque>
 
-template <class T, class Container = std::deque<T>>
+template <class T, class Container = std::deque<T> >
 
 class	MutantStack : public std::stack<T, Container>{
 	private:
@@ -72,7 +72,7 @@ class	MutantStack : public std::stack<T, Container>{
 			return container.end();
 		}
 		operator std::stack<T, Container>() const {
-        	return static_cast<std::stack<T, Container>>(*this);
+        	return static_cast<std::stack<T, Container> >(*this);
     	}
 };
 
