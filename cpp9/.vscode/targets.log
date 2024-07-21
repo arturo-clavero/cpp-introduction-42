@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 20 21:23:57 2024
+# Make data base, printed on Sun Jul 21 15:02:11 2024
 
 # Variables
 
@@ -57,7 +57,7 @@ OLDPWD = /home/artclave
 # environment
 VSCODE_CODE_CACHE_PATH = /home/artclave/.config/Code/CachedData/5437499feb04f7a586f677b155b039bc2b3669eb
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
 LANG = C
 # environment
@@ -71,7 +71,7 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/artclave/Desktop/CPP00/cpp9
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3030811
+VSCODE_PID = 3118543
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_eDP1lT
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_DZG5b3
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t3c3.42bangkok.com:@/tmp/.ICE-unix/3027617,unix/z1t3c3.42bangkok.com:/tmp/.ICE-unix/3027617
+SESSION_MANAGER = local/z1t3c3.42bangkok.com:@/tmp/.ICE-unix/3106868,unix/z1t3c3.42bangkok.com:/tmp/.ICE-unix/3106868
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = e7b199afcc304dc49a2c6fdcb292d164
+INVOCATION_ID = a43ae5f2a09c40799a712547d1feb7d7
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -169,7 +169,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 3027641
+SYSTEMD_EXEC_PID = 3106895
 # environment
 DISPLAY = :0
 # environment
@@ -179,13 +179,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 3026793
+MANAGERPID = 3106049
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3030811
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3118543
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:11170531
+JOURNAL_STREAM = 8:11666543
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -294,10 +294,10 @@ GNUmakefile:
 # strcache buffers: 1 (0) / strings = 15 / storage = 122 B / avg = 8 B
 # current buf: size = 8162 B / used = 122 B / count = 15 / avg = 8 B
 
- 
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
+ 
 # Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Sat Jul 20 21:23:57 2024
+# Finished Make data base on Sun Jul 21 15:02:11 2024
 
  
