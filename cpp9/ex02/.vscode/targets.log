@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 21 20:24:47 2024
+# Make data base, printed on Sun Jul 21 20:29:14 2024
 
 # Variables
 
@@ -14,9 +14,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# environment
- 
-NO_AT_BRIDGE = 1
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # makefile (from 'Makefile', line 18)
@@ -32,15 +29,13 @@ LC_NUMERIC = en_US.UTF-8
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
-VSCODE_CWD = /home/artclave/Desktop/CPP00/cpp9/ex02
+VSCODE_CWD = /home/artclave
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
 # default
 MAKE_COMMAND := make
-# environment
-VSCODE_INJECTION = 1
 # environment
 QT_ACCESSIBILITY = 1
 # automatic
@@ -56,7 +51,7 @@ PWD = /home/artclave/Desktop/CPP00/cpp9/ex02
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/artclave/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/artclave/Desktop/CPP00/cpp9
+OLDPWD = /home/artclave
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -78,11 +73,9 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/artclave/Desktop/CPP00/cpp9/ex02
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # makefile (from 'Makefile', line 21)
-SRCS = PmergeMe.cpp main.cpp 
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
+SRCS = main.cpp 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -96,17 +89,13 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-GIT_ASKPASS = /usr/share/code/resources/app/extensions/git/dist/askpass.sh
-# environment
-ZDOTDIR = /home/artclave
-# environment
 XDG_SESSION_DESKTOP = ubuntu
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3118543
+VSCODE_PID = 3279290
 # environment
 KRB5CCNAME = FILE:/tmp/krb5cc_103610_DZG5b3
 # environment
@@ -123,13 +112,13 @@ CHROME_DESKTOP = code-url-handler.desktop
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/103610/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
-# makefile (from 'Makefile', line 28)
+# makefile (from 'Makefile', line 27)
 EXEC = PmergeMe
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 24)
+# makefile (from 'Makefile', line 23)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -139,26 +128,22 @@ SHELL = /bin/sh
 MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
-# makefile (from 'Makefile', line 26)
+# makefile (from 'Makefile', line 25)
 HEADERS = PmergeMe.hpp 
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-SHLVL = 2
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/artclave/bin:/home/artclave/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/artclave/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # default
 MAKEFILES := 
 # environment
-VSCODE_GIT_IPC_HANDLE = /run/user/103610/vscode-git-38acf38b33.sock
-# environment
 LANGUAGE = en_US:
-# environment
-VSCODE_GIT_ASKPASS_NODE = /usr/share/code/code
 # environment
 LC_MONETARY = en_US.UTF-8
 # automatic
@@ -166,11 +151,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-VSCODE_GIT_ASKPASS_MAIN = /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
-# environment
 INVOCATION_ID = a43ae5f2a09c40799a712547d1feb7d7
-# environment
-TERM_PROGRAM = vscode
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -188,13 +169,11 @@ XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
 DESKTOP_SESSION = ubuntu
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = Unity
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = artclave
-# environment
-USER_ZDOTDIR = /home/artclave
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
@@ -216,9 +195,9 @@ DEBUGINFOD_URLS = https://debuginfod.ubuntu.com
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3118543
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3279290
 # environment
-_ = /usr/bin/code
+_ = /usr/share/code/code
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
@@ -227,8 +206,6 @@ XDG_RUNTIME_DIR = /run/user/103610
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
-# environment
-COLORTERM = truecolor
 # environment
 JOURNAL_STREAM = 8:11666543
 # environment
@@ -245,8 +222,6 @@ INCDIR = includes
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/103610/vscode-e449c818-1.90-main.sock
-# environment
-TERM = xterm-256color
 # makefile (from 'Makefile', line 15)
 SRCDIR = src
 # environment
@@ -260,11 +235,7 @@ IM_CONFIG_PHASE = 1
 # default
 SUFFIXES := 
 # environment
-VSCODE_CLI = 1
-# environment
 FT_HOOK_NAME = login-user
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/artclave
 # default
@@ -274,14 +245,11 @@ CC = c++
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
- 
-TERM_PROGRAM_VERSION = 1.90.2
-# environment
 GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=134/1024=13%, Rehash=0, Collisions=14/179=8%
+# Load=119/1024=12%, Rehash=0, Collisions=10/169=6%
 
 # Pattern-specific Variable Values
 
@@ -290,14 +258,14 @@ LC_IDENTIFICATION = en_US.UTF-8
 # Directories
 
 # src: could not be stat'd.
-# . (device 2064, inode 3750): 8 files, no impossibilities.
+# . (device 2064, inode 3750): 6 files, no impossibilities.
 
-# 8 files, no impossibilities in 2 directories.
+# 6 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 bin/obj/%.o: src/%.cpp PmergeMe.hpp | bin/obj
-#  recipe to execute (from 'Makefile', line 37):
+#  recipe to execute (from 'Makefile', line 36):
 	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -MP -c $< -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
@@ -306,38 +274,51 @@ bin/obj/%.o: src/%.cpp PmergeMe.hpp | bin/obj
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-07-21 20:24:46.827837744
+#  Last modified 2024-07-21 20:27:34.296747395
 #  File has been updated.
 #  Successfully updated.
 
 leaks: all
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 49):
+#  recipe to execute (from 'Makefile', line 48):
 	valgrind --leak-check=full ./$(EXEC)
-
-# Not a target:
-PmergeMe.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2024-07-21 20:23:42.573599328
-#  File has been updated.
-#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 42):
 	rm -rf $(BINDIR)
 
-PmergeMe: PmergeMe.cpp main.cpp
+PmergeMe: main.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2024-07-21 20:23:42.573599328
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  Needs to be updated (-q is set).
+# automatic
+# @ := PmergeMe
+# automatic
+# * := 
+# automatic
+# < := main.cpp
+# automatic
+# + := main.cpp
+# automatic
+# % := 
+# automatic
+# ^ := main.cpp
+# automatic
+# ? := main.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 32):
 	$(CC) $(CFLAGS) $^ -o $@
 
 re: fclean all
@@ -358,21 +339,23 @@ all: PmergeMe
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 45):
 	rm -f $(EXEC)
 
 run: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 52):
+#  recipe to execute (from 'Makefile', line 51):
 	./$(EXEC)
 	
 
@@ -380,7 +363,7 @@ bin/obj:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
+#  recipe to execute (from 'Makefile', line 39):
 	mkdir -p $(OBJDIR)
 
 # Not a target:
@@ -390,25 +373,31 @@ main.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/38=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 188 B / avg = 8 B
-# current buf: size = 8162 B / used = 188 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 175 B / avg = 7 B
+# current buf: size = 8162 B / used = 175 B / count = 22 / avg = 7 B
 
-# strcache performance: lookups = 52 / hit rate = 55%
+# strcache performance: lookups = 50 / hit rate = 56%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=0/52=0%
-# Finished Make data base on Sun Jul 21 20:24:47 2024
+# Load=22/8192=0%, Rehash=0, Collisions=0/50=0%
+# Finished Make data base on Sun Jul 21 20:29:14 2024
 
  
