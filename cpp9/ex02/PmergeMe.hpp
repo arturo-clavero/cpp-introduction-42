@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 16:05:25 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/21 17:22:23 by artclave         ###   ########.fr       */
+/*   Created: 2024/07/21 18:12:23 by artclave          #+#    #+#             */
+/*   Updated: 2024/07/21 20:03:43 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include <iostream>
 #include <list>
-#include <cmath>
 #include <vector>
-#include <ctime>
-#include <limits>
-#include <algorithm> 
+#include <unistd.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <math.h>
 
 #define FRONT 0
 # define BACK 1
@@ -29,30 +29,33 @@
 # define VECTOR 1
 
 template <typename T>
-class PmergeMe {
+class PmergeMe{
 	private:
-		typedef T container;
-		typedef &T	divide(int type, T input){
-			int odd = input.size() % 2;
-			T sub;
-			typename T::iterator it = input.begin();
-			for (int i = 0; i <  type * (static_cast<int>(input.size() / 2) + odd); i++)
-				it++;
-			for (int i = 0; i < static_cast<int>(input.size()) / 2 + (type * odd); i++){
-				sub.push_back(*it);
-				it++;
-			}
-			return sub;
-		};
-		void	sort();
-		void	merge();
+		T container;
+
 	public:
-	//orthodox
+	//ORTHODOX
 		PmergeMe(){
-			std::cout<<"Default constructor called for PmergeMe\n";
-		};
+		//	std::cout<<"Default constructor called\n";
+		}
 		PmergeMe(char **av){
-			std::cout<<"Constructor called for PmergeMe with string array\n";
+			//std::cout<<"Constructor with string array called\n";
+			for (int i = 1; av[i]; i++){
+				for (int j = 0; av[i][j];){
+					while (av[i][j] && av[i][j] == ' ')
+						j++;
+					if (av[i][j] && (av[i][j] == '+' || av[i][j] == '-'))
+						j++;
+					if (!av[i][j])
+						continue ;
+					if (!std::isdigit(av[i][j]))
+						throw std::runtime_error("Invalid arguments\n");
+					while (std::isdigit(av[i][j]))
+						j++;
+					if (av[i][j] && av[i][j] != ' ')
+						throw std::runtime_error("Invalid args\n");
+				}
+			}
 			for (int i = 1; av[i]; i++){
 				std::string str = av[i];
 				int len = str.size();
@@ -64,48 +67,92 @@ class PmergeMe {
 					if (av[i][j] == '+' || av[i][j] == '-')
 						j++;
 					if (num != 0)
-					j += log10(abs(num));
+						j += log10(abs(num));
 					else
 						j++;
 				}
 			}
-		};
+		}
 		PmergeMe(T container){
-			std::cout<<"Constructor called for PmergeMe with container\n";		
+		//	std::cout<<"Constructor called with container\n";
 			this->container = container;
-		};
-		PmergeMe(const PmergeMe &original){
-			std::cout<<"Copy constructor called for PmergeMe\n";
-			container = original->container;
-		};
-		PmergeMe	&operator=(const PmergeMe &original){
-			std::cout<<"Copy assignment operator called for PmergeMe\n";
-			container = original->container;
+		}
+		PmergeMe(PmergeMe const &og){
+		//	std::cout<<"Copy constructor called\n";
+			container = og.container;
+		}
+		PmergeMe	&operator=(PmergeMe const &og){
+		//	std::cout<<"Copy assignment operator called\n";
+			container = og.container;
 			return *this;
-		};
-	//MEMBER FTS
-		void	print_container(std::string str = "list: "){
-			std::cout<<str;
+		}
+		~PmergeMe(){
+		//	std::cout<<"Default destructor called\n";
+		}
+	//MEMBER FTS:
+		T	get_container(){
+			return container;
+		}
+		void	set_container(T container){
+			this->container = container;
+		}
+		int	size(){
+			return static_cast<int>(container.size());
+		}
+		void	sort();
+		void	merge(T other);
+		void	divide(int section){
+			int odd = this->size() % 2;
 			typename T::iterator it = this->container.begin();
-			while (it != this->container.end()){
+			T	sub;
+			for (int i = 0; i < section * (this->size() / 2 + odd); i++)
+				it++;
+			for (int i = 0; i < this->size() / 2 + (section * odd); i++){
+				sub.push_back(*it);
+				it++;
+			}
+			this->container = sub;
+		}
+		void	algo(){
+			if (container.size() < 3){
+				this->sort();
+				return ;
+			}
+			PmergeMe<T>	sub1(*this);
+			sub1.divide(FRONT);
+			sub1.sort();
+			PmergeMe<T>	sub2(*this);
+			sub2.divide(BACK);
+			sub2.sort();
+			sub2.merge(sub1.get_container());
+			this->container = sub2.get_container();
+		}
+		void	print(std::string str = "container: "){
+			std::cout<<str;
+			typename T::iterator it = container.begin();
+			while (it != container.end()){
 				std::cout<<*it<<" ";
 				it++;
 			}
 			std::cout<<"\n";
-		};
+		}
 };
 
+
 template <>
-void PmergeMe<std::list<int> >::sort() {
-	container.sort();
+void	PmergeMe<std::vector<int> >::merge(std::vector<int> other){
+	std::vector<int> result;
+	std::merge(container.begin(), container.end(), other.begin(), other.end(), std::back_inserter(result));
+	container = result;
 }
 
 template <>
-void PmergeMe<std::list<int> >::merge() {
-	container.merge();
+void	PmergeMe<std::list<int> >::merge(std::list<int> other){
+	container.merge(other);
 }
 
-void PmergeMe<std::vector<int> >::sort() {
+template <>
+void	PmergeMe<std::vector<int> >::sort(){
 	std::vector<int> result;
 	std::vector<int>::iterator it;
 	while (!container.empty()){
@@ -117,10 +164,8 @@ void PmergeMe<std::vector<int> >::sort() {
 }
 
 template <>
-void PmergeMe<std::vector<int> >::merge(std::vector<int> vec_b) {
-	std::vector<int> result;
-	std::merge(.begin(), container.end(), container.begin(), vec_b.end(), std::back_inserter(result));
-	container = result;
+void	PmergeMe<std::list<int> >::sort(){
+	container.sort();
 }
 
 #endif
