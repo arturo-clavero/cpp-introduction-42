@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/20 21:23:15 by artclave         ###   ########.fr        #
+#    Updated: 2024/07/21 20:27:34 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,11 @@ BINDIR = bin
 OBJDIR = $(BINDIR)/obj
 
 
-SRCS = PmergeMe.cpp \
-		main.cpp \
+SRCS = main.cpp \
 	   
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
-HEADERS = RPN.hpp\
-			PmergeMe.hpp\
+HEADERS = PmergeMe.hpp\
 
 EXEC = PmergeMe
 
