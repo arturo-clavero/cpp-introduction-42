@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 02:46:40 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/20 03:25:00 by artclave         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:03:54 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,30 @@
 # define BITCOINEXCHANGE_HPP
 
 #include <iostream>
-/*
-EX00
-database to container **search
-associate 2 values
-search for one value and find corresponding value
-MAP
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <map>
+#include <cctype>
+#include <stdlib.h>
 
-EX01
-need some kind of tree or binary tree perhaps ... 
-*seearch how to solve polish reverse notation ... 
-STACK
-https://www.geeksforgeeks.org/arithmetic-expression-evalution/
+typedef std::map<std::string, std::string> tMap;
+typedef	std::pair<std::string, std::string> tPair;
 
-EX02
+class	BitcoinExchange{
+	private:
+		tMap	map;
+		int	cont_digits(std::string str, int max);
+		int	incorrect_format(std::string &str);
 
-*/
+	public:
+	//ORTHODOX:
+		BitcoinExchange();
+		BitcoinExchange(BitcoinExchange const &og);
+		BitcoinExchange	&operator=(BitcoinExchange const &og);
+		~BitcoinExchange();
+	//MEMBER FUNCTION
+		void	get_rates(std::string name);
+};
 
 #endif

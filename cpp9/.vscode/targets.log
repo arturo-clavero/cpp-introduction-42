@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 22 04:51:31 2024
+# Make data base, printed on Mon Jul 22 11:37:21 2024
 
 # Variables
 
@@ -91,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 735532
+VSCODE_PID = 889561
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_kAvfwI
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_DSm3xJ
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t4c4.42bangkok.com:@/tmp/.ICE-unix/730915,unix/z1t4c4.42bangkok.com:/tmp/.ICE-unix/730915
+SESSION_MANAGER = local/z1t4c4.42bangkok.com:@/tmp/.ICE-unix/885999,unix/z1t4c4.42bangkok.com:/tmp/.ICE-unix/885999
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = b27c7333141c4969ad29760bbdcbfa64
+INVOCATION_ID = 6b3e97cb52e44b74b521b83e54518167
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -169,7 +169,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 730938
+SYSTEMD_EXEC_PID = 886023
 # environment
 DISPLAY = :0
 # environment
@@ -179,13 +179,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 730115
+MANAGERPID = 885204
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 735532
+GIO_LAUNCHED_DESKTOP_FILE_PID = 889561
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:4129487
+JOURNAL_STREAM = 8:4628994
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -275,6 +275,7 @@ makefile:
 #  File does not exist.
 #  File has been updated.
 #  Failed to be updated.
+ 
 
 # Not a target:
 GNUmakefile:
@@ -288,7 +289,6 @@ GNUmakefile:
 # VPATH Search Paths
 
 # No 'vpath' search paths.
- 
 
 # No general ('VPATH' variable) search path.
 
@@ -298,6 +298,6 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Mon Jul 22 04:51:31 2024
+# Finished Make data base on Mon Jul 22 11:37:21 2024
 
  
