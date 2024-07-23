@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/02 20:02:16 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/23 17:22:34 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 HEADERS = $(INCDIR)/ClapTrap.hpp \
 		  $(INCDIR)/SavTrap.hpp \
 
-EXEC = executable
+EXEC = SavTrap
 
 all: $(EXEC)
 

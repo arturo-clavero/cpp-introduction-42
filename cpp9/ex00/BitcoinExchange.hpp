@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 02:46:40 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/23 10:53:27 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 13:32:22 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,14 @@ typedef	std::pair<std::string, std::string> tPair;
 
 class	BitcoinExchange{
 	private:
-		tMap	map;
-		int	cont_digits(std::string str, int max);
-		int	incorrect_format(std::string &str);
-		int	valid_date(int year, int month, int day);
+		static int	cont_digits(std::string str, int max);
+		static int	incorrect_format(std::string &str);
+		static int	valid_date(int year, int month, int day);
 
 	public:
-	//ORTHODOX:
-		BitcoinExchange();
-		BitcoinExchange(BitcoinExchange const &og);
-		BitcoinExchange	&operator=(BitcoinExchange const &og);
-		~BitcoinExchange();
 	//MEMBER FUNCTION
 		void	get_rates(std::string name);
+		tMap	init_map(char **av);
 };
 
 #endif

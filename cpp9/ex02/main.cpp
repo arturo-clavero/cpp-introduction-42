@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:09:52 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/21 20:01:55 by artclave         ###   ########.fr       */
+/*   Updated: 2024/07/23 13:38:46 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,18 @@ int	main(int ac, char **av){
 		return 2;
 	}
 	try {
-		PmergeMe<std::list<int> > store_original(av);
+		std::list<int> store_original = init_data(av);
 		time[LIST] = static_cast<unsigned long long>(clock()) * 1000000ULL / CLOCKS_PER_SEC;
-		PmergeMe<std::list<int> > list(av);
-		list.algo();
+		std::list<int> list = init_data(av);
+		algo(list);
 		time[LIST] -= static_cast<unsigned long long>(clock()) * 1000000ULL / CLOCKS_PER_SEC;
 		time[VECTOR] = static_cast<unsigned long long>(clock()) * 1000000ULL / CLOCKS_PER_SEC;
-		PmergeMe<std::vector<int> > vector(av);
-		vector.algo();
+		std::vector<int> vector = init_data(av);
+		algo(vector);
 		time[VECTOR] = static_cast<unsigned long long>(clock()) * 1000000ULL / CLOCKS_PER_SEC;
-		store_original.print("before: ");
-		list.print("after: ");
+		print("before: ", store_original);
+		print("after: ", list);
+		//print("after: ", vector);
 		std::cout<<"Time to process a range of "<<list.size()<<" elements with std::list<int> : "<<time[LIST]<<" us\n";
 		std::cout<<"Time to process a range of "<<vector.size()<<" elements with std::vector<int> : "<<time[VECTOR]<<" us\n";
 	}catch(std::exception &e){

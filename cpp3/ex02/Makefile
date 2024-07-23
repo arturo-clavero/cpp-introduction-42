@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/02 20:02:22 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/23 17:34:01 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ HEADERS = $(INCDIR)/ClapTrap.hpp \
 		  $(INCDIR)/SavTrap.hpp \
 		  $(INCDIR)/FragTrap.hpp \
 
-EXEC = executable
+EXEC = FragTrap
 
 all: $(EXEC)
 

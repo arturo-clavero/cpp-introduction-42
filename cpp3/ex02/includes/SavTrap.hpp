@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:05:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:03:04 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 17:47:41 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ class	SavTrap : public ClapTrap
 	public:
 	//member functions
 		void	guardGate();
-		void	attack(const std::string& target);
-		void	printStats();
 	//ORTHODOX FORMAT
 		SavTrap();
-		SavTrap(std::string name);
-		SavTrap(SavTrap const &original);
-		SavTrap	&operator=(SavTrap const &original);
+		SavTrap(const std::string &name);
+		SavTrap(const SavTrap &original);
+		SavTrap	&operator=(const SavTrap &original);
 		~SavTrap();
 };
 

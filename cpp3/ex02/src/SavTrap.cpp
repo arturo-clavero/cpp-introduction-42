@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:06:28 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:03:34 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 17:47:59 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,6 @@
 //member functions
 void	SavTrap::guardGate() {
 	std::cout<<"ScavTrap is now in Gate keeper mode.\n";
-}
-
-void	SavTrap::attack(const std::string& target) {
-	if (energyPoints == 0)
-	{
-		std::cout<<"SavTrap "<<name<<" failed to attack "<<target<<", (No energy points!)\n";
-		return ;
-	}
-	std::cout<<"SavTrap "<<name<<" attacks "<<target<<", causing "<<attackDamage<<" points of damage!\n";
-	energyPoints--;
-}
-
-void	SavTrap::printStats() {
-	std::cout<<"SavTrap "<<name<<" : hit("<<hitPoints<<"), energy("<<energyPoints<<")\n";
 }
 
 //ORTHODOX FORMAT
@@ -40,7 +26,7 @@ SavTrap::SavTrap() {
 	hitPoints = 100;
 }
 
-SavTrap::SavTrap(std::string name) {
+SavTrap::SavTrap(const std::string &name) {
 	std::cout<<"Constructor with params called for class 'SavTrap'\n";
 	this->name = name;
 	attackDamage = 20;
@@ -48,7 +34,7 @@ SavTrap::SavTrap(std::string name) {
 	hitPoints = 100;
 }
 
-SavTrap::SavTrap(SavTrap const &original) : ClapTrap(original) {
+SavTrap::SavTrap(const SavTrap &original) : ClapTrap(original) {
 	std::cout<<"Copy constructor called for class 'SavTrap'\n";
 	attackDamage = original.attackDamage;
 	energyPoints = original.energyPoints;
@@ -56,7 +42,7 @@ SavTrap::SavTrap(SavTrap const &original) : ClapTrap(original) {
 	name = original.name;
 }
 
-SavTrap	&SavTrap::operator=(SavTrap const &original) {
+SavTrap	&SavTrap::operator=(const SavTrap &original) {
 	std::cout<<"Copy assignment operator called for class 'SavTrap'\n";
 	ClapTrap::operator=(original);
 	attackDamage = original.attackDamage;

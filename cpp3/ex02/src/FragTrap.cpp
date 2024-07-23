@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:44:24 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:03:24 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 17:57:10 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 
 void FragTrap::highFivesGuys(void){
 	std::cout<<"Positive high five request...\n";
-}
-
-void	FragTrap::attack(const std::string& target) {
-	if (energyPoints == 0)
-	{
-		std::cout<<"FragTrap "<<name<<" failed to attack "<<target<<", (No energy points!)\n";
-		return ;
-	}
-	std::cout<<"FragTrap "<<name<<" attacks "<<target<<", causing "<<attackDamage<<" points of damage!\n";
-	energyPoints--;
-}
-
-void	FragTrap::printStats() {
-	std::cout<<"FragTrap "<<name<<" : hit("<<hitPoints<<"), energy("<<energyPoints<<")\n";
 }
 
 //ORTHODOX FORMAT
@@ -39,7 +25,7 @@ FragTrap::FragTrap() {
 	hitPoints = 100;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(const std::string &name) {
 	std::cout<<"Constructor with params called for class 'FragTrap'\n";
 	this->name = name;
 	attackDamage = 30;
@@ -47,7 +33,7 @@ FragTrap::FragTrap(std::string name) {
 	hitPoints = 100;
 }
 
-FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original) {
+FragTrap::FragTrap(const FragTrap &original) : ClapTrap(original) {
 	std::cout<<"Copy constructor called for class 'FragTrap'\n";
 	attackDamage = original.attackDamage;
 	energyPoints = original.energyPoints;
@@ -55,7 +41,7 @@ FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original) {
 	name = original.name;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &original) {
+FragTrap	&FragTrap::operator=(const FragTrap &original) {
 	std::cout<<"Copy assignment operator called for class 'FragTrap'\n";
 	ClapTrap::operator=(original);
 	attackDamage = original.attackDamage;

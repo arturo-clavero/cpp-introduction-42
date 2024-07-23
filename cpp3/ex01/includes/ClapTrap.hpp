@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:50:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:03:47 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 17:33:04 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ class	ClapTrap
 	//member functions
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void	beRepaired(const unsigned int &amount);
 		void	printStats();
 	//ORTHODOX FORMAT
 		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap const &original);
-		ClapTrap	&operator=(ClapTrap const &original);
+		ClapTrap(const std::string &name);
+		ClapTrap(const ClapTrap &original);
+		ClapTrap	&operator=(const ClapTrap &original);
 		~ClapTrap();
 };
 
