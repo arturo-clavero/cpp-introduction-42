@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:57:51 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/20 04:58:21 by artclave         ###   ########.fr       */
+/*   Updated: 2024/07/22 23:51:12 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iostream>
 #include <stack>
 #include <cctype>
+#include <stdlib.h>
+
+
 void	rpn(std::string str);
 
 # endif

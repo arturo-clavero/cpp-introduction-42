@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 02:46:40 by artclave          #+#    #+#             */
-/*   Updated: 2024/07/22 12:03:54 by artclave         ###   ########.fr       */
+/*   Updated: 2024/07/23 10:53:27 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
+#include <ctime>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -29,6 +30,7 @@ class	BitcoinExchange{
 		tMap	map;
 		int	cont_digits(std::string str, int max);
 		int	incorrect_format(std::string &str);
+		int	valid_date(int year, int month, int day);
 
 	public:
 	//ORTHODOX:
