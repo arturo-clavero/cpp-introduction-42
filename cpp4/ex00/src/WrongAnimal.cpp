@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:25:03 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:27:19 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 18:07:52 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ WrongAnimal::WrongAnimal() {
 	type = "";
 }
 
-WrongAnimal::WrongAnimal(std::string type) {
+WrongAnimal::WrongAnimal(const std::string &type) {
 	std::cout<<"WrongAnimal constructor with params called\n";
 	this->type = type;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &original) {
+WrongAnimal::WrongAnimal(const WrongAnimal &original) {
 	std::cout<<"WrongAnimal copy constructor called\n";
 	type = original.type;
 }
 
-WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &original) {
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &original) {
 	std::cout<<"WrongAnimal copy assignment operator called\n";
 	type = original.type;
 	return *this;

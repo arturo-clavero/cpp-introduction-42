@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/02 18:16:31 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/23 18:09:00 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ HEADERS = $(INCDIR)/Animal.hpp \
 		  $(INCDIR)/WrongAnimal.hpp \
 		  $(INCDIR)/WrongCat.hpp \
 
-EXEC = executable
+EXEC = Polymorphism
 
 all: $(EXEC)
 

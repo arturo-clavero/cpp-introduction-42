@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:22:51 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:24:54 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 18:07:21 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Dog::Dog() {
 	type = "Dog";
 }
 
-Dog::Dog(Dog const &original) : Animal(original){
+Dog::Dog(const Dog &original) : Animal(original){
 	std::cout<<"Dog copy constructor called\n";
 	type = original.type;
 }
 
-Dog	&Dog::operator=(Dog const &original) {
+Dog	&Dog::operator=(const Dog &original) {
 	std::cout<<"Dog copy assignment operator called\n";
 	Animal::operator=(original);
 	type = original.type;

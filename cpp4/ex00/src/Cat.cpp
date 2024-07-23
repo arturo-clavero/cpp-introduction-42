@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:20:43 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:22:45 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 18:07:05 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Cat::Cat() {
 	type = "Cat";
 }
 
-Cat::Cat(Cat const &original) : Animal(original){
+Cat::Cat(const Cat &original) : Animal(original){
 	std::cout<<"Cat copy constructor called\n";
 	type = original.type;
 }
 
-Cat	&Cat::operator=(Cat const &original) {
+Cat	&Cat::operator=(const Cat &original) {
 	std::cout<<"Cat copy assignment operator called\n";
 	Animal::operator=(original);
 	type = original.type;

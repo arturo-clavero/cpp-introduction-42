@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:17:04 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:31:38 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 18:05:05 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ Animal::Animal() {
 	type = "";
 }
 
-Animal::Animal(std::string type) {
+Animal::Animal(const std::string &type) {
 	std::cout<<"Animal constructor with params called\n";
 	this->type = type;
 }
 
-Animal::Animal(Animal const &original) {
+Animal::Animal(const Animal &original) {
 	std::cout<<"Animal copy constructor called\n";
 	type = original.type;
 }
 
-Animal	&Animal::operator=(Animal const &original) {
+Animal	&Animal::operator=(const Animal &original) {
 	std::cout<<"Animal copy assignment operator called\n";
 	type = original.type;
 	return *this;
