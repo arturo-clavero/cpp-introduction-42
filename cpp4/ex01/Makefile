@@ -6,7 +6,7 @@
 #    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/02 16:55:37 by arturo           ###   ########.fr        #
+#    Updated: 2024/07/23 18:21:07 by arturo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ HEADERS = $(INCDIR)/Animal.hpp \
 		  $(INCDIR)/WrongCat.hpp \
 		  $(INCDIR)/Brain.hpp \
 
-EXEC = executable
+EXEC = Brain
 
 all: $(EXEC)
 

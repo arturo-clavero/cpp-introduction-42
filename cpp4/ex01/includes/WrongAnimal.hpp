@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:12:27 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:31:29 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/24 15:54:45 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class	WrongAnimal
 		std::string	getType() const;
 	//ORTHODOX FORMAT
 		WrongAnimal();
-		WrongAnimal(std::string type);
-		WrongAnimal(WrongAnimal const &original);
-		WrongAnimal	&operator=(WrongAnimal const &original);
+		WrongAnimal(const std::string &type);
+		WrongAnimal(const WrongAnimal &original);
+		WrongAnimal	&operator=(const WrongAnimal &original);
 		virtual ~WrongAnimal();
 };
 

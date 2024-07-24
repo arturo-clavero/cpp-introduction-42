@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:10:20 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:50:08 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 19:12:33 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class	Cat : public Animal {
 		void	makeSound()const;
 	//ORTHODOX FORMAT
 		Cat();
-		Cat(Cat const &original);
-		Cat	&operator=(Cat const &original);
+		Cat(const Cat &original);
+		Cat	&operator=(const Cat &original);
 		virtual ~Cat();
 };
 

@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:13:15 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:34:06 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 19:13:16 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class	WrongCat : public WrongAnimal {
 		void	makeSound()const;
 	//ORTHODOX FORMAT
 		WrongCat();
-		WrongCat(WrongCat const &original);
-		WrongCat	&operator=(WrongCat const &original);
+		WrongCat(const WrongCat &original);
+		WrongCat	&operator=(const WrongCat &original);
 		virtual ~WrongCat();
 };
 

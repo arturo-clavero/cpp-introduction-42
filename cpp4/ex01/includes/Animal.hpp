@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:09:24 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:46:09 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 19:12:04 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class	Animal
 		std::string	getType() const;
 	//ORTHODOX FORMAT
 		Animal();
-		Animal(std::string type);
-		Animal(Animal const &original);
-		Animal	&operator=(Animal const &original);
+		Animal(const std::string &type);
+		Animal(const Animal &original);
+		Animal	&operator=(const Animal &original);
 		virtual ~Animal();
 };
 

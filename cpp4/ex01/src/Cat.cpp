@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:20:43 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/02 16:51:26 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/23 19:14:22 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::Cat() {
 	localBrain = new Brain();
 }
 
-Cat::Cat(Cat const &original) : Animal(original){
+Cat::Cat(const Cat &original) : Animal(original){
 	std::cout<<"Cat copy constructor called\n";
 	type = original.type;
 	localBrain = new Brain(*original.localBrain);

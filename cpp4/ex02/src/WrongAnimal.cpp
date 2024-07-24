@@ -6,7 +6,7 @@
 /*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:25:03 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/01 18:27:19 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/24 15:57:13 by arturo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongAnimal::WrongAnimal() {
 	type = "";
 }
 
-WrongAnimal::WrongAnimal(std::string type) {
+WrongAnimal::WrongAnimal(const std::string &type) {
 	std::cout<<"WrongAnimal constructor with params called\n";
 	this->type = type;
 }
