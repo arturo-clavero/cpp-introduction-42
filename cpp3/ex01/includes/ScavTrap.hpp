@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SavTrap.hpp                                        :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:05:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/23 17:47:21 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/25 16:00:43 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAVTRAP_HPP
-# define SAVTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class	SavTrap : public ClapTrap
+class	ScavTrap : public ClapTrap
 {
 	public:
 	//member functions
 		void	guardGate();
+		void	attack(const std::string& target);
+
 	//ORTHODOX FORMAT
-		SavTrap();
-		SavTrap(const std::string &name);
-		SavTrap(const SavTrap &original);
-		SavTrap	&operator=(const SavTrap &original);
-		~SavTrap();
+		ScavTrap();
+		ScavTrap(const std::string &name);
+		ScavTrap(const ScavTrap &original);
+		ScavTrap	&operator=(const ScavTrap &original);
+		~ScavTrap();
 };
 
 #endif
