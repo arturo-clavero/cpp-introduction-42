@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 06:10:40 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/08 02:45:47 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "Form.hpp"
 #include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -20,8 +19,9 @@
 
 void	testRobo()
 {
+	std::cout<<"\n\n";
 	Intern	intern;
-	Form *form1;
+	AForm *form1;
 	form1 = intern.makeForm("robotomy request", "home");
 	if (form1 != NULL)
 	{
@@ -31,9 +31,10 @@ void	testRobo()
 }
 
 void	testPresi()
-{
+{	
+	std::cout<<"\n\n";
 	Intern	intern;
-	Form *form3;
+	AForm *form3;
 	form3 = intern.makeForm("presidential request", "home");
 	if (form3 != NULL)
 	{
@@ -44,8 +45,9 @@ void	testPresi()
 
 void	testShrub()
 {
+	std::cout<<"\n\n";
 	Intern	intern;
-	Form *form3;
+	AForm *form3;
 	form3 = intern.makeForm("shrubbery request", "home");
 	if (form3 != NULL)
 	{
@@ -56,8 +58,9 @@ void	testShrub()
 
 void	testWrong()
 {
+	std::cout<<"\n\n";
 	Intern intern;
-	Form *form4;
+	AForm *form4;
 	form4 = intern.makeForm("alian request", "home");
 	if (form4 != NULL)
 	{

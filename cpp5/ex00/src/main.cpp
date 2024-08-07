@@ -3,133 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:24:43 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 18:36:15 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/07 19:16:16 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-void	testDefaultConstructor()
-{
-	std::cout<<"\nTEST DEFAULT CONSTRUCTOR:\n";
-	Bureaucrat	Bur;
-}
-
-void	testConstructor()
-{
-	std::cout<<"\nTEST CONSTRUCTOR WITH PARAMS:\n";
-	Bureaucrat	bur("new bur", 5);
-}
-
-void	testCopyConstructor()
-{
-	std::cout<<"\nTEST COPY CONSTRUCTOR:\n";
-	Bureaucrat bur1("one", 6);
-	Bureaucrat bur2(bur1);
-	std::cout<<bur1;
-	std::cout<<bur2;
-}
-
-void	testCopyAssignmentOperator()
-{
-	std::cout<<"\nTEST COPY ASSIGNMENT OPERATOR:\n";
-	Bureaucrat bur1("one", 3);
-	Bureaucrat bur2("two", 6);
-	std::cout<<bur1;
-	std::cout<<bur2;
-	bur2 = bur1;
-	std::cout<<bur1<<"\n";
-	std::cout<<bur2<<"\n";
-}
-
-void	testOrthodox()
-{
-	testDefaultConstructor();
-	testConstructor();
-	testCopyConstructor();
-	testCopyAssignmentOperator();
-}
-
-void	initBurGradeTooLow()
-{
-	std::cout<<"\nTESTING INITIALIZATION OF OBJECT WITH LOW GRADE\n\n";
+void	test_construction_grade_too_high(){
+	std::cout<<"\nCONSTRUCT TOO HIGH:\n";
 	try {
-		Bureaucrat bur1("One", 150);
-		std::cout<<bur1;
-		Bureaucrat bur2("Two", 151);
-		std::cout<<bur2;
-	}catch(std::exception &e){
+		Bureaucrat	bur1("Jim", 1);
+		Bureaucrat	bur2("Wrong", 0);
+		std::cout<<"This will only print if both burs have correct grades...\n";
+	}
+	catch (std::exception &e){
 		std::cout<<e.what();
 	}
 }
 
-void	initBurGradeTooHigh()
-{
-	std::cout<<"\nTESTING INITIALIZATION OF OBJECT WITH HIGH GRADE\n\n";
+
+void	test_construction_grade_too_low(){
+	std::cout<<"\nCONSTRUCT TOO LOW:\n";
 	try {
-		Bureaucrat bur1("One", 1);
-		std::cout<<bur1;
-		Bureaucrat bur2("Two", 0);
-		std::cout<<bur2;
-	}catch(std::exception &e){
+		Bureaucrat	bur1("Jim", 150);
+		Bureaucrat	bur2("Wrong", 151);
+		std::cout<<"This will only print if both burs have correct grades...\n";
+	}
+	catch (std::exception &e){
 		std::cout<<e.what();
 	}
 }
 
-void	testGetters()
-{
-	std::cout<<"\nTESTING GUETTERS AND OPERATOR << \n\n";
-	Bureaucrat bur("Random", 5);
-	std::cout<<"getName()-> "<<bur.getName()<<"\n";
-	std::cout<<"getGrade()-> "<<bur.getGrade()<<"\n";
-	std::cout<<"'printing' class details with << operator\n";
-	std::cout<<bur;
-}
-
-void	testIncrement()
-{
-	std::cout<<"\nTESTING INCREMENT MEMBER FT\n\n";
-	Bureaucrat bur("example", 150);
-	std::cout<<bur;
-	try {
-		bur.increaseGrade(100);
-		std::cout<<bur;
-		bur.increaseGrade(49);
-		std::cout<<bur;
-		bur.increaseGrade(1);
-		std::cout<<bur;
-	}catch(std::exception &e){
-		std::cout<<e.what()<<"\n";
+void	test_increment_grade(){
+	std::cout<<"\n\nINCREMENT:\n";
+	try{
+		Bureaucrat	bur1("Jim", 10);
+		bur1.incrementGrade(5);
+		bur1.incrementGrade(5);
+		std::cout<<"This will only print if both promotions are successful...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
 	}
 }
 
-void	testDecrement()
-{
-	std::cout<<"\nTESTING DECREMENT MEMBER FT\n\n";
-	Bureaucrat bur("example", 1);
-	std::cout<<bur;
-	try {
-		bur.decreaseGrade(120);
-		std::cout<<bur;
-		bur.decreaseGrade(29);
-		std::cout<<bur;
-		bur.decreaseGrade(1);
-		std::cout<<bur;
-	}catch(std::exception &e){
-		std::cout<<e.what()<<"\n";
+void	test_decrement_grade(){
+	std::cout<<"\n\nDECREMENT:\n";
+	try{
+		Bureaucrat	bur1("Jim", 141);
+		bur1.decrementGrade(5);
+		bur1.decrementGrade(5);
+		std::cout<<"This will only print if both demotions are successful...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
 	}
 }
-
 
 int	main(void)
 {
-	testOrthodox();
-	initBurGradeTooLow();
-	initBurGradeTooHigh();
-	testGetters();
-	testIncrement();
-	testDecrement();
+	test_construction_grade_too_high();
+	test_construction_grade_too_low();
+	test_increment_grade();
+	test_decrement_grade();
 }

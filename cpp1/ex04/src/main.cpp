@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 21:32:57 by arturo            #+#    #+#             */
-/*   Updated: 2024/06/30 20:30:00 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/28 15:26:00 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	std::string	haystack = "this is abc and abc,\n after abc...\n";
-	std::string	oldNeedle = "a";
-	std::string newNeedle = "12345678";
+	(void)ac;
+	
+	std::string	haystack = av[1];
+	std::cout<<av[1]<<"\n";
+	std::string	oldNeedle = av[2];
+	std::string newNeedle = av[3];
 	std::ofstream	newFile("rest.txt");
 	newFile<<haystack;
 	newFile.close();

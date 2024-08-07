@@ -3,74 +3,84 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 15:00:42 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 01:57:07 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 18:07:17 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 01:05:56 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat(){
-	std::cout<<"Default constructor called\n";
-};
-		
-Bureaucrat::Bureaucrat(const std::string name_param, int grade) : name(name_param)
-{
-	std::cout<<"Constructor with grade "<<grade<<" called for Bureaucrat '"<<name<<"'\n";
+//ORTHODOX
+Bureaucrat::Bureaucrat(std::string const &name, int const grade) : _name(name), _grade(grade){
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw	GradeTooHighException();
 	if (grade > 150)
-		throw GradeTooLowException();
-	this->grade = grade;
+		throw	GradeTooLowException();
+	std::cout<<"Constructor called for: "<<*this;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &original) : name(original.name){
-	std::cout<<"Copy constructor called\n";
-	grade = original.grade;		
+Bureaucrat::Bureaucrat(Bureaucrat const &og) : _name(og.getName()), _grade(og.getGrade()) {
+	std::cout<<"Copy constructor called for: "<<*this<<"\n";
 }
 
-Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &original) {
-	std::cout<<"Copy assignment operator called\n";
-	grade = original.grade;
+Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &og){
+	std::cout<<"Copy assignment operator called for: "<<*this;
+	_grade = og.getGrade();
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat(){
-	std::cout<<"Destructor called for bureaucrat "<<name<<std::endl;
-}
-		
-std::string	Bureaucrat::getName(){
-	return name;
+	std::cout<<"Destructor called for: "<<*this;
 }
 
-int	Bureaucrat::getGrade() const{
-	return grade;
+//GETTER
+std::string	Bureaucrat::getName() const{
+	return (_name);
 }
 
-void	Bureaucrat::increaseGrade(int amount){
-	std::cout<<"Increasing grade by "<<amount<<std::endl;
-	if (grade - amount < 1)
+int	Bureaucrat::getGrade()	const{
+	return (_grade);
+}
+
+//OTHER
+void	Bureaucrat::incrementGrade(int const amount){
+	if (_grade - amount < 1)
 		throw GradeTooHighException();
-	grade -= amount;
+	_grade -= amount;
+	std::cout<<_name<<" got promoted from grade "<<_grade + amount<<" to "<<_grade<<".\n";
 }
 
-void	Bureaucrat::decreaseGrade(int amount){
-	std::cout<<"Decreasing grade by "<<amount<<std::endl;
-	if (grade + amount > 150)
+void	Bureaucrat::decrementGrade(int const amount){
+	if (_grade + amount > 150)
 		throw GradeTooLowException();
-	grade += amount;
+	_grade += amount;
+	std::cout<<_name<<" got demoted from grade "<<_grade - amount<<" to "<<_grade<<".\n";
 }
 
-void	Bureaucrat::executeForm(AForm const & form)
-{
-	std::cout<<"Bureaucrat "<<name<<" is attempting to execute form "<<form.getName()<<"\n";
+void	Bureaucrat::signForm(AForm const & form) const{
+	if (_grade > form.getRequiredGradeSign())
+		std::cout<<_name<<" couldn't sign form "<<form.getName()<<" because their grade is too low\n";
+	else if (form.getIsSigned() == true)
+		std::cout<<_name<<" signed form "<<form.getName()<<"\n";
+	else
+		std::cout<<_name<<" couldn't sign form "<<form.getName()<<" because they did not have time\n";
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const{
 	form.execute(*this);
+	if (_grade > form.getRequiredGradeExecute())
+		std::cout<<_name<<" couldn't execute form "<<form.getName()<<" because their grade is too low\n";
+	else if (form.getIsSigned() == false)
+		std::cout<<_name<<" couldn't execute form "<<form.getName()<<" because it is not signed\n";
+	else
+		std::cout<<_name<<" executed form "<<form.getName()<<"\n";
 }
 
-std::ostream	&operator<<(std::ostream &cout_param, Bureaucrat &bur){
-	std::cout<<bur.getName()<<", bureaucrat grade "<<bur.getGrade()<<std::endl;
-	return (cout_param);
-};
+//PRINT
+std::ostream	&operator<<(std::ostream & out, Bureaucrat const &bur){
+	out<<"Bureaucrat "<<bur.getName()<<", grade ("<<bur.getGrade()<<")\n";
+	return out;
+}

@@ -3,49 +3,90 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 02:15:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 05:28:51 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 21:46:42 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 02:12:55 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", 72, 45), Form("robotomy request", 72, 45), name("Robotomy Request"), target("default"), signGrade(72), execGrade(45){
-	std::cout<<"Default constructor called for Robotomy\n";
-	isSigned = false;
+//ORTHODOX
+
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : 		AForm("robotomy", 72, 45),
+																	_target(target),
+																	_required_grade_sign(72),
+																	_required_grade_execute(45)
+{
+	std::cout<<"Constructor called for "<<*this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Request", 72, 45), Form("robotomy request", 72, 45), name("Robotomy Request"), target("default"), signGrade(72), execGrade(45) {
-	std::cout<<"Constructor called for Robotomy with target "<<target<<"\n";
-	isSigned = false;
-	this->target = target;
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & og): 		AForm(og),
+																				_target(og.getTarget()),
+																				_required_grade_sign(og.getRequiredGradeSign()),
+																				_required_grade_execute(og.getRequiredGradeExecute())
+{
+	std::cout<<"Copy constructor called for "<<*this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &original) : AForm("Robotomy Request", 72, 45), Form("robotomy request", 72, 45), name("Robotomy Request"), target("default"), signGrade(72), execGrade(45){
-	std::cout<<"Copy constructor called for Robotomy\n";
-	isSigned = original.isSigned;
-	target = original.target;
-}
-
-RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &original){
-	std::cout<<"Copy assignment operator called for Robotomy\n";
-	isSigned = original.isSigned;
-	target = original.target;
+RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const & og) {
+	_target = og.getTarget();
+	std::cout<<"Copy assignment operator called for "<<*this;
 	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-	std::cout<<"Destructor called for Robotomy with target "<<target<<"\n";
+	std::cout<<"Destructor called for "<<*this;
 }
 
-void	RobotomyRequestForm::performTask() const{
-	std::cout<<"\n⠀⢀⣤⡤⠤⠤⠤⠤⠤⠤⠤⠤⠤⢤⣤⡄⢠⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⣼⣿⡇⣠⣤⣤⣤⣤⣤⣤⣤⡄⢸⣿⡇⢸⣿⡇⣿⣿⠀⣿⣿⣦⠀⣤⣤⣤⠀\n⠀⢹⣿⣇⣉⣉⣉⣉⣉⣉⣉⣉⣁⣸⣿⡇⢸⣿⡇⠿⠿⠀⠛⠛⠉⠀⠀⠀⠀⠀\n⠀⠀⠉⠉⠙⠛⢿⣿⣿⣿⣿⡟⠛⠛⠛⠃⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⢀⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠀⣼⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⠰⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⠀⠀⠀⣤⣤⣤⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠀⢀⣶⣶⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⢀⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n⠀⠘⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n\rrrrrRRRRATATATATATATAAAAA\n\n";
+//GETTERS
+std::string	RobotomyRequestForm::getTarget() const{
+	return _target;
+}
+
+int	RobotomyRequestForm::getRequiredGradeSign() const{
+	return _required_grade_sign;
+}
+
+int	RobotomyRequestForm::getRequiredGradeExecute() const{
+	return _required_grade_execute;
+}
+
+//OTHER
+void	RobotomyRequestForm::form_action() const{
+	int	fail, pid, flags;
 	std::srand(std::time(0));
-	int	success = std::rand() % 2;
-	if (success)
-		std::cout<<target<<" has been robotomized successfully\n";
-	else
-		std::cout<<"Robotomy failed\n";
+	fail = std::rand() % 2;
+	if (fail)
+	{
+		std::cout<<_target<<" failed to be robotomized\n";
+		return ;
+	}
+	pid = fork();
+    if (pid == 0) {
+		std::cout<<"\nYou can press enter to stop the drilling\n";
+		execlp("aplay", "aplay", "drill.wav", NULL);
+        exit(1);
+    }
+	else{
+		flags = fcntl(STDIN_FILENO, F_GETFL, 0);
+        fcntl(STDIN_FILENO, F_SETFL, flags | O_NONBLOCK);
+        while (true) {
+            if (waitpid(pid, &flags, WNOHANG) == pid)
+				break;
+            if (read(STDIN_FILENO, &flags, 1) > 0) {
+                kill(pid, SIGKILL);
+				std::cout<<"\nCongratulations!!! You are boring.\n\n";
+                break;
+            }
+        }
+	}
+	std::cout<<_target<<"has been successfully robotomized\n";
+}
+
+//PRINT
+std::ostream	&operator<<(std::ostream &out, RobotomyRequestForm const & form){
+	out<<"Robotomy Request Form with target: "<<form.getTarget()<<", required grade for signing ["<<form.getRequiredGradeSign()<<"], and for executing ["<<form.getRequiredGradeExecute()<<"]\n";
+	return out;
 }

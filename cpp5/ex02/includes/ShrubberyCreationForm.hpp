@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 16:57:30 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 02:26:52 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 21:46:40 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 00:25:21 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@
 #include <fstream>
 
 class ShrubberyCreationForm : public AForm{
-	
 	private:
-		std::string	const	name;
-		std::string			target;
-		bool				isSigned;
-		int	const			signGrade;
-		int	const			execGrade;
+		std::string			_target;
+		int	const			_required_grade_sign;
+		int	const			_required_grade_execute;
 	public:
-		ShrubberyCreationForm();
+	//orthodox
 		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &original);
-		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &original);
+		ShrubberyCreationForm(ShrubberyCreationForm const & og);
+		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const & og);
 		~ShrubberyCreationForm();
-		void	performTask() const;
+	//getters
+		std::string getTarget() const;
+		int			getRequiredGradeSign() const;
+		int			getRequiredGradeExecute() const;
+	//other
+		void	form_action() const;
 };
+
+std::ostream	&operator<<(std::ostream &out, ShrubberyCreationForm const & form);
 
 #endif

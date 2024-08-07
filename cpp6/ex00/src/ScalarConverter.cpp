@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 06:27:53 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 18:59:45 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/05 18:25:57 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	explicitConversion(T data, bool exceptionInt)
 {
 	std::stringstream ss;
 	ss<<static_cast<char>(data);
+	if (exceptionInt)
+		ss.str("impossible");
 	printConversion(ss, "char");
 	ss.str("");
 	ss<<static_cast<int>(data);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
+#    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/07 23:57:10 by arturo           ###   ########.fr        #
+#    Updated: 2024/08/05 18:26:21 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 HEADERS = $(INCDIR)/ScalarConverter.hpp\
 
-EXEC = executable
+EXEC = convert
 
 all: $(EXEC)
 

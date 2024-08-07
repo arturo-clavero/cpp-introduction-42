@@ -3,35 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 02:19:50 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 03:07:21 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 21:46:38 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 00:24:40 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
-#include "AForm.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <signal.h>
+#include <fcntl.h>
+#include "AForm.hpp"
 
-class  RobotomyRequestForm : public AForm{
-	
+
+class RobotomyRequestForm : public AForm{
 	private:
-		std::string	const	name;
-		std::string			target;
-		bool				isSigned;
-		int	const			signGrade;
-		int	const			execGrade;
+		std::string			_target;
+		int	const			_required_grade_sign;
+		int	const			_required_grade_execute;
 	public:
-		RobotomyRequestForm();
+	//orthodox
 		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &original);
-		RobotomyRequestForm	&operator=(const RobotomyRequestForm &original);
+		RobotomyRequestForm(RobotomyRequestForm const & og);
+		RobotomyRequestForm	&operator=(RobotomyRequestForm const & og);
 		~RobotomyRequestForm();
-		void	performTask() const;
+	//getters
+		std::string getTarget() const;
+		int			getRequiredGradeSign() const;
+		int			getRequiredGradeExecute() const;
+	//other
+		void	form_action() const;
 };
+
+std::ostream	&operator<<(std::ostream &out, RobotomyRequestForm const & form);
 
 #endif

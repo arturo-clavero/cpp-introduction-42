@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:12:27 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/24 15:56:40 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/29 18:32:21 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	WrongAnimal
 		WrongAnimal(const std::string &type);
 		WrongAnimal(WrongAnimal const &original);
 		WrongAnimal	&operator=(WrongAnimal const &original);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 };
 
 #endif

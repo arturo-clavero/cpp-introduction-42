@@ -3,36 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 03:48:43 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 19:00:33 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/08 02:19:25 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 02:41:46 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
-#include <cstddef>
-
-#include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+class	Form;
 
 class	Intern{
-	
 	private:
-		Form	*makeRobot(std::string target);
-		Form	*makeShrub(std::string target);
-		Form	*makePresi(std::string target);
-	
 	public:
-		Form	*makeForm(std::string type, std::string target);
+	//orthodox
 		Intern();
-		Intern(const Intern &original);
-		Intern	&operator=(const Intern &original);
+		Intern(Intern const & og);
+		Intern	&operator=(Intern const & og);
 		~Intern();
+	//other
+		AForm	*makeShrub(std::string const target) const;
+		AForm	*makeRobot(std::string const target) const;
+		AForm	*makePresi(std::string const target) const;
+		AForm	*makeForm(std::string const name, std::string const target) const;
 };
 
 #endif

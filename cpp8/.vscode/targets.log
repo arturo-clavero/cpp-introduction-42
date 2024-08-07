@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 20 02:44:32 2024
+# Make data base, printed on Wed Jul 31 19:42:57 2024
 
 # Variables
 
@@ -32,8 +32,6 @@ VSCODE_CWD = /home/artclave
 LC_ADDRESS = en_US.UTF-8
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
-# environment
-GDM_LANG = en
 # default
 MAKE_COMMAND := make
 # environment
@@ -45,7 +43,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/artclave/Desktop/CPP00/cpp8
+PWD = /home/artclave/Desktop/cpp/cpp8
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -59,7 +57,7 @@ OLDPWD = /home/artclave
 # environment
 VSCODE_CODE_CACHE_PATH = /home/artclave/.config/Code/CachedData/5437499feb04f7a586f677b155b039bc2b3669eb
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
 LANG = C
 # environment
@@ -71,7 +69,7 @@ XAUTHORITY = /home/artclave/.Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/artclave/Desktop/CPP00/cpp8
+CURDIR := /home/artclave/Desktop/cpp/cpp8
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
@@ -93,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1470788
+VSCODE_PID = 1665420
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_KQCkZz
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_3UznY3
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t2c1.42bangkok.com:@/tmp/.ICE-unix/1467632,unix/z1t2c1.42bangkok.com:/tmp/.ICE-unix/1467632
+SESSION_MANAGER = local/z1t1c2.42bangkok.com:@/tmp/.ICE-unix/1662338,unix/z1t1c2.42bangkok.com:/tmp/.ICE-unix/1662338
 # automatic
 *F = $(notdir $*)
 # environment
@@ -143,7 +141,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 3e766efddce64603ae3b2696de9d0ef2
+INVOCATION_ID = 4425a293be9e4b1d88f26d39ed4f7299
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -171,7 +169,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1467656
+SYSTEMD_EXEC_PID = 1662362
 # environment
 DISPLAY = :0
 # environment
@@ -181,13 +179,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1466851
+MANAGERPID = 1661518
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1470788
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1665420
 # environment
 _ = /usr/share/code/code
 # environment
@@ -197,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:9003518
+JOURNAL_STREAM = 8:25741091
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -233,7 +231,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=110/1024=11%, Rehash=0, Collisions=4/137=3%
+# Load=109/1024=11%, Rehash=0, Collisions=3/136=2%
 
 # Pattern-specific Variable Values
 
@@ -241,9 +239,9 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 2064, inode 20972224): 7 files, no impossibilities.
+# . (device 2064, inode 23454): 6 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,12 +279,12 @@ makefile:
 # Not a target:
 GNUmakefile:
 #  Implicit rule search has been done.
- 
 #  File does not exist.
 #  File has been updated.
 #  Failed to be updated.
 
 # files hash-table stats:
+ 
 # Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
@@ -294,12 +292,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 15 / storage = 122 B / avg = 8 B
-# current buf: size = 8162 B / used = 122 B / count = 15 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 14 / storage = 113 B / avg = 8 B
+# current buf: size = 8162 B / used = 113 B / count = 14 / avg = 8 B
 
-# strcache performance: lookups = 18 / hit rate = 16%
+# strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
-# Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Sat Jul 20 02:44:32 2024
+# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
+# Finished Make data base on Wed Jul 31 19:42:57 2024
 
  

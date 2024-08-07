@@ -3,78 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 15:29:11 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:56:44 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 19:37:42 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/07 21:31:12 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-Form::Form() : name("default"), signGrade(1), execGrade(1){
-	std::cout<<"Form default constructor called\n";
-	isSigned = false;
-}
 
-Form::Form(const std::string name_param) : name(name_param), signGrade(1), execGrade(1) {
-	std::cout<<"Constructor with paremeters called for form "<<name<<"\n";
-	if (execGrade < 1)
+//ORTHODOX:
+Form::Form(std::string const &name, const int sign, const int exec): _name(name),
+																	_is_signed(false),
+																	_required_grade_sign(sign),
+																	_required_grade_execute(exec)
+{
+	if (_required_grade_execute < 1 || _required_grade_sign < 1)
 		throw GradeTooHighException();
-	if (execGrade > 150)
+	if (_required_grade_execute > 150 || _required_grade_sign > 150)
 		throw GradeTooLowException();
-	isSigned = false;
+	std::cout<<"Constructor called for: "<<*this;
 }
 
-Form::Form(Form const &original) : name(original.name), signGrade(original.signGrade), execGrade(original.execGrade){
-	std::cout<<"Form copy constructor called\n";
-	isSigned = original.isSigned;
+Form::Form(Form const &og) : _name(og.getName()),
+							_is_signed(false),
+							_required_grade_sign(og.getRequiredGradeSign()),
+							_required_grade_execute(og.getRequiredGradeExecute())
+{
+	std::cout<<"Copy constructor called for: "<<*this;
 }
 
-Form	&Form::operator=(Form const &original) {
-	std::cout<<"Form copy assignment operator called\n";
-	isSigned = original.isSigned;
+Form	&Form::operator=(Form const &og){
+	_is_signed = og.getIsSigned();
+	std::cout<<"Copy assignment operator called for: "<<*this;
 	return *this;
 }
 
 Form::~Form(){
-	std::cout<<"Destructor called for form "<<name<<std::endl;
+	std::cout<<"Destructor called for: "<<*this;
 }
 
-std::string	Form::getName(){
-	return name;
+//GETTERS:
+
+std::string	Form::getName() const{
+	return _name;
 }
 
-int	Form::getSignGrade(){
-	return signGrade;
+bool		Form::getIsSigned() const{
+	return _is_signed;
 }
 
-int	Form::getExecGrade(){
-	return execGrade;
+int			Form::getRequiredGradeSign() const{
+	return _required_grade_sign;
 }
 
-int	Form::getIsSigned() {
-	return isSigned;
+int			Form::getRequiredGradeExecute() const{
+	return _required_grade_execute;
 }
 
-void	Form::beSigned(Bureaucrat &bur) {
-	std::cout<<"Bureaucrat "<<bur.getName()<<" with grade "<<bur.getGrade()<<" wants to sign form "<<name<<"\n";
-	if (bur.getGrade() > signGrade)
+
+//OTHER
+void		Form::beSigned(Bureaucrat const & bur){
+	if (bur.getGrade() > _required_grade_sign)
+	{
+		bur.signForm(*this);
 		throw GradeTooLowException();
-	isSigned = true;	
-	std::cout<<"Form "<<name<<" was signed by "<<bur.getName()<<"\n";
+	}
+	_is_signed = true;
+	bur.signForm(*this);
 }
 
-void	Form::signForm(Bureaucrat &bur) {
-	if (isSigned)
-		std::cout<<"Bureaucrat "<<bur.getName()<<" signed form "<<name<<std::endl;
-	else if (bur.getGrade() > signGrade)
-		std::cout<<"Bureaucrat "<<bur.getName()<<" couldn't sign form "<<name<<" because their grade is too low\n";
+//PRINT
+
+std::ostream	&operator<<(std::ostream &out, Form const &form){
+	out<<"Form "<<form.getName()<<", ";
+	if (form.getIsSigned() == true)
+		out<<"(signed), ";
 	else
-		std::cout<<"Bureaucrat "<<bur.getName()<<" couldn't sign form "<<name<<" because they are incompetent\n";
+		out<<"(NOT signed), ";
+	out<<"required grade for signing ["<<form.getRequiredGradeSign()<<"] and for executing ["<<form.getRequiredGradeExecute()<<"]\n";
+	return out;
 }
-
-std::ostream	&operator<<(std::ostream &cout_param, Form &form){
-	std::cout<<form.getName()<<", signed: "<<form.getIsSigned()<< ", required grade for signing: "<<form.getSignGrade()<<", required grade for executing: "<<form.getExecGrade()<<std::endl;
-	return (cout_param);
-};

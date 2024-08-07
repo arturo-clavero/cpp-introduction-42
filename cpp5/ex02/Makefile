@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
+#    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/04 04:23:41 by arturo           ###   ########.fr        #
+#    Updated: 2024/08/08 02:43:10 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ OBJDIR = $(BINDIR)/obj
 SRCS = $(SRCDIR)/main.cpp \
        $(SRCDIR)/Bureaucrat.cpp \
 	   $(SRCDIR)/AForm.cpp \
-	   $(SRCDIR)/Form.cpp \
 	   $(SRCDIR)/ShrubberyCreationForm.cpp \
 	   $(SRCDIR)/RobotomyRequestForm.cpp \
 	   $(SRCDIR)/PresidentialPardonForm.cpp \
@@ -30,7 +29,6 @@ OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 HEADERS = $(INCDIR)/Bureaucrat.hpp \
 		  $(INCDIR)/AForm.hpp \
-		  $(INCDIR)/Form.hpp \
 	      $(INCDIR)/ShrubberyCreationForm.hpp \
 		  $(INCDIR)/RobotomyRequestForm.hpp \
 		  $(INCDIR)/PresidentialPardonForm.hpp \

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
+#    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/03 18:54:02 by arturo           ###   ########.fr        #
+#    Updated: 2024/08/07 19:16:29 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 HEADERS = $(INCDIR)/Bureaucrat.hpp \
 
-EXEC = executable
+EXEC = Bureaucrat
 
 all: $(EXEC)
 

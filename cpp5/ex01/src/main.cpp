@@ -3,106 +3,79 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 15:05:22 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 16:43:37 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 20:16:36 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/07 21:37:39 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-void	testDefaultConstructor()
-{
-	std::cout<<"\nTEST DEFAULT CONSTRUCTOR:\n";
-	Form	form;
-}
-
-void	testConstructor()
-{
-	std::cout<<"\nTEST CONSTRUCTOR WITH PARAMS:\n";
-	Form	form("new form");
-	std::cout<<form<<"\n";
-}
-
-void	testCopyConstructor()
-{
-	std::cout<<"\nTEST COPY CONSTRUCTOR:\n";
-	Form form1("one");
-	Form form2(form1);
-	std::cout<<form1<<"\n";
-	std::cout<<form2<<"\n";
-}
-
-void	testCopyAssignmentOperator()
-{
-	std::cout<<"\nTEST COPY ASSIGNMENT OPERATOR:\n";
-	Form form1("one");
-	Form form2("two");
-	std::cout<<form1<<"\n";
-	std::cout<<form2<<"\n";
-	form2 = form1;
-	std::cout<<form1<<"\n";
-	std::cout<<form2<<"\n";
-}
-
-void	testOrthodox()
-{
-	testDefaultConstructor();
-	testConstructor();
-	testCopyConstructor();
-	testCopyAssignmentOperator();
-}
-
-void	testGetters()
-{
-	std::cout<<"\nTEST GETTERS\n";
-	Form form("one");
-	std::cout<<form<<"\n";
-	std::cout<<"getExecGrade()= "<<form.getExecGrade()<<"\n";
-	std::cout<<"getIsSigned()= "<<form.getIsSigned()<<"\n";
-	std::cout<<"getName()= "<<form.getName()<<"\n";
-	std::cout<<"getSignGrade()= "<<form.getSignGrade()<<"\n";
-}
-
-void	testBeSigned()
-{
-	std::cout<<"\nTEST BE SIGNED FT\n";
-	Bureaucrat bur("Mr.Bur", 1);
-	Form form("one");
-	Form form2("two");
-	try{
-		form.beSigned(bur);
-		bur.decreaseGrade(1);
-		form2.beSigned(bur);
-	}catch(std::exception &e){
-		std::cout<<"Error: "<<e.what()<<"\n";
+void	test_construction_grade_too_high(){
+	std::cout<<"\nCONSTRUCT TOO HIGH:\n";
+	try {
+		Form	form1("(A)", 20, 10);
+		Form	form2("(B)", 0, 10);
+		std::cout<<"This will only print if both forms have correct grades...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
+	}
+	std::cout<<"\n";
+	try {
+		Form	form1("(C)", 20, 10);
+		Form	form2("(D)", 20, 0);
+		std::cout<<"This will only print if both forms have correct grades...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
 	}
 }
 
-void	testSignForm()
-{
-	std::cout<<"\nTEST SIGN FORM FT\n";
-	Bureaucrat bur("Mr.Bur", 1);
-	Form form("one");
-	Form form2("two");
-	std::cout<<"\n";
-	try{
-		form.signForm(bur);
-		form.beSigned(bur);
-		form.signForm(bur);
-		bur.decreaseGrade(1);
-		form2.signForm(bur);
-	}catch(std::exception &e){
-		std::cout<<"Error: "<<e.what()<<"\n";
+void	test_construction_grade_too_low(){
+	std::cout<<"\nCONSTRUCT TOO LOW:\n";
+	try {
+		Form	form1("(A)", 20, 10);
+		Form	form2("(B)", 151, 10);
+		std::cout<<"This will only print if both forms have correct grades...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
 	}
 	std::cout<<"\n";
+	try {
+		Form	form1("(C)", 20, 10);
+		Form	form2("(D)", 20, 151);
+		std::cout<<"This will only print if both forms have correct grades...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
+	}
 }
 
-int	main(void)
-{
-	testOrthodox();
-	testGetters();
-	testBeSigned();
-	testSignForm();
+void	test_sign_form(){
+	std::cout<<"\nSIGN::\n";
+	try {
+		Form		form("(A)", 20, 10);
+		Bureaucrat	ana("Ana", 20);
+		Bureaucrat	tom("Tom", 21);
+		ana.signForm(form);
+		form.beSigned(ana);
+		//ana.signForm(form);
+		form.beSigned(tom);
+		//tom.signForm(form);
+		std::cout<<"This will only print if both bureaucrats have correct grades...\n";
+	}
+	catch (std::exception &e){
+		std::cout<<e.what();
+	}
+
+}
+
+int	main(void){
+	test_construction_grade_too_high();
+	test_construction_grade_too_low();
+	test_sign_form();
 }

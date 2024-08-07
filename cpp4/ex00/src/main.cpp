@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:15:02 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/03 14:52:27 by arturo           ###   ########.fr       */
+/*   Updated: 2024/07/29 18:37:38 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void	subjectTest()
 	const Animal* meta = new Animal("Animal hehe");
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const WrongAnimal* wrongAnimal = new WrongAnimal("error animal");
+	//const WrongAnimal* wrongAnimal = new WrongAnimal("error animal");
 	const WrongAnimal* wrongCat = new WrongCat();
 
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	std::cout << wrongAnimal->getType() << " " << std::endl;
+	//std::cout << wrongAnimal->getType() << " " << std::endl;
 	std::cout << wrongCat->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!*/
 	j->makeSound();	
 	meta->makeSound();
-	wrongAnimal->makeSound();
+	//wrongAnimal->makeSound();
 	wrongCat->makeSound();
 	delete meta;
 	delete j;
 	delete i;	
-	delete wrongAnimal;
+	//delete wrongAnimal;
 	delete wrongCat;
 }
 
@@ -232,7 +232,7 @@ void	checkDerivedClass()
 	derivedCopyAssignmentOperator();
 	derivedCopyAssignmentOperatorHeap();
 }
-
+/*
 void	checkVirtualFts()
 {
 	std::cout<<"Our base and derived classes all have a member function 'makeSound'\n";
@@ -252,22 +252,23 @@ void	checkVirtualFts()
 	std::cout<<"\n\t 1. Creating an object 'wrongBase' from base class WrongAnimal:\n";
 	WrongAnimal	wrongBase("snake");
 	std::cout<<"\n\t 1. Creating an object 'wrongDerivedCat' from derived class WrongCat:\n";
-	WrongAnimal *wrongDerivedCat = new WrongCat();
+	WrongCat wrongDerivedCat();
 	std::cout<<"\n\t 2. Lets call makeSound of wrongBase, wrongDerivedCat:\n";
 	wrongBase.makeSound();
-	wrongDerivedCat->makeSound();
+	wrongDerivedCat.makeSound();
 	std::cout<<"\n Look at that, we have the same output, the wrongDerivedCat is calling its base class function instead of its own\nWhen a base class function is virtual, it will allow derived class's implementations of the same function to be called otherwise we get this wrong behavior like here\n";
 	std::cout<<"\n Note that this only happens when creating instances of non abstract base classes pointing to a derived class. Virtual fts are not needed for an instance of a derived class to call its own member function.\n\n Now all derived objects will be explicitely destroyed...\n\n";
 	delete derivedCat;
 	delete derivedDog;
-	delete wrongDerivedCat;
+	//delete wrongDerivedCat;
 	std::cout<<"\n Now all base objects will be autoamtically destroyed...\n\n";
 }
 	
+	*/
 int main()
 {
-	checkBaseClass();
-	checkDerivedClass();
-	checkVirtualFts();
+	//checkBaseClass();
+	//checkDerivedClass();
+	//checkVirtualFts();
 	subjectTest();
 }

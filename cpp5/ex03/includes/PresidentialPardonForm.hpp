@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 02:20:58 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 04:23:12 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 21:46:35 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 00:24:43 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
-#include "Form.hpp"
 
-class  PresidentialPardonForm : public AForm, public Form{
-	
+class PresidentialPardonForm : public AForm{
 	private:
-		std::string	const	name;
-		std::string			target;
-		bool				isSigned;
-		int	const			signGrade;
-		int	const			execGrade;
+		std::string			_target;
+		int	const			_required_grade_sign;
+		int	const			_required_grade_execute;
 	public:
-		PresidentialPardonForm();
+	//orthodox
 		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(const PresidentialPardonForm &original);
-		PresidentialPardonForm	&operator=(const PresidentialPardonForm &original);
+		PresidentialPardonForm(PresidentialPardonForm const & og);
+		PresidentialPardonForm	&operator=(PresidentialPardonForm const & og);
 		~PresidentialPardonForm();
-		void	performTask() const;
+	//getters
+		std::string getTarget() const;
+		int			getRequiredGradeSign() const;
+		int			getRequiredGradeExecute() const;
+	//other
+		void	form_action() const;
 };
+
+std::ostream	&operator<<(std::ostream &out, PresidentialPardonForm const & form);
 
 #endif

@@ -3,50 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 16:49:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/04 02:00:44 by arturo           ###   ########.fr       */
+/*   Created: 2024/08/07 19:37:40 by artclave          #+#    #+#             */
+/*   Updated: 2024/08/08 02:12:04 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-# define AFORM_HPP
+#ifndef	AFORM_HPP
+#define AFORM_HPP
 
-#include "Bureaucrat.hpp"
+#include <iostream>
+class Bureaucrat;
 
 class	AForm{
 	private:
-		std::string	const	name;
-		bool				isSigned;
-		int	const			signGrade;
-		int	const			execGrade;
+		std::string	const	_name;
+		bool				_is_signed;
+		int	const			_required_grade_sign;
+		int	const			_required_grade_execute;
 	public:
+	//orthodox
+		AForm(std::string const &name, const int sign, const int exec);
+		AForm(AForm const & og);
+		AForm	&operator=(AForm const & og);
+		virtual ~AForm() = 0;
+	//getter
+		std::string	getName() const;
+		bool		getIsSigned() const;
+		int			getRequiredGradeSign() const;
+		int			getRequiredGradeExecute() const;
+	//other
+		void			beSigned(Bureaucrat const & bur);
+		void			execute(Bureaucrat const & executor) const;
+		virtual void	form_action() const = 0;
+	//exceptions
 		class	GradeTooHighException : public std::exception{
 			const char *what() const throw(){
-				return "Error: Grade too high\n";
+				return "Grade too high\n";
 			}
 		};
 		class	GradeTooLowException : public std::exception{
 			const char *what() const throw(){
-				return "Error: Grade too low\n";
+				return "Grade too low\n";
 			}
 		};
-		AForm();
-		AForm(const std::string name_param, int signGrade_param, int execGrade_param);
-		AForm(AForm const &original);
-		AForm	&operator=(AForm const &original);
-		~AForm();
-		std::string	getName() const;
-		int	getSignGrade() const;
-		int	getExecGrade() const;
-		int	getIsSigned() const;
-		void	beSigned(Bureaucrat &bur);
-		void	signForm(Bureaucrat &bur);
-		virtual void performTask() const = 0;
-		void	execute(Bureaucrat const & executor) const;
+		class	FormNotSignedException : public std::exception{
+			const char *what() const throw(){
+				return "Form not signed\n";
+			}
+		};
 };
 
-std::ostream	&operator<<(std::ostream &cout_param, AForm &form);
+std::ostream	&operator<<(std::ostream &out, AForm const &form);
 
 #endif
