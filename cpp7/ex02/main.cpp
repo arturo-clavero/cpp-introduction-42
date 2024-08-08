@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 18:19:26 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/08 18:57:52 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/08 17:38:38 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 template<typename T>
 void	test(std::string type){
 	std::cout<<"TEST OF DATA TYPE:"<<type<<"\n\n";
-	std::cout<<"Testing default constructor\n";
-	Array<T> b;	
-	std::cout<<"\nCreating array of 5"<<type<<"\n";
 	Array<T> a(5);
 	for (int i = 0; i < 5; i++){
 		a[i] = static_cast<T>(i) + static_cast<T>(70.5);
@@ -26,19 +23,6 @@ void	test(std::string type){
 	std::cout<<"Printing original array:\n";
 	for (int i = 0; i < 5; i++){
 		std::cout<<a[i]<<"\n";
-	}
-	std::cout<<"\nTesting copy constructor\n";
-	Array<T> c(a);
-	std::cout<<"Printing copied array:\n";
-	for (int i = 0; i < 5; i++){
-		std::cout<<c[i]<<"\n";
-	}
-	std::cout<<"\nTesting copy assignment operator\n";
-	Array<T> d;
-	d = a;
-	std::cout<<"Printing copied array:\n";
-	for (int i = 0; i < 5; i++){
-		std::cout<<d[i]<<"\n";
 	}
 	std::cout<<"\nTesting to access array out of bounds..\n";
 	try {

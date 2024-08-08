@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/08/08 17:36:32 by artclave         ###   ########.fr        #
+#    Updated: 2024/08/08 17:42:22 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = main.cpp \
 	   
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
-HEADERS = Array.hpp\
+HEADERS = iter.hpp\
 
 EXEC = executable
 
