@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  5 18:31:01 2024
+# Make data base, printed on Thu Aug  8 15:27:05 2024
 
 # Variables
 
@@ -30,8 +30,6 @@ VSCODE_CWD = /home/artclave/Desktop/cpp/cpp6
 LC_ADDRESS = en_US.UTF-8
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
-# environment
-GDM_LANG = en
 # default
 MAKE_COMMAND := make
 # environment
@@ -49,7 +47,7 @@ PWD = /home/artclave/Desktop/cpp/cpp6
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/artclave/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/artclave/Desktop/cpp
+OLDPWD = /home/artclave/Desktop/cpp/cpp6/ex00
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -67,7 +65,7 @@ XAUTHORITY = /home/artclave/.Xauthority
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.99
+GNOME_TERMINAL_SERVICE = :1.86
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -93,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1411714
+VSCODE_PID = 733441
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_zuTvBC
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_8uVhyo
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z2t17c1.42bangkok.com:@/tmp/.ICE-unix/1405761,unix/z2t17c1.42bangkok.com:/tmp/.ICE-unix/1405761
+SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/730240,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/730240
 # automatic
 *F = $(notdir $*)
 # environment
@@ -125,7 +123,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7e299139_a37e_434c_9c9d_e18d6342767c
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/4ee450fd_b9d2_41e4_8994_0be62efed7ec
 # environment
 MAKELEVEL := 0
 # default
@@ -167,7 +165,7 @@ LOGNAME = artclave
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1405785
+SYSTEMD_EXEC_PID = 730269
 # environment
 DISPLAY = :0
 # environment
@@ -216,7 +214,6 @@ IM_CONFIG_PHASE = 1
 SUFFIXES := 
 # environment
 VSCODE_CLI = 1
- 
 # environment
 FT_HOOK_NAME = login-user
 # environment
@@ -234,7 +231,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=110/1024=11%, Rehash=0, Collisions=12/137=9%
+# Load=109/1024=11%, Rehash=0, Collisions=11/136=8%
 
 # Pattern-specific Variable Values
 
@@ -299,7 +296,8 @@ GNUmakefile:
 
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
+ 
 # Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Mon Aug  5 18:31:01 2024
+# Finished Make data base on Thu Aug  8 15:27:05 2024
 
  

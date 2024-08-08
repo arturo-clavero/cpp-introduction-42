@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 06:28:13 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 18:59:54 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/08 15:27:49 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ScalarConverter{
 		~ScalarConverter();
 
 	public:
-		static void convert(std::string input);
+		static void convert(std::string const input);
 };
 
 #endif

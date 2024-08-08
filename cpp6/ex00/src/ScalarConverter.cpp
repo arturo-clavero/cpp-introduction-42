@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 06:27:53 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/05 18:25:57 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/08 15:28:05 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ bool	isChar(std::string str){
 	return false;
 }
 
-void	ScalarConverter::convert(std::string input) {
+void	ScalarConverter::convert(std::string const input) {
 	if (isInt(input) || isDouble(input) || isFloat(input) || isChar(input))
 		return ;
 	std::cout<<"Sorry, conversion is not possible\n Input is neither a char, nor an int, nor a double or a float\n";
