@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 10:46:03 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/20 01:47:12 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/09 04:12:48 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,52 +28,23 @@ class	MutantStack : public std::stack<T, Container>{
 		
 	public:
 	typedef typename Container::iterator iterator;
-		MutantStack(){
-			std::cout<<"Default constructor called for mutantstack\n";
-		}
-		MutantStack(MutantStack const &original){
-			std::cout<<"Copy constructor called\n";
-			container = original.container;
-		}
-		MutantStack	&operator=(MutantStack const &original){
-			std::cout<<"Copy assignment operator called for mutantstack\n";
-			container = original.container;
-			return *this;
-		}
-		~MutantStack(){
-			std::cout<<"Destructor called for mutantstack\n";
-		}
+		MutantStack();
+		MutantStack(MutantStack const &original);
+		MutantStack	&operator=(MutantStack const &original);
+		~MutantStack();
 	//MEMBER FTS
-		int	empty(){
-			return (container.empty());
-		}
-		size_type	size(){
-			return (container.size());
-		}
-		value_type	top(){
-			return (container.back());
-		}
-		void	push(value_type value){
-			container.push_back(value);
-		}
-		void	emplace(value_type value){
-			container.emplace_back(value);
-		}
-		void	pop(){
-			container.pop_back();
-		}
-		void	swap(MutantStack &other){
-			container.swap(other);
-		}
-		iterator begin(){
-			return container.begin();
-		}
-		iterator end(){
-			return container.end();
-		}
-		operator std::stack<T, Container>() const {
-        	return static_cast<std::stack<T, Container> >(*this);
-    	}
+		int	empty() const;
+		size_type	size() const;
+		value_type	top() const;
+		void	push(value_type const & value);
+		void	emplace(value_type const & value);
+		void	pop();
+		void	swap(MutantStack const &other);
+		iterator begin();
+		iterator end();
+		operator std::stack<T, Container>() const;
 };
+
+#include "MutantStack.tpp"
 
 #endif

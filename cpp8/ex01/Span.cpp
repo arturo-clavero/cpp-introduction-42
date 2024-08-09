@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:16:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 20:15:47 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/09 03:45:46 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ Span::~Span(){
 }
 
 //MEMBER FT:
-void	Span::addNumber(int num){
+void	Span::addNumber(int const num){
 	if (array.size() < N)
 		array.push_back(num);
 	else
 		throw std::out_of_range("Could not add element, array is already full\n");
 }
 
-int	Span::shortestSpan(){
+int	Span::shortestSpan() const{
 	if (array.empty())
 		throw std::out_of_range("Array is empty\n");
 	if (array.size() == 1)
@@ -63,7 +63,7 @@ int	Span::shortestSpan(){
 	return min;
 }
 
-int	Span::longestSpan(){
+int	Span::longestSpan() const{
 	if (array.empty())
 		throw std::out_of_range("Array is empty\n");
 	if (array.size() == 1)
@@ -79,20 +79,26 @@ int	Span::longestSpan(){
 	return abs(min - max);
 }
 
-void	Span::addArrayOfNums(int *numArray, int totalNums){
+void	Span::addArrayOfNums(int const *numArray, int const totalNums){
     std::copy(numArray, numArray + totalNums, std::back_inserter(array));
 }
 
 //TEST FT
-void	Span::getSize(std::string name){
+void	Span::getSize(std::string const &name) const{
 	std::cout<<"Capacity.() of "<<name<<" is "<<array.capacity()<<"\n";
 }
 
-void	Span::print(std::string name){
-	std::cout<<"Elements of "<<name<<"\n";
+std::vector<int>	Span::getArray()const{
+	return array;
+}
+
+std::ostream	&operator<<(std::ostream & out, Span const & span){
+	out<<"Elements of span:\n";
+	std::vector<int> array = span.getArray();
 	if (array.empty())
 		throw std::out_of_range("Empty array\n");
 	for (size_t i = 0; i < array.size(); i++)
-		std::cout<<array[i]<<" ";
-	std::cout<<"\n";
+		out<<array[i]<<" ";
+	out<<"\n";
+	return out;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 18:33:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/12 20:16:12 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/09 03:44:42 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,20 @@ class Span{
 	//ORTHODOX:
 		Span();
 		Span(unsigned int N);
-		Span(const Span &original);
-		Span	&operator=(const Span &original);
+		Span(Span const &original);
+		Span	&operator=(Span const &original);
 		~Span();
 	//MEMBER FT:
-	void	addNumber(int num);
-	int	longestSpan();
-	int	shortestSpan();
-	void	addArrayOfNums(int *numArray, int totalNums);
+		void	addNumber(int const num);
+		int		longestSpan() const;
+		int		shortestSpan() const;
+		void	addArrayOfNums(int const *numArray, int const totalNums);
 	//TEST FT:
-	void	getSize(std::string name = "Span");
-	void	print(std::string name = "Span");
-	
+		void	getSize(std::string const & name = "Span") const;
+		std::vector<int>	getArray()const;
 };
+
+std::ostream	&operator<<(std::ostream & out, Span const & span);
 
 
 #endif

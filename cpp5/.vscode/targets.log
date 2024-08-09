@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug  7 18:00:58 2024
+# Make data base, printed on Fri Aug  9 03:49:17 2024
 
 # Variables
 
@@ -14,6 +16,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
@@ -25,7 +29,7 @@ LC_NUMERIC = en_US.UTF-8
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
-VSCODE_CWD = /home/artclave
+VSCODE_CWD = /home/artclave/Desktop/cpp/cpp5
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
@@ -47,7 +51,7 @@ PWD = /home/artclave/Desktop/cpp/cpp5
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/artclave/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/artclave
+OLDPWD = /home/artclave/Desktop/cpp
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -64,6 +68,8 @@ XAUTHORITY = /home/artclave/.Xauthority
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+GNOME_TERMINAL_SERVICE = :1.215
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -89,15 +95,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 198786
+VSCODE_PID = 943566
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_NWLulX
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_JxTEAG
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/192445,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/192445
+SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/906079,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/906079
 # automatic
 *F = $(notdir $*)
 # environment
@@ -123,6 +129,8 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
 SHLVL = 1
 # environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/18b45adb_fc7c_464c_82d0_13237dd3504b
+# environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
@@ -139,7 +147,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 9daff77a188b4222b6972c96943a8c2f
+INVOCATION_ID = ef952167f47d4a2c885427ec25dac080
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -167,7 +175,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 192468
+SYSTEMD_EXEC_PID = 906103
 # environment
 DISPLAY = :0
 # environment
@@ -177,15 +185,15 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 191659
+MANAGERPID = 905270
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 198786
+GIO_LAUNCHED_DESKTOP_FILE_PID = 943566
 # environment
-_ = /usr/share/code/code
+_ = /usr/bin/code
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
@@ -193,7 +201,9 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:22429747
+COLORTERM = truecolor
+# environment
+JOURNAL_STREAM = 8:23811247
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -207,6 +217,8 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/103610/vscode-e449c818-1.90-main.sock
 # environment
+TERM = xterm-256color
+# environment
 FT_HOOK_PATHNAME = login-user.d
 # environment
 IM_CONFIG_PHASE = 1
@@ -217,7 +229,13 @@ IM_CONFIG_PHASE = 1
 # default
 SUFFIXES := 
 # environment
+VSCODE_CLI = 1
+# environment
 FT_HOOK_NAME = login-user
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6800
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/artclave
 # default
@@ -229,7 +247,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=3/136=2%
+# Load=117/1024=11%, Rehash=0, Collisions=11/144=8%
 
 # Pattern-specific Variable Values
 
@@ -294,9 +312,8 @@ GNUmakefile:
 
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
+ 
 # Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Wed Aug  7 18:00:58 2024
+# Finished Make data base on Fri Aug  9 03:49:18 2024
 
  
-make: *** No rule to make target 'all'.  Stop.
-

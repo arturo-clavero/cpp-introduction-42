@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 31 19:42:57 2024
+# Make data base, printed on Fri Aug  9 03:16:38 2024
 
 # Variables
 
@@ -91,15 +89,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1665420
+VSCODE_PID = 943566
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_3UznY3
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_JxTEAG
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t1c2.42bangkok.com:@/tmp/.ICE-unix/1662338,unix/z1t1c2.42bangkok.com:/tmp/.ICE-unix/1662338
+SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/906079,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/906079
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +139,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 4425a293be9e4b1d88f26d39ed4f7299
+INVOCATION_ID = ef952167f47d4a2c885427ec25dac080
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -169,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1662362
+SYSTEMD_EXEC_PID = 906103
 # environment
 DISPLAY = :0
 # environment
@@ -179,13 +177,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1661518
+MANAGERPID = 905270
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1665420
+GIO_LAUNCHED_DESKTOP_FILE_PID = 943566
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +193,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:25741091
+JOURNAL_STREAM = 8:23811247
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -281,10 +279,12 @@ GNUmakefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  Failed to be updated.
 
 # files hash-table stats:
- 
 # Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
@@ -298,6 +298,6 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Wed Jul 31 19:42:57 2024
+# Finished Make data base on Fri Aug  9 03:16:38 2024
 
  

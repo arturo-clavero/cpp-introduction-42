@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arturo <arturo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:29:26 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/11 18:29:50 by arturo           ###   ########.fr       */
+/*   Updated: 2024/08/09 03:32:32 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,15 @@ void	test(T &numbers, int toFind, std::string test){
 	}
 }
 
-void	testingVectors(){
-	std::vector<int> contVector(4, 10);
-	test(contVector, 1, "\nTesting invalid element with vector container:\n");
-	test(contVector, 10, "\nTesting valid element with vector container:\n");
-}
-
-void	testingDeques(){
-	std::deque<int> contDeque(4, 10);
-	test(contDeque, 1, "\nTesting invalid element with deque container:\n");
-	test(contDeque, 10, "\nTesting valid element with deque container:\n");
-}
-
-void	testingLists(){
-	std::list<int> contList(4, 10);
-	test(contList, 1, "\nTesting invalid element with list container:\n");
-	test(contList, 10, "\nTesting valid element with list container:\n");
+template<typename T>
+void	createContainer(){
+	T cont(4, 10);
+	test<T>(cont, 1, "\nTesting invalid element:\n");
+	test<T>(cont, 10, "\nTesting valid element:\n");
 }
 
 int	main(void){
-	testingVectors();
-	testingDeques();
-	testingLists();	
+	createContainer<std::vector<int> >();
+	createContainer<std::deque<int> >();
+	createContainer<std::list<int> >();
 }

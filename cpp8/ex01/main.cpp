@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:20:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/07/31 18:36:41 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/09 03:51:21 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	testCopyConstructor(){
 	for(int i = 0; i < max; i++)
 		span1.addNumber(i);
 	span1.getSize("Span 1");
-	span1.print("Span 1");
+	std::cout<<span1;
 	Span span2(span1);
 	span2.getSize("Span 2");
-	span2.print("Span 2");
+	std::cout<<span1;
 }
 
 void	testCopyOp(){
@@ -50,24 +50,24 @@ void	testCopyOp(){
 	Span span1(max);
 	for(int i = 0; i < max; i++)
 		span1.addNumber(i);
-	span1.getSize("Span 2");
-	span1.print("Span 1");
+	span1.getSize("Span 1");
+	std::cout<<span1;
 	Span span2(1);
 	span2.addNumber(5);
 	span2.getSize("Span 2");
-	span2.print("Span 2");
+	std::cout<<span2;
 	span2 = span1;
 	span2.getSize("Span 2");
-	span2.print("Span 2");
+	std::cout<<span2;
 	Span span3(5);
 	for (int i = 0; i < 5; i++){
 		span3.addNumber(i + 10);
 	}
 	span3.getSize("span 3");
-	span3.print("span 3");
+	std::cout<<span3;
 	span3 = span2;
 	span3.getSize("span 3");
-	span3.print("span 3");
+	std::cout<<span3;
 }
 
 void	invalidMaxDist(){
@@ -124,7 +124,7 @@ void	testThousands(int thousand){
 	for (int i = 0; i < N; i++){
 		span.addNumber(std::rand());
 	}
-	span.print();
+	std::cout<<span;
 	std::cout<<"Shortest span: "<<span.shortestSpan()<<std::endl;
 	std::cout<<"Longest span: "<<span.longestSpan()<<std::endl;
 }
@@ -132,13 +132,13 @@ void	testThousands(int thousand){
 void	manyNumsInOneGo(){
 	Span span(10);
 	span.addNumber(9);
-	span.print("span");
+	std::cout<<span;
 	int array[] = {1, 3, 5, 7};
 	span.addArrayOfNums(array, 4);
-	span.print("span");
+	std::cout<<span;
 	int array2[3] = {11, 33, 55};
 	span.addArrayOfNums(array2, 3);
-	span.print();
+	std::cout<<span;
 }
 
 int	main(void){
