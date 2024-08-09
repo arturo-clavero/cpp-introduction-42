@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 17:23:15 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/08 17:39:13 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/09 22:10:13 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Array<T>::Array(){
 }
 
 template<typename T>
-Array<T>::Array(unsigned int n){
+Array<T>::Array(unsigned int const n){
 	std::cout<<"Constructor called for class 'Array' with size "<<n<<"\n";
 	len = n;
 	array = new T[len];
