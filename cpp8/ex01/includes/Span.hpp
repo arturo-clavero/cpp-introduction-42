@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 18:33:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/09 03:44:42 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/11 00:48:16 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 class Span{
 	private:
-		unsigned int N;
-		std::vector<int> array;
+		unsigned int 		_N;
+		std::vector<int> 	_array;
 	public:
 	//ORTHODOX:
 		Span();
@@ -30,13 +30,16 @@ class Span{
 		Span	&operator=(Span const &original);
 		~Span();
 	//MEMBER FT:
-		void	addNumber(int const num);
 		int		longestSpan() const;
 		int		shortestSpan() const;
-		void	addArrayOfNums(int const *numArray, int const totalNums);
-	//TEST FT:
-		void	getSize(std::string const & name = "Span") const;
+		void	addNumber(int const num);
+		void	addManyNums(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	//GETTERS:
+		void				getSize(std::string const & name = "Span") const;
 		std::vector<int>	getArray()const;
+	//ITERATORS
+		std::vector<int>::iterator	begin();
+		std::vector<int>::iterator	end();
 };
 
 std::ostream	&operator<<(std::ostream & out, Span const & span);

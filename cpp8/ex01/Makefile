@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arturo <arturo@student.42.fr>              +#+  +:+       +#+         #
+#    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/12 17:25:40 by arturo           ###   ########.fr        #
+#    Updated: 2024/08/10 20:19:14 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,9 @@ OBJDIR = $(BINDIR)/obj
 
 
 SRCS = main.cpp \
-		Span.cpp \
-	   
-OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
+		Span.cpp
 
-HEADERS = Span.hpp\
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 EXEC = executable
 
@@ -32,9 +30,8 @@ all: $(EXEC)
 $(EXEC): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERS) | $(OBJDIR)
-	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -MP -c $< -o $@
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
@@ -52,5 +49,7 @@ run: all
 	./$(EXEC)
 	
 re: fclean all
+
+-include $(OBJS:.o=.d)
 
 .PHONY: all clean fclean re

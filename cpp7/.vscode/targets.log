@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug  9 22:09:58 2024
+# Make data base, printed on Sat Aug 10 17:56:22 2024
 
 # Variables
 
@@ -19,13 +19,15 @@ LC_ALL = C
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
 LC_NAME = en_US.UTF-8
 # environment
 LC_NUMERIC = en_US.UTF-8
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
-VSCODE_CWD = /home/artclave/Desktop/cpp/cpp7
+VSCODE_CWD = /home/artclave
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
@@ -47,7 +49,7 @@ PWD = /home/artclave/Desktop/cpp/cpp7
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/artclave/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/artclave/Desktop/cpp
+OLDPWD = /home/artclave
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -55,7 +57,7 @@ OLDPWD = /home/artclave/Desktop/cpp
 # environment
 VSCODE_CODE_CACHE_PATH = /home/artclave/.config/Code/CachedData/5437499feb04f7a586f677b155b039bc2b3669eb
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
 LANG = C
 # environment
@@ -64,14 +66,12 @@ XAUTHORITY = /home/artclave/.Xauthority
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.101
 # makefile
 MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/artclave/Desktop/cpp/cpp7
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1105152
+VSCODE_PID = 1230602
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_Pho7Uo
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_DxbUkB
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/1101155,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/1101155
+SESSION_MANAGER = local/z1t1c1.42bangkok.com:@/tmp/.ICE-unix/1228656,unix/z1t1c1.42bangkok.com:/tmp/.ICE-unix/1228656
 # automatic
 *F = $(notdir $*)
 # environment
@@ -121,9 +121,9 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-SHLVL = 1
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/3f0f2577_5057_4d93_bd9d_8ae019a70642
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
@@ -140,6 +140,8 @@ LC_MONETARY = en_US.UTF-8
 ^F = $(notdir $^)
 # environment
 LC_TIME = en_US.UTF-8
+# environment
+INVOCATION_ID = 2b8bb80d08c24cccbacbba032a354343
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -162,10 +164,12 @@ ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = artclave
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1101178
+SYSTEMD_EXEC_PID = 1228680
 # environment
 DISPLAY = :0
 # environment
@@ -175,11 +179,15 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
+MANAGERPID = 1227850
+# environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-_ = /usr/bin/code
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1230602
+# environment
+_ = /usr/share/code/code
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
@@ -187,8 +195,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-COLORTERM = truecolor
- 
+JOURNAL_STREAM = 8:25231152
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -202,8 +209,6 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/103610/vscode-e449c818-1.90-main.sock
 # environment
-TERM = xterm-256color
-# environment
 FT_HOOK_PATHNAME = login-user.d
 # environment
 IM_CONFIG_PHASE = 1
@@ -214,13 +219,7 @@ IM_CONFIG_PHASE = 1
 # default
 SUFFIXES := 
 # environment
-VSCODE_CLI = 1
-# environment
 FT_HOOK_NAME = login-user
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-VTE_VERSION = 6800
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/artclave
 # default
@@ -232,7 +231,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=11/136=8%
+# Load=109/1024=11%, Rehash=0, Collisions=3/136=2%
 
 # Pattern-specific Variable Values
 
@@ -298,6 +297,6 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Fri Aug  9 22:09:58 2024
+# Finished Make data base on Sat Aug 10 17:56:22 2024
 
  

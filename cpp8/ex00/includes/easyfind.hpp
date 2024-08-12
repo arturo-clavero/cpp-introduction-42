@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:17:00 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/09 03:18:17 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/10 18:21:18 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ template <typename T>
 
 typename T::iterator	easyfind(T &container, int const toFind){
 	typename T::iterator result = std::find(container.begin(), container.end(), toFind);
-	if (std::find(container.begin(), container.end(), toFind) == container.end())
+	if (result == container.end())
 		throw std::out_of_range("Element not found\n");
 	return result;
 }

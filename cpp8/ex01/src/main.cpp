@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:20:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/09 03:51:21 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/11 00:54:02 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,14 +130,22 @@ void	testThousands(int thousand){
 }
 
 void	manyNumsInOneGo(){
-	Span span(10);
-	span.addNumber(9);
+	Span span(8);
+	span.addNumber(0);
 	std::cout<<span;
-	int array[] = {1, 3, 5, 7};
-	span.addArrayOfNums(array, 4);
-	std::cout<<span;
-	int array2[3] = {11, 33, 55};
-	span.addArrayOfNums(array2, 3);
+	std::vector<int> array;
+	try
+	{
+		array.push_back(1);
+		array.push_back(3);
+		array.push_back(5);
+		array.push_back(7);
+		span.addManyNums(array.begin(), array.end());
+		span.addManyNums(array.begin(), array.end());
+	}
+	catch(std::exception &e){
+		std::cout<<e.what();
+	}
 	std::cout<<span;
 }
 
