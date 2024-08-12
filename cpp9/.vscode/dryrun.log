@@ -1,6 +1,6 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/home/artclave/Desktop/CPP00/cpp9'
-make: Leaving directory '/home/artclave/Desktop/CPP00/cpp9'
+make: Entering directory '/home/artclave/Desktop/cpp/cpp9'
+make: Leaving directory '/home/artclave/Desktop/cpp/cpp9'
  
 make: *** No targets specified and no makefile found.  Stop.
 

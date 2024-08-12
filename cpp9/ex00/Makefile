@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/22 11:37:21 by artclave         ###   ########.fr        #
+#    Updated: 2024/08/13 01:27:57 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,9 @@ OBJDIR = $(BINDIR)/obj
 
 
 SRCS = main.cpp \
-		BitcoinExchange.cpp \
-	   
-OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
+		BitcoinExchange.cpp
 
-HEADERS = BitcoinExchange.hpp \
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 EXEC = BitcoinExchange
 
@@ -32,9 +30,8 @@ all: $(EXEC)
 $(EXEC): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERS) | $(OBJDIR)
-	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -MP -c $< -o $@
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
@@ -49,8 +46,19 @@ leaks: all
 	valgrind --leak-check=full ./$(EXEC)
 
 run: all
-	./$(EXEC)
+	$(MAKE) find-and-run
+
+find-and-run:
+	@FILE=$(shell find . -name '*.txt' | head -n 1) ; \
+	if [ -n "$$FILE" ]; then \
+		echo "Running with $$FILE"; \
+		./$(EXEC) $$FILE; \
+	else \
+		echo "No .txt files found."; \
+	fi
 	
 re: fclean all
+
+-include $(OBJS:.o=.d)
 
 .PHONY: all clean fclean re

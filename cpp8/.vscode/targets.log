@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 13 00:42:49 2024
+# Make data base, printed on Tue Aug 13 00:43:51 2024
 
 # Variables
 
@@ -71,7 +69,7 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/artclave/Desktop/cpp/cpp8
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,7 +89,7 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 551028
+VSCODE_PID = 551482
 # environment
 KRB5CCNAME = FILE:/tmp/krb5cc_103610_949NiF
 # environment
@@ -185,7 +183,7 @@ DEBUGINFOD_URLS = https://debuginfod.ubuntu.com
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 551028
+GIO_LAUNCHED_DESKTOP_FILE_PID = 551482
 # environment
 _ = /usr/share/code/code
 # environment
@@ -297,6 +295,8 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Tue Aug 13 00:42:49 2024
+# Finished Make data base on Tue Aug 13 00:43:51 2024
 
  
+make: *** No rule to make target 'all'.  Stop.
+
