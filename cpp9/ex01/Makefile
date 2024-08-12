@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/07/20 05:34:32 by artclave         ###   ########.fr        #
+#    Updated: 2024/08/13 05:13:28 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,10 @@ BINDIR = bin
 OBJDIR = $(BINDIR)/obj
 
 
-SRCS = RPN.cpp \
-		main.cpp \
-	   
-OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
+SRCS = main.cpp \
+		RPN.cpp
 
-HEADERS = RPN.hpp\
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 EXEC = RPN
 
@@ -32,9 +30,8 @@ all: $(EXEC)
 $(EXEC): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERS) | $(OBJDIR)
-	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -MP -c $< -o $@
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
@@ -48,9 +45,8 @@ fclean: clean
 leaks: all
 	valgrind --leak-check=full ./$(EXEC)
 
-run: all
-	./$(EXEC)
-	
 re: fclean all
+
+-include $(OBJS:.o=.d)
 
 .PHONY: all clean fclean re
