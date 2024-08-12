@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:20:47 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/11 00:54:02 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/12 23:01:24 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	invalidPush(){
 void	testConstructor(){
 	std::cout<<"\nTESTING CONSTRUCTOR\n";
 	Span span1(5);
-	span1.getSize("Span");
+	span1.printSize("Span");
 }
 
 void	testCopyConstructor(){
@@ -37,10 +37,10 @@ void	testCopyConstructor(){
 	Span span1(max);
 	for(int i = 0; i < max; i++)
 		span1.addNumber(i);
-	span1.getSize("Span 1");
+	span1.printSize("Span 1");
 	std::cout<<span1;
 	Span span2(span1);
-	span2.getSize("Span 2");
+	span2.printSize("Span 2");
 	std::cout<<span1;
 }
 
@@ -50,23 +50,23 @@ void	testCopyOp(){
 	Span span1(max);
 	for(int i = 0; i < max; i++)
 		span1.addNumber(i);
-	span1.getSize("Span 1");
+	span1.printSize("Span 1");
 	std::cout<<span1;
 	Span span2(1);
 	span2.addNumber(5);
-	span2.getSize("Span 2");
+	span2.printSize("Span 2");
 	std::cout<<span2;
 	span2 = span1;
-	span2.getSize("Span 2");
+	span2.printSize("Span 2");
 	std::cout<<span2;
 	Span span3(5);
 	for (int i = 0; i < 5; i++){
 		span3.addNumber(i + 10);
 	}
-	span3.getSize("span 3");
+	span3.printSize("span 3");
 	std::cout<<span3;
 	span3 = span2;
-	span3.getSize("span 3");
+	span3.printSize("span 3");
 	std::cout<<span3;
 }
 
@@ -150,15 +150,15 @@ void	manyNumsInOneGo(){
 }
 
 int	main(void){
-	testConstructor();
-	testCopyConstructor();
-	testCopyOp();
-	invalidPush();
-	invalidMaxDist();
-	invalidMinDist();
-	subjectTest();
-	testThousands(10);
-	testThousands(50);
-	testThousands(100);
-	manyNumsInOneGo();
+	// testConstructor();
+	// testCopyConstructor();
+	// testCopyOp();
+	// invalidPush();
+	// invalidMaxDist();
+	// invalidMinDist();
+	 subjectTest();
+	// testThousands(10);
+	// testThousands(50);
+	// testThousands(100);
+	// manyNumsInOneGo();
 }

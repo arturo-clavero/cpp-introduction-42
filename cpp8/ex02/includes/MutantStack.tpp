@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 04:04:47 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/12 20:57:11 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/12 23:00:32 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ MutantStack<T>::MutantStack(){
 template <typename T>
 MutantStack<T>::MutantStack(MutantStack<T> const & other) : _stack(other.getStack()){
 	std::cout<<BLUE<<"\t(MutantStack copy constructor called)\n"<<RESET;
+}
+
+template <typename T>
+MutantStack<T>::MutantStack(std::stack<T> const & other){
+	std::cout<<BLUE<<"\t(MutantStack copy constructor called)\n"<<RESET;
+	std::stack<T> temp(other);
+	while (!temp.empty()){
+		this->push(temp.top());
+		temp.pop();
+	}
 }
 
 template <typename T>
@@ -75,7 +85,7 @@ typename std::deque<T>::const_iterator	MutantStack<T>::begin() const{
 }
 
 template <typename T>
-typename std::deque<T>::iterator	MutantStack<T>::begin() {
+typename std::deque<T>::iterator	MutantStack<T>::begin(){
  	return _stack.begin();
 }
 
@@ -85,19 +95,19 @@ typename std::deque<T>::const_iterator 	MutantStack<T>::end() const{
 }
 
 template <typename T>
-typename std::deque<T>::iterator 	MutantStack<T>::end() {
+typename std::deque<T>::iterator 	MutantStack<T>::end(){
 	return _stack.end();
 }
 
 template <typename T>
-MutantStack<T>::operator std::stack<T, std::deque<T> >() {
+MutantStack<T>::operator std::stack<T, std::deque<T> >(){
 	std::stack<T, std::deque<T> > newStack (_stack);
 	std::cout<<BLUE<<"\t(conversion operator is called)\n"<<RESET;
 	return newStack;
 }
 
 template <typename T>
-MutantStack<T>::operator const std::stack<T, std::deque<T> >() const {
+MutantStack<T>::operator const std::stack<T, std::deque<T> >() const{
 	std::stack<T, std::deque<T> > newStack (_stack);
 	std::cout<<BLUE<<"\t(conversion operator is called)\n"<<RESET;
 	return newStack;

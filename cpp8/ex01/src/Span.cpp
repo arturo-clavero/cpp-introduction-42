@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:16:23 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/11 00:46:52 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/12 22:57:31 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	Span::addNumber(int const num){
 }
 
 int	Span::shortestSpan() const{
-	if (_array.empty())
-		throw std::out_of_range("Array is empty\n");
-	if (_array.size() == 1)
-		throw std::out_of_range("Array only has 1 element\n");
+	if (_array.size() < 2)
+		throw std::out_of_range("Array has to have at least 2 elements\n");
+	std::vector<int> sorted_array = _array;
+    std::sort(sorted_array.begin(), sorted_array.end());
 	int min = std::numeric_limits<int>::max();
 	int	value;
-	for (int i = 0; i + 1 < static_cast<int>(_array.size()); i++){
-		value = abs(_array[i] - _array[i + 1]);
+	for (int i = 0; i + 1 < static_cast<int>(sorted_array.size()); i++){
+		value = abs(sorted_array[i] - sorted_array[i + 1]);
 		if (value < min)
 			min = value;
 	}
@@ -64,10 +64,8 @@ int	Span::shortestSpan() const{
 }
 
 int	Span::longestSpan() const{
-	if (_array.empty())
-		throw std::out_of_range("Array is empty\n");
-	if (_array.size() == 1)
-		throw std::out_of_range("Array only has 1 element\n");
+	if (_array.size() < 2)
+		throw std::out_of_range("Array has to have at least 2 elements\n");
 	int min = std::numeric_limits<int>::max();
 	int max = std::numeric_limits<int>::min();
 	for (int i = 0; i < static_cast<int>(_array.size()); i++){
@@ -76,7 +74,7 @@ int	Span::longestSpan() const{
 		if (_array[i] > max)
 			max = _array[i];
 	}
-	return abs(min - max);
+	return max - min;
 }
 
 std::vector<int>::iterator	Span::begin(){
@@ -86,12 +84,20 @@ std::vector<int>::iterator	Span::end(){
 	return _array.end();
 }
 
+std::vector<int>::const_iterator	Span::begin() const{
+	return _array.begin();
+}
+
+std::vector<int>::const_iterator	Span::end() const{
+	return _array.end();
+}
+
 void	Span::addManyNums(std::vector<int>::iterator begin, std::vector<int>::iterator end){
     for (; begin != end; begin++)
 		this->addNumber(*begin);
 }
 
-void	Span::getSize(std::string const &name) const{
+void	Span::printSize(std::string const &name) const{
 	std::cout<<"Capacity.() of "<<name<<" is "<<_array.capacity()<<"\n";
 }
 

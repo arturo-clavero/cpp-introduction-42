@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 18:33:52 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/11 00:48:16 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/12 22:58:16 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,15 @@ class Span{
 		void	addNumber(int const num);
 		void	addManyNums(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	//GETTERS:
-		void				getSize(std::string const & name = "Span") const;
+		void				printSize(std::string const & name = "Span") const;
 		std::vector<int>	getArray()const;
 	//ITERATORS
 		std::vector<int>::iterator	begin();
 		std::vector<int>::iterator	end();
+		std::vector<int>::const_iterator	begin() const;
+		std::vector<int>::const_iterator	end() const;
 };
 
 std::ostream	&operator<<(std::ostream & out, Span const & span);
-
 
 #endif

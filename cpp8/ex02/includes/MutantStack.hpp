@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 10:46:03 by arturo            #+#    #+#             */
-/*   Updated: 2024/08/12 20:55:22 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/12 23:00:20 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define RESET "\033[0m"
 
 template <typename T>
-class MutantStack{
+class MutantStack {
 	private:
 		std::deque<T>	_stack;
 	public:
@@ -37,6 +37,7 @@ class MutantStack{
 	//MEMBER FTS:
 		MutantStack();
 		MutantStack(MutantStack<T> const & og);
+		MutantStack(std::stack<T> const & og);
 		~MutantStack();
 		MutantStack	&operator=(MutantStack<T> const & og);
 		//element access:
