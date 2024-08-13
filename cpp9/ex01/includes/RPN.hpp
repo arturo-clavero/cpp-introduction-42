@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:57:51 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 05:12:18 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/13 18:29:51 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class	RPN{
 		std::stack<int> _stack;
 		int const		_mode;
 	//unused orthodox:
+		RPN();
 		RPN	&operator=(RPN const & other);
 	//private ft helpers:
 		static bool 	isValidChar(char c, const std::string &haystack);

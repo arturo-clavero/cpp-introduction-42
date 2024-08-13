@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:42:53 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 05:08:25 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/13 23:23:03 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	RPN::process_number(int *i){
 	int num;
 	std::stringstream ss(&_input[*i]);
     ss >> num;
-	if (ss.fail())
-		error("Conversion to digit failed\n");
+	if (ss.fail() || num > 10)
+		error("Incorrect num");
 	_stack.push(num);
 	if (!std::isdigit(_input[*i]))
 		*i += 1;

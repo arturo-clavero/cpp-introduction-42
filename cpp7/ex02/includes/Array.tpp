@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 17:23:15 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/09 22:10:13 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/13 21:55:00 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ template<typename T>
 Array<T>::~Array(){
 	std::cout<<"Destructor for class 'Array' called\n";
 	delete[] array;
+	std::cout<<"..........\n";
 }

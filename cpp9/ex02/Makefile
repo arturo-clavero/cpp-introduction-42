@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/08/13 05:20:08 by artclave         ###   ########.fr        #
+#    Updated: 2024/08/13 19:21:59 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ OBJDIR = $(BINDIR)/obj
 
 
 SRCS = main.cpp \
-		PmergeMe.cpp
 
 OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
