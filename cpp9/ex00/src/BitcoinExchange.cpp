@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:58:45 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/17 17:03:49 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/17 17:35:35 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,33 +102,6 @@ int	BitcoinExchange::valid_date(int const year, int const month, int const day)c
 		return 0;
 	}
 	return 1;
-}
-
-std::string::const_iterator findFirstAlpha(const std::string& str) {
-    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-        if (std::isalpha(*it)) {
-            return it;
-        }
-    }
-    return str.end(); 
-}
-
-std::string::const_iterator findFirstDigit(const std::string& str) {
-    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-        if (std::isdigit(*it)) {
-            return it;
-        }
-    }
-    return str.end(); 
-}
-
-std::string::const_iterator findFirstSign(const std::string& str) {
-    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-        if (*it == '+' || *it == '-') {
-            return it;
-        }
-    }
-    return str.end(); 
 }
 
 bool	valid_char(char c, std::string haystack){

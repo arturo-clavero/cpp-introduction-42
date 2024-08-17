@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:42:53 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/14 17:10:07 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/17 18:04:58 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,37 @@
 #include <sstream>
 #include <algorithm>
 
+bool	valid_char(char c, std::string haystack){
+	if (std::find(haystack.begin(), haystack.end(), c) == haystack.end())
+	{
+		std::cout<<"invalid char-> '"<<c<<"'\n";
+		return true;
+	}
+	return false;
+}
+
+bool	check_sign(std::string str){
+	std::string haystack = "+-";
+	std::string::iterator next, prev;
+	for (std::string::iterator it = str.begin(); it != str.end(); it++){
+		if (std::find(haystack.begin(), haystack.end(), *it) != haystack.end())
+		{
+			prev = it - 1;
+			next = it + 1;
+			if ((*prev != ' ') || (*next != ' ' && next != str.end()))
+				return false;
+		}
+	}
+	return true;
+}
+
 RPN::RPN(std::string const &str) : _input(str){
 	std::string allowed = "0123456789 +*-/";
 	std::string operand = "+*-/";
-    if (std::find_if(_input.begin(), _input.end(), std::bind2nd(std::ptr_fun(isValidChar), allowed)) == _input.end())
-		error("Invalid expression: only digits, operands and spaces allowed\n");
-	std::string::const_iterator it = std::find_if(_input.begin(), _input.end(), std::bind2nd(std::ptr_fun(isValidChar), operand));
-	if ((it != _input.end() && (it == _input.begin() || *(it - 1) != ' '|| (*(it + 1) != ' ' && it + 1 != _input.end()))))
-		error("Invalid expression: operands must be preceeded and proceeded by spaces\n\t(last operand doesnt have to be preceeded by a space)\n");
+	std::cout<<_input<<"\n";
+    if ((std::find_if(_input.begin(), _input.end(), std::bind2nd(std::ptr_fun(valid_char), allowed)) != _input.end())
+		|| !check_sign(str))
+		error("Invalid expression: only digits, operands(separated by space) and spaces allowed\n");
 }
 
 RPN::RPN(RPN const & other) : _input(other.getInput()){};
@@ -88,8 +111,4 @@ void	RPN::process_operand(char const operand){
 void	RPN::error(std::string msg) const{
 	std::cerr<<RED<<msg<<RESET;
 	exit (2);
-}
-
-bool RPN::isValidChar(char c, const std::string &haystack) {
-    return haystack.find(c) != std::string::npos;
 }
