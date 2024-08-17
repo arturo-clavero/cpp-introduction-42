@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:40:15 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 05:07:55 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:58:50 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,7 @@ int	main(int ac, char **av){
 		std::cerr<<"Invalid arguments\n";
 		return 2;
 	}
-	int mode = 0;
-	std::cout<<"Would you like to use signed integers? [y/n]\n";
-	std::string user_input;
-	std::cin>>user_input;
-	if (user_input == "y" || user_input == "Y")
-		mode = 1;
 	std::cout<<BLUE<<"\n\n<"<<av[1]<<">\n"<<RESET;
-	RPN op(av[1], mode);
+	RPN op(av[1]);
 	std::cout<<GREEN<<"The answer is:\t"<<op.solve()<<"\n"<<RESET;
 }

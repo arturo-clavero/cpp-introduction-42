@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 02:46:40 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 01:35:55 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:31:46 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 #include <map>
 #include <cctype>
 #include <stdlib.h>
+#include <cstdlib> 
+#include <algorithm>
+#include <string> // For std::to_string
+
 #define PURPLE "\033[38;2;0;0;205m"
 #define BLUE "\033[38;2;135;206;250m"
 #define RED "\033[38;2;255;0;0m"

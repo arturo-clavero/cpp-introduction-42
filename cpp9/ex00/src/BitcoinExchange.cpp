@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:58:45 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 01:44:12 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/17 17:03:49 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,64 @@ int	BitcoinExchange::valid_date(int const year, int const month, int const day)c
 	return 1;
 }
 
+std::string::const_iterator findFirstAlpha(const std::string& str) {
+    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+        if (std::isalpha(*it)) {
+            return it;
+        }
+    }
+    return str.end(); 
+}
+
+std::string::const_iterator findFirstDigit(const std::string& str) {
+    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+        if (std::isdigit(*it)) {
+            return it;
+        }
+    }
+    return str.end(); 
+}
+
+std::string::const_iterator findFirstSign(const std::string& str) {
+    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+        if (*it == '+' || *it == '-') {
+            return it;
+        }
+    }
+    return str.end(); 
+}
+
+bool	valid_char(char c, std::string haystack){
+	return (std::find(haystack.begin(), haystack.end(), c) == haystack.end());
+}
+
+bool	check_rate(std::string &str){
+	std::string::iterator begin = str.begin();
+	while (begin != str.end() && *begin == ' ')
+		begin++;
+	if (*begin == '+' || *begin == '-')
+		begin++;
+	std::string haystack = "0123456789 .";
+	if (find_if(begin, str.end(), std::bind2nd(std::ptr_fun(valid_char), haystack)) != str.end()
+		|| std::count(begin, str.end(), '.') > 1
+ 		|| !std::isdigit(*begin))
+	{
+		std::cout<<"Error: incorrect rate format\n";
+		return false;
+	}
+	while (*begin != ' ' && begin != str.end())
+		begin++;
+	for (; begin != str.end(); begin++)
+	{
+		if (*begin != ' ')
+		{
+			std::cout<<"Error: incorrect rate format\n";
+			return false;
+		}
+	}
+	return true;
+}
+
 int	BitcoinExchange::incorrect_format(std::string str)const{
 	int i = 0;
 	while (str[i] == ' ')
@@ -126,9 +184,13 @@ int	BitcoinExchange::incorrect_format(std::string str)const{
 		std::cerr<<"This date is not valid ("<<str.substr(0, 10)<<")\n";
 		return 1;
 	}
-	float rate = std::atof(str.substr(13, static_cast<int>(str.size()) - 10).c_str());
+	std::string num_string = str.substr(13, static_cast<int>(str.size()) - 10);
+	if (!check_rate(num_string))
+		return 1;
+	std::cout<<"num string "<<num_string<<"\n";
+	float rate = std::atof(num_string.c_str());
 	if (rate < 0 || rate > 1000){
-		std::cerr<<"Error: rates must be between 0 and 1000\n";
+		std::cerr<<"Error: incorrect rate range\n";
 		return 1;
 	}
 	return 0;

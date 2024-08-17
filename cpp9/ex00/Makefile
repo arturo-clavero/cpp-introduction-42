@@ -6,7 +6,7 @@
 #    By: artclave <artclave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 14:34:18 by arturo            #+#    #+#              #
-#    Updated: 2024/08/13 01:27:57 by artclave         ###   ########.fr        #
+#    Updated: 2024/08/14 16:40:08 by artclave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = main.cpp \
 
 OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
-EXEC = BitcoinExchange
+EXEC = btc
 
 all: $(EXEC)
 
