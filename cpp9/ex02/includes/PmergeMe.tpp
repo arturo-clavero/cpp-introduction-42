@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:09:14 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/13 23:21:55 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/19 03:36:25 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,27 +82,7 @@ void	PmergeMe<T>::ford_algo(){
 }
 
 template <typename T>
-void	PmergeMe<T>::recursive_sort(T & max, int &low, int &high, int x){
-	int	m = (low + high) / 2;
-	if (x < max[m])
-		high = m - 1;
-	else if (x > max[m])
-		low = m + 1;
-	else {
-		max.insert(max.begin() + m, x);
-		low = 0;
-		high = max.size() - 1;
-		return ;
-	}
-	if (low > high)
-	{
-		max.insert(max.begin() + low, x);
-		low = 0;
-		high = max.size() - 1;
-		return ;
-	}
-	recursive_sort(max, low, high, x);
-}
+
 
 //HELPER FTS
 template<>
