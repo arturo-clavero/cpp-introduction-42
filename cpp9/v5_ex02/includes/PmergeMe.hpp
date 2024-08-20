@@ -24,16 +24,18 @@ struct Type<std::vector<int> > {
 
 template<>
 struct Type<std::deque<int> > {
-    typedef std::deque<std::pair<int, int> > pair;
+	typedef std::deque<std::pair<int, int> > pair;
 };
 
 template <typename Container>
-typename Type<Container>::pair make_null_pair(Container const &input);
-
-
+void	pair_elements(Container const &input, typename Type<Container>::pair &result);
 
 template <typename Container>
-void	print_vector_pair(Container const &input);
+Container	ford_algo(Container &input);
+
+template <typename Container>
+void	print_pairs(Container const &input);
+
 
 #include "PmergeMe.tpp"
 #endif

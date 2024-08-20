@@ -6,25 +6,31 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:46:57 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/21 02:19:28 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/21 04:10:09 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-template <typename Container>
-Container	ford_algo(typename Type<Container>::pair input){
-	(void)input;
-	std::cout<<"hey!\n";
-	Container randomshit(3);
-	return randomshit;
-}
+// template <typename Container>
+// void	reorder_large_elements_first(Container &input){
+// 	std::cout<<"Determine large elements"
+// 	int temp;
+// 	for (int i = 0; i < static_cast<int>(input.size()); i++)
+// 	{
+// 		if (input[i].first.first < input[i].first.second)
+// 		{
+// 			temp = input[i].first.first;
+// 			input[i].first.first = input[i].first.second;
+// 			input[i].first.second = temp;
+// 		}
+// 	}
+// }
 
 template <typename Container>
-Container	ford_algo(Container input){
-	std::cout<<"First\n";
-	typename Type<Container>::pair false_pairs = make_null_pair(input);
-	ford_algo<Container>(false_pairs);
+Container	ford_algo(Container &input){
+	typename Type<Container>::pair pairs;
+	pair_elements(input, pairs);
 	return input;
 }
 
