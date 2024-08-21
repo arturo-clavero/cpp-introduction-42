@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:09:14 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/19 03:36:25 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/21 14:48:30 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ PmergeMe<T>::PmergeMe(char **av) {
 			std::stringstream ss(&str[j]);
     		ss >> num;
 			if (num < 0)
-				error("Numbers must be positiven");
+				error("Numbers must be positive\n");
 			_container.push_back(num);
 			if (str[j] == '+')
 				j ++;

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 21 04:01:13 2024
+# Make data base, printed on Wed Aug 21 13:49:14 2024
 
 # Variables
 
@@ -91,15 +91,15 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3534906
+VSCODE_PID = 3722626
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_Kpglh5
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_fDm70V
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z2t8c2.42bangkok.com:@/tmp/.ICE-unix/3531890,unix/z2t8c2.42bangkok.com:/tmp/.ICE-unix/3531890
+SESSION_MANAGER = local/z2t8c2.42bangkok.com:@/tmp/.ICE-unix/3719380,unix/z2t8c2.42bangkok.com:/tmp/.ICE-unix/3719380
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 4dc5ece07b8e4b97b44984e52c120375
+INVOCATION_ID = dc84115ec2bd4ed2a585efe0dc58a85e
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -169,7 +169,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 3531916
+SYSTEMD_EXEC_PID = 3719407
 # environment
 DISPLAY = :0
 # environment
@@ -179,13 +179,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 3531083
+MANAGERPID = 3718554
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3534906
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3722626
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/103610
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:27761311
+JOURNAL_STREAM = 8:28130853
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -296,8 +296,7 @@ GNUmakefile:
 
 # strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
- 
 # Load=18/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Wed Aug 21 04:01:13 2024
+# Finished Make data base on Wed Aug 21 13:49:14 2024
 
  
