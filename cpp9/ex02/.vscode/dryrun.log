@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/artclave/Desktop/cpp/cpp9/ex02'
+mkdir -p bin/obj
+c++ -Wall -Wextra -Werror -std=c++98 -Iincludes -MMD -c src/main.cpp -o bin/obj/main.o
+c++ -Wall -Wextra -Werror -std=c++98 -Iincludes -MMD -c src/PmergeMe.cpp -o bin/obj/PmergeMe.o
+c++ -Wall -Wextra -Werror -std=c++98 bin/obj/main.o bin/obj/PmergeMe.o -o PmergeMe
+make: Leaving directory '/home/artclave/Desktop/cpp/cpp9/ex02'
+ 

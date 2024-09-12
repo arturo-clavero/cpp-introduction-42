@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:58:45 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/17 17:35:35 by artclave         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:24:07 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	BitcoinExchange::get_rates(std::string const &name){
 	if (!file.is_open())
 		throw std::runtime_error("Error: can't open input file\n");
 	std::string line, date;
-	float rate, final_rate;
+	float rate, factor, final_rate;
 	std::getline(file, line);
 	if (line.empty())
 		std::cerr<<"Error: input file is empty\n";
@@ -64,11 +64,19 @@ void	BitcoinExchange::get_rates(std::string const &name){
 	while (std::getline(file, line)){
 		if (this->incorrect_format(line) == 0){
 			date = line.substr(0, 10);
-			rate = std::atof(line.substr(13, static_cast<int>(line.size()) - 10).c_str());
+			std::stringstream ss1(line.substr(13, static_cast<int>(line.size()) - 10));
+			ss1 >> rate;
 			tMap::iterator it = _map.find(date);
 			if (it == _map.end())
-				it = _map.upper_bound(date);
-			final_rate = rate * std::atof(it->second.c_str());
+			{
+				std::cout<<"date not found ... "<<date<<"\n";
+				it = _map.lower_bound(date);
+				if (it != _map.begin())
+					it--;
+			}
+			std::stringstream ss2(it->second);
+			ss2 >> factor;
+			final_rate = rate * factor;
 			std::cout<<date<<" => "<<rate<<" = "<<final_rate<<"\n";
 		}
 	}
@@ -119,7 +127,7 @@ bool	check_rate(std::string &str){
 		|| std::count(begin, str.end(), '.') > 1
  		|| !std::isdigit(*begin))
 	{
-		std::cout<<"Error: incorrect rate format\n";
+		std::cerr<<"Error: incorrect rate format\n";
 		return false;
 	}
 	while (*begin != ' ' && begin != str.end())
@@ -128,7 +136,7 @@ bool	check_rate(std::string &str){
 	{
 		if (*begin != ' ')
 		{
-			std::cout<<"Error: incorrect rate format\n";
+			std::cerr<<"Error: incorrect rate format\n";
 			return false;
 		}
 	}
@@ -160,11 +168,13 @@ int	BitcoinExchange::incorrect_format(std::string str)const{
 	std::string num_string = str.substr(13, static_cast<int>(str.size()) - 10);
 	if (!check_rate(num_string))
 		return 1;
-	std::cout<<"num string "<<num_string<<"\n";
 	float rate = std::atof(num_string.c_str());
 	if (rate < 0 || rate > 1000){
-		std::cerr<<"Error: incorrect rate range\n";
+		std::cerr<<"Error: not a positive number\n";
 		return 1;
+	}
+	if (rate > 1000){
+		std::cerr<<"Error: too large a number.\n";
 	}
 	return 0;
 }	

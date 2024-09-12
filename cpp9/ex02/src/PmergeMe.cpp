@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 02:03:48 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/21 15:05:54 by artclave         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:20:10 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,17 @@ int	PmergeMe::get_total_sub_groups(int elements)
 		count += size;
 	}
 	return n;
+}
+
+int PmergeMe::get_digits(int num){
+	int digit = -1;
+
+	while (num > 0)
+	{
+		num /= 10;
+		digit++;
+	}
+	if (digit == -1)
+		digit = 0;
+	return digit;
 }

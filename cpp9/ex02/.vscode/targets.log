@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Sep 12 16:15:13 2024
+# Make data base, printed on Thu Sep  5 11:11:51 2024
 
 # Variables
 
@@ -18,8 +16,12 @@ GDK_BACKEND = x11
 LC_ALL = C
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
+# makefile (from 'Makefile', line 18)
+OBJDIR = $(BINDIR)/obj
 # environment
 GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 17)
+BINDIR = bin
 # environment
 LC_NAME = en_US.UTF-8
 # environment
@@ -43,7 +45,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/artclave/Desktop/cpp/cpp9
+PWD = /home/artclave/Desktop/cpp/cpp9/ex02
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -69,9 +71,11 @@ XAUTHORITY = /home/artclave/.Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/artclave/Desktop/cpp/cpp9
+CURDIR := /home/artclave/Desktop/cpp/cpp9/ex02
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'Makefile', line 21)
+SRCS = main.cpp PmergeMe.cpp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -86,20 +90,20 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = ubuntu
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'bin/obj/PmergeMe.d', line 1)
+MAKEFILE_LIST := Makefile bin/obj/main.d bin/obj/PmergeMe.d
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2142807
+VSCODE_PID = 456077
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_103610_2YHxlq
+KRB5CCNAME = FILE:/tmp/krb5cc_103610_kQvRkr
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/z1t4c4.42bangkok.com:@/tmp/.ICE-unix/2139538,unix/z1t4c4.42bangkok.com:/tmp/.ICE-unix/2139538
+SESSION_MANAGER = local/z1t3c2.42bangkok.com:@/tmp/.ICE-unix/450662,unix/z1t3c2.42bangkok.com:/tmp/.ICE-unix/450662
 # automatic
 *F = $(notdir $*)
 # environment
@@ -108,10 +112,14 @@ CHROME_DESKTOP = code-url-handler.desktop
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/103610/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 25)
+EXEC = PmergeMe
 # environment
 VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en","availableLanguages":{}}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 23)
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
@@ -141,7 +149,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 84f3de875779440db74762090fffcc41
+INVOCATION_ID = d1157a93d9444e518229438dbf65be1f
 # environment
 DOCKER_HOST = unix:///run/user/103610/docker.sock
 # environment
@@ -167,9 +175,9 @@ LOGNAME = artclave
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2139561
+SYSTEMD_EXEC_PID = 450689
 # environment
 DISPLAY = :0
 # environment
@@ -179,23 +187,25 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2138709
+MANAGERPID = 449816
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2142807
+GIO_LAUNCHED_DESKTOP_FILE_PID = 456077
 # environment
 _ = /usr/share/code/code
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/103610
+# makefile (from 'Makefile', line 14)
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 # environment
 GPG_AGENT_INFO = /run/user/103610/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:10980633
+JOURNAL_STREAM = 8:1656371
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -204,10 +214,14 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 HOME = /home/artclave
 # environment
 QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 16)
+INCDIR = includes
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/103610/vscode-e449c818-1.92-main.sock
+# makefile (from 'Makefile', line 15)
+SRCDIR = src
 # environment
 FT_HOOK_PATHNAME = login-user.d
 # environment
@@ -224,6 +238,8 @@ FT_HOOK_NAME = login-user
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/artclave
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 13)
+CC = c++
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -231,7 +247,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=3/136=2%
+# Load=118/1024=12%, Rehash=0, Collisions=9/175=5%
 
 # Pattern-specific Variable Values
 
@@ -239,22 +255,85 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 2064, inode 21107866): 6 files, no impossibilities.
+# src (device 2064, inode 20980715): No files, no impossibilities so far.
+# . (device 2064, inode 4248000): 8 files, no impossibilities.
+# bin (device 2064, inode 8417876): No files, no impossibilities so far.
 
-# 6 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+bin/obj/%.o: src/%.cpp | bin/obj
+#  recipe to execute (from 'Makefile', line 33):
+	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -c $< -o $@
 
+# 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2024-08-21 09:55:45.9747498
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+# Not a target:
+bin/obj/PmergeMe.d:
+#  Implicit rule search has been done.
+#  Last modified 2024-09-04 14:57:23.710928763
+#  File has been updated.
+#  Successfully updated.
+
+leaks: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 48):
+	valgrind --leak-check=full ./$(EXEC)
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2024-09-04 14:58:03.764127336
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 39):
+	rm -rf $(BINDIR)
+
+# Not a target:
+includes/PmergeMe.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2024-08-21 16:26:19.009232008
+#  File has been updated.
+#  Successfully updated.
+
+PmergeMe: bin/obj/main.o bin/obj/PmergeMe.o
+#  Implicit rule search has not been done.
+#  Last modified 2024-09-04 14:57:23.782930915
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 30):
+	$(CC) $(CFLAGS) $^ -o $@
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+bin/obj/PmergeMe.o: src/PmergeMe.cpp includes/PmergeMe.hpp includes/PmergeMe.tpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -263,41 +342,104 @@ Makefile:
 #  File has not been updated.
 
 # Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
+src/PmergeMe.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
+all: PmergeMe
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Failed to be updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	rm -f $(EXEC)
+
+run: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 45):
+	./$(EXEC)
+
+bin/obj:
+#  Implicit rule search has not been done.
+#  Last modified 2024-09-04 14:58:05.292173128
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	mkdir -p $(OBJDIR)
 
 # Not a target:
-GNUmakefile:
+bin/obj/main.d:
 #  Implicit rule search has been done.
+#  Last modified 2024-09-04 14:58:05.292173128
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+includes/PmergeMe.tpp:
+#  Implicit rule search has been done.
+#  Last modified 2024-08-21 16:21:41.20112187
+#  File has been updated.
+#  Successfully updated.
+
+bin/obj/main.o: src/main.cpp src/main.cpp includes/PmergeMe.hpp includes/PmergeMe.tpp | bin/obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
 #  File does not exist.
 #  File has been updated.
-#  Failed to be updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/obj/main.o
+# automatic
+# * := main
+# automatic
+# < := src/main.cpp
+# automatic
+# + := src/main.cpp src/main.cpp includes/PmergeMe.hpp includes/PmergeMe.tpp
+# automatic
+# % := 
+# automatic
+# ^ := src/main.cpp includes/PmergeMe.hpp includes/PmergeMe.tpp
+# automatic
+# ? := src/main.cpp includes/PmergeMe.hpp includes/PmergeMe.tpp
+# automatic
+# | := bin/obj
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=4/16=25%
+#  recipe to execute (from 'Makefile', line 33):
+	$(CC) $(CFLAGS) -I$(INCDIR) -MMD -c $< -o $@
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/58=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 113 B / avg = 8 B
-# current buf: size = 8162 B / used = 113 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 313 B / avg = 10 B
+# current buf: size = 8162 B / used = 313 B / count = 31 / avg = 10 B
 
-# strcache performance: lookups = 17 / hit rate = 17%
+# strcache performance: lookups = 71 / hit rate = 56%
 # hash-table stats:
- 
-# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Thu Sep 12 16:15:13 2024
+# Load=31/8192=0%, Rehash=0, Collisions=0/71=0%
+# Finished Make data base on Thu Sep  5 11:11:51 2024
 
  
