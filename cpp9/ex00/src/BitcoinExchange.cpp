@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:58:45 by artclave          #+#    #+#             */
-/*   Updated: 2024/09/12 16:24:07 by artclave         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:39:00 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	BitcoinExchange::get_rates(std::string const &name){
 			tMap::iterator it = _map.find(date);
 			if (it == _map.end())
 			{
-				std::cout<<"date not found ... "<<date<<"\n";
 				it = _map.lower_bound(date);
 				if (it != _map.begin())
 					it--;
@@ -149,20 +148,20 @@ int	BitcoinExchange::incorrect_format(std::string str)const{
 			i++;
 	str = &str[i];
 	if (str.size() < 14){
-		std::cerr<<"Error: incomplete information\n";
+		std::cerr<<"Error: bad input => "<<str.substr(0, 10)<<"\n";
 		return 1;
 	}
 	if (!this->cont_digits(str, 4) || str[4] != '-' || !this->cont_digits(&str[5], 2) || str[7] != '-' || !this->cont_digits(&str[8], 2))
 	{
-		std::cerr<<"Error: incorrect Year-Month-Day format ("<<str.substr(0, 10)<<")\n";
+		std::cerr<<"Error: bad input => "<<str.substr(0, 10)<<"\n";
 		return 1;
 	}
 	if (str.substr(10, 3) != " | "){
-		std::cerr<<"Error: incorrect format, dates and rates must be separated by ' | '\n";
+		std::cerr<<"Error: bad input => "<<str.substr(0, 10)<<"\n";
 		return 1;
 	}
 	if (this->valid_date(std::atoi(str.substr(0, 4).c_str()), std::atoi(str.substr(5, 2).c_str()), std::atoi(str.substr(8, 2).c_str())) == 0){
-		std::cerr<<"This date is not valid ("<<str.substr(0, 10)<<")\n";
+		std::cerr<<"Error: bad input => "<<str.substr(0, 10)<<"\n";
 		return 1;
 	}
 	std::string num_string = str.substr(13, static_cast<int>(str.size()) - 10);
