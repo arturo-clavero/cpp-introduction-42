@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 04:42:53 by artclave          #+#    #+#             */
-/*   Updated: 2024/08/17 18:04:58 by artclave         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:34:33 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 bool	valid_char(char c, std::string haystack){
 	if (std::find(haystack.begin(), haystack.end(), c) == haystack.end())
 	{
-		std::cout<<"invalid char-> '"<<c<<"'\n";
+	std::cerr<<"Error: invalid char-> '"<<c<<"'\n";
 		return true;
 	}
 	return false;
@@ -42,7 +42,6 @@ bool	check_sign(std::string str){
 RPN::RPN(std::string const &str) : _input(str){
 	std::string allowed = "0123456789 +*-/";
 	std::string operand = "+*-/";
-	std::cout<<_input<<"\n";
     if ((std::find_if(_input.begin(), _input.end(), std::bind2nd(std::ptr_fun(valid_char), allowed)) != _input.end())
 		|| !check_sign(str))
 		error("Invalid expression: only digits, operands(separated by space) and spaces allowed\n");
@@ -73,7 +72,7 @@ void	RPN::process_number(int *i){
 	int num;
 	std::stringstream ss(&_input[*i]);
     ss >> num;
-	if (ss.fail() || num > 10)
+	if (ss.fail() || num >= 10)
 		error("Incorrect num\n");
 	_stack.push(num);
 	if (!std::isdigit(_input[*i]))
@@ -109,6 +108,6 @@ void	RPN::process_operand(char const operand){
 }
 
 void	RPN::error(std::string msg) const{
-	std::cerr<<RED<<msg<<RESET;
+	std::cerr<<RED<<"Error: "<<msg<<RESET;
 	exit (2);
 }
