@@ -6,7 +6,7 @@
 /*   By: artclave <artclave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:46:57 by artclave          #+#    #+#             */
-/*   Updated: 2024/09/04 14:58:03 by artclave         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:01:16 by artclave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int ac, char **av){
 	(void)elapsed_time_vector;
 	if (ac < 2)
 		PmergeMe::error("not enough args\n");
-	std::vector<int> original = PmergeMe::parsing(av);
+	std::vector<int> original = PmergeMe::parsing<myVector>(av);
 	std::vector<int> vec = PmergeMe::parsing<myVector>(av);
 	std::deque<int> deque = PmergeMe::parsing<myDeque>(av);
 
@@ -46,6 +46,6 @@ int main(int ac, char **av){
 	PmergeMe::print_container(vec);
 	//PmergeMe::print_container(deque);
 	std::cout<<"Time to process a range of "<<vec.size()<<" elements with std::vector<int> : "<<elapsed_time_vector<<" us\n";
-	std::cout<<"Time to process a range of "<<deque.size()<<" elements with std::vector<int> : "<<elapsed_time_deque<<" us\n";
+	std::cout<<"Time to process a range of "<<deque.size()<<" elements with std::deque<int> : "<<elapsed_time_deque<<" us\n";
 }
 
